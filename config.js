@@ -4,16 +4,16 @@
 
      //text.style.display = "block";
 
-    playerclass = chooseclass(2, yesAmiibo(), yesEnemy(), yesBroken());
+    playerclass = chooseclass(1, yesAmiibo(), yesEnemy(), yesBroken());
     //setsprite(playerclass);
     //document.write(chooseclass(1))
 
-    //htmlify("Saber");
+    htmlify("Saber");
 
-    var text = input.options[input.selectedIndex].text; // returns the text ie one / two etc
-    var value = input.value; // returns the value ie 1 / 2 / 3 etc
+    //var text = input.options[input.selectedIndex].text; // returns the text ie one / two etc
+    //var value = input.value; // returns the value ie 1 / 2 / 3 etc
 
-    console.log(value);
+    //console.log(value);
 
 
     //docuemnt.removeElement("p");
@@ -31,19 +31,19 @@
 
   }
 
-  function htmlify(pokemon) {
+  function htmlify(name) {
 
 
-      var title = pokemon;
+    var _img = document.getElementById('id1');
+    var newImg = new Image;
+    newImg.onload = function() {
+    _img.src = this.src;
+    }
+    newImg.src = 'img/' + playerclass + '.gif';
 
-      var out = pokemon;
 
 
-      out += "</li>";
-
-
-
-      return out;
+      return ;
   }
 
 
