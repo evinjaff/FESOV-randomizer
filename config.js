@@ -1,6 +1,10 @@
 
   function randomize(){
 
+    var e = document.getElementById("characters");
+    var charname = e.options[e.selectedIndex].text;
+
+    console.log("Name:" + charname)
 
      //text.style.display = "block";
 
@@ -10,8 +14,7 @@
 
     //docuemnt.getElementById('characters');
 
-    htmlify('Saber');
-
+    htmlify(charname);
     //var text = input.options[input.selectedIndex].text; // returns the text ie one / two etc
     //var value = input.value; // returns the value ie 1 / 2 / 3 etc
 
@@ -35,7 +38,9 @@
 
   function htmlify(name) {
 
-    //newname = spacefixer(name)
+    newclass = spacefixer(playerclass);
+
+    console.log("new class is:" + newclass);
     //Write a space fixer for bow knights
 
     var _img = document.getElementById('id1');
@@ -44,12 +49,22 @@
     _img.src = this.src;
     }
 
-    //status =
+    var status = 0;
 
-    var exists = checkImage('img/FE15_' + playerclass + '_(' + name + ').gif', function(){ console.log("good"); }, function(){ console.log("not found")});
+    var exists = checkImage('img/FE15_' + newclass + '_(' + name + ').gif', function(){
+      console.log("good");
+      newImg.src = 'img/FE15_' + newclass + '_(' + name + ').gif';
+    },
+      function(){
+        console.log("not found");
+        newImg.src = 'img/Generic' + newclass + '.gif';
+      });
 
-    console.log("exists is:" + exists);
-    //newImg.src = 'img/FE15_' + playerclass + '_(' + name + ').gif';
+
+
+
+    console.log("exists is:" + status);
+    newImg.src = 'img/FE15_' + playerclass + '_(' + name + ').gif';
 
 
 
@@ -62,8 +77,15 @@
     img.onerror = bad;
     img.src = imageSrc;
 
+    return
+
   }
 
+function spacefixer(name){
+  var newname = name.replace(" ","_");
+
+  return newname;
+}
 //include amiibos
 
 /*
