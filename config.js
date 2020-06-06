@@ -8,7 +8,9 @@
     //setsprite(playerclass);
     //document.write(chooseclass(1))
 
-    htmlify("Saber");
+    //docuemnt.getElementById('characters');
+
+    htmlify('Saber');
 
     //var text = input.options[input.selectedIndex].text; // returns the text ie one / two etc
     //var value = input.value; // returns the value ie 1 / 2 / 3 etc
@@ -39,7 +41,7 @@
     newImg.onload = function() {
     _img.src = this.src;
     }
-    newImg.src = 'img/' + playerclass + '.gif';
+    newImg.src = 'img/FE15_' + playerclass + '_(' + name + ').gif';
 
 
 
@@ -77,7 +79,7 @@ function yesBroken() {return document.getElementById("busted").checked;}
         var almcelica2 = ["Hero (Alm)", "Princess"]
         var almcelica3 = ["Conqueror", "Rigain"]
 
-        var levelone = ["Villager","Archer", "Fighter", "Cavalier", "Soldier", "Mercenary","Boy/Girl" ];
+        var levelone = ["Villager","Archer", "Fighter", "Cavalier", "Soldier", "Mercenary","Boy", "Girl"];
         var leveltwo = ["Myrmidon", "Sniper", "Paladin", "Knight", ];
 
         var levelthree = ["Dread Fighter", "Baron", "Bow Knight", "Gold Knight"];
@@ -99,6 +101,7 @@ function yesBroken() {return document.getElementById("busted").checked;}
         //Base options
         if(level == 1){
           classledger = levelone;
+          arraypush(oneandtwo, classledger);
         }
         if(level == 2){
           classledger = leveltwo;
