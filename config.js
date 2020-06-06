@@ -1,7 +1,7 @@
   function randomize(){
 
-    
-    chooseclass(1);
+
+    chooseclass(1, yesAmiibo(), yesEnemy(), yesBroken());
 
     //document.write(chooseclass(1))
 
@@ -18,12 +18,18 @@ if (chosen.isMega) {
     eligiblePokemon = removeMegas(eligiblePokemon);
 }
 */
+function yesAmiibo() {return document.getElementById("amiibo").checked;}
+function yesEnemy() {return document.getElementById("enemy").checked;}
+function yesBroken() {return document.getElementById("busted").checked;}
 
-  function chooseclass(level){
+  function chooseclass(level, yesamiibo, yesenemy, yesbroken){
         //Class data
 
-        var is = false;
-        var isAmiibo = true;
+        var isBroken = yesBroken;
+        var isEnemy = yesenemy;
+        var isAmiibo = yesamiibo;
+
+        console.log("isEnemy:" + yesenemy);
 
         //Amiibo
         var amiibo = ["Lord (Marth)", "Lord (Corrin)", "Lord(Roy)", "Lord(Lucina)", "", "Hero (Ike)", "Tactitian (Robin)"];
@@ -55,7 +61,7 @@ if (chosen.isMega) {
 
 
         //Broken Classes -- Only use if you want a fucked playthrough
-        var brokenclasses = ["Fell Dragon", "God", ""];
+        var broken = ["Fell Dragon", "God"];
 
         var classledger = [];
 
@@ -70,11 +76,14 @@ if (chosen.isMega) {
           classledger = levelthree;
         }
 
-        if(isAmiibo == true){
-          for (i = 0; i < amiibo.length; i++){
-            classledger.push(amiibo[i]);
-          }
-        }
+        if(isAmiibo == true){for (i = 0; i < amiibo.length; i++){classledger.push(amiibo[i]);}}
+
+
+        if(isEnemy == true){for (i = 0; i < enemyflex.length; i++){classledger.push(enemyflex[i]);}}
+
+
+        if(isBroken == true){for (i = 0; i < broken.length; i++){classledger.push(broken[i]);}}
+
         console.log(classledger);
 
         return classledger[randint(classledger.length)];
