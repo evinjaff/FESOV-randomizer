@@ -20,48 +20,39 @@ if (chosen.isMega) {
 */
 function yesAmiibo() {return document.getElementById("amiibo").checked;}
 function yesEnemy() {return document.getElementById("enemy").checked;}
+
 function yesBroken() {return document.getElementById("busted").checked;}
 
   function chooseclass(level, yesamiibo, yesenemy, yesbroken){
         //Class data
 
-        var isBroken = yesBroken;
+        var isBroken = yesbroken;
         var isEnemy = yesenemy;
         var isAmiibo = yesamiibo;
 
-        console.log("isEnemy:" + yesenemy);
 
+        console.log("isBroken:" + yesBroken);
         //Amiibo
         var amiibo = ["Lord (Marth)", "Lord (Corrin)", "Lord(Roy)", "Lord(Lucina)", "", "Hero (Ike)", "Tactitian (Robin)"];
-
         //Classes lv 1 and 2
         var oneandtwo = ["Mage", "Pegasus Knight", "Cleric", "Mage"];
-
         //Alm and Celica
         var almcelica1 = ["Fighter", "Priestess (Celica)"]
         var almcelica2 = ["Hero (Alm)", "Princess"]
         var almcelica3 = ["Conqueror", "Rigain"]
-
-
         var levelone = ["Villager","Archer", "Fighter", "Cavalier", "Soldier", "Mercenary","Boy/Girl" ];
-
         var leveltwo = ["Myrmidon", "Sniper", "Paladin", "Knight", ];
         var levelthree = ["Dread Fighter", "Baron", "Bow Knight", "Gold Knight"];
-
         var onetwothree = ["Falcon Knight", "Saint", "Sage", "Priestess"];
-
         var enemyflex = ["Brigand", "Arcanist", "Mogall", "Cantor"];
-
         var enemytwo = ["Cantor", "", ""];
-
         var enemythree = ["Mila/Duma Apostole", "Dagon", "Fire Dragon", "Deimos", ""];
-
         var overclass = ["Harrier", "Skogul", "Yasha", "Exemplar", "Guru", "Enchantress", "Oliphantier", "Spartan"];
 
 
 
         //Broken Classes -- Only use if you want a fucked playthrough
-        var broken = ["Fell Dragon", "God"];
+        var broken = ["Fell Dragon", "God", "Player Boat", "Enemy Boat"];
 
         var classledger = [];
 
@@ -78,11 +69,10 @@ function yesBroken() {return document.getElementById("busted").checked;}
 
         if(isAmiibo == true){for (i = 0; i < amiibo.length; i++){classledger.push(amiibo[i]);}}
 
-
         if(isEnemy == true){for (i = 0; i < enemyflex.length; i++){classledger.push(enemyflex[i]);}}
 
-
         if(isBroken == true){for (i = 0; i < broken.length; i++){classledger.push(broken[i]);}}
+
 
         console.log(classledger);
 
