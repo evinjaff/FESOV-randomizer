@@ -35,19 +35,34 @@
 
   function htmlify(name) {
 
+    //newname = spacefixer(name)
+    //Write a space fixer for bow knights
 
     var _img = document.getElementById('id1');
     var newImg = new Image;
     newImg.onload = function() {
     _img.src = this.src;
     }
-    newImg.src = 'img/FE15_' + playerclass + '_(' + name + ').gif';
+
+    //status =
+
+    var exists = checkImage('img/FE15_' + playerclass + '_(' + name + ').gif', function(){ console.log("good"); }, function(){ console.log("not found")});
+
+    console.log("exists is:" + exists);
+    //newImg.src = 'img/FE15_' + playerclass + '_(' + name + ').gif';
 
 
 
       return ;
   }
 
+  function checkImage(imageSrc, good, bad) {
+    var img = new Image();
+    img.onload = good;
+    img.onerror = bad;
+    img.src = imageSrc;
+
+  }
 
 //include amiibos
 
