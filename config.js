@@ -1,14 +1,44 @@
+
   function randomize(){
 
 
-    chooseclass(1, yesAmiibo(), yesEnemy(), yesBroken());
+     //text.style.display = "block";
 
+    playerclass = chooseclass(1, yesAmiibo(), yesEnemy(), yesBroken());
+    //setsprite(playerclass);
     //document.write(chooseclass(1))
 
-    return "randomize";
+    //htmlify("Saber");
+
+    //docuemnt.removeElement("p");
+
+    document.getElementById("p1").innerHTML = playerclass;
+    var child = document.getElementById("p1");
+    /*
+    var para = document.createElement("p");
+    var node = document.createTextNode(playerclass);
+    para.appendChild(node);
+    parent.replaceChild(para,child);
+    */
+
+    return ;
 
   }
 
+  function htmlify(pokemon) {
+
+
+      var title = pokemon;
+
+      var out = pokemon;
+
+
+      out += "</li>";
+
+
+
+      return out;
+  }
 
 
 //include amiibos
@@ -31,7 +61,7 @@ function yesBroken() {return document.getElementById("busted").checked;}
         var isAmiibo = yesamiibo;
 
 
-        console.log("isBroken:" + yesBroken);
+        //console.log("isBroken:" + yesBroken);
         //Amiibo
         var amiibo = ["Lord (Marth)", "Lord (Corrin)", "Lord(Roy)", "Lord(Lucina)", "", "Hero (Ike)", "Tactitian (Robin)"];
         //Classes lv 1 and 2
@@ -83,6 +113,12 @@ function yesBroken() {return document.getElementById("busted").checked;}
 
   function randint(max){
     return Math.floor(Math.random()*max);
+  }
+
+  function getSpritePath(pclass) {
+      var path = "img/";
+      var name = pclass;
+      return path + name;
   }
 
 /*
