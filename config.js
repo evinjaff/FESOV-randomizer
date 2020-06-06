@@ -4,11 +4,17 @@
 
      //text.style.display = "block";
 
-    playerclass = chooseclass(1, yesAmiibo(), yesEnemy(), yesBroken());
+    playerclass = chooseclass(2, yesAmiibo(), yesEnemy(), yesBroken());
     //setsprite(playerclass);
     //document.write(chooseclass(1))
 
     //htmlify("Saber");
+
+    var text = input.options[input.selectedIndex].text; // returns the text ie one / two etc
+    var value = input.value; // returns the value ie 1 / 2 / 3 etc
+
+    console.log(value);
+
 
     //docuemnt.removeElement("p");
 
@@ -63,20 +69,24 @@ function yesBroken() {return document.getElementById("busted").checked;}
 
         //console.log("isBroken:" + yesBroken);
         //Amiibo
-        var amiibo = ["Lord (Marth)", "Lord (Corrin)", "Lord(Roy)", "Lord(Lucina)", "", "Hero (Ike)", "Tactitian (Robin)"];
+        var amiibo = ["Lord (Marth)", "Lord (Corrin)", "Lord(Roy)", "Lord(Lucina)", "Hero (Ike)", "Tactitian (Robin)"];
         //Classes lv 1 and 2
         var oneandtwo = ["Mage", "Pegasus Knight", "Cleric", "Mage"];
         //Alm and Celica
         var almcelica1 = ["Fighter", "Priestess (Celica)"]
         var almcelica2 = ["Hero (Alm)", "Princess"]
         var almcelica3 = ["Conqueror", "Rigain"]
+
         var levelone = ["Villager","Archer", "Fighter", "Cavalier", "Soldier", "Mercenary","Boy/Girl" ];
         var leveltwo = ["Myrmidon", "Sniper", "Paladin", "Knight", ];
+
         var levelthree = ["Dread Fighter", "Baron", "Bow Knight", "Gold Knight"];
         var onetwothree = ["Falcon Knight", "Saint", "Sage", "Priestess"];
-        var enemyflex = ["Brigand", "Arcanist", "Mogall", "Cantor"];
-        var enemytwo = ["Cantor", "", ""];
-        var enemythree = ["Mila/Duma Apostole", "Dagon", "Fire Dragon", "Deimos", ""];
+
+        var enemyflex = ["Brigand", "Arcanist", "Mogall", "Cantor", "Witch"];
+        var enemytwo = ["Cantor", "Vestal"];
+
+        var enemythree = ["Mila/Duma Apostole", "Dagon", "Fire Dragon", "Deimos"];
         var overclass = ["Harrier", "Skogul", "Yasha", "Exemplar", "Guru", "Enchantress", "Oliphantier", "Spartan"];
 
 
@@ -92,16 +102,18 @@ function yesBroken() {return document.getElementById("busted").checked;}
         }
         if(level == 2){
           classledger = leveltwo;
+          //if(isEnemy == true){for (i = 0; i < enemytwo.length; i++){classledger.push(enemytwo[i]);}}
+          arraypush(enemytwo, classledger);
         }
         if(level == 3){
           classledger = levelthree;
         }
 
-        if(isAmiibo == true){for (i = 0; i < amiibo.length; i++){classledger.push(amiibo[i]);}}
+        //Universal Classes
 
-        if(isEnemy == true){for (i = 0; i < enemyflex.length; i++){classledger.push(enemyflex[i]);}}
-
-        if(isBroken == true){for (i = 0; i < broken.length; i++){classledger.push(broken[i]);}}
+        if(isAmiibo == true){arraypush(amiibo, classledger);}
+        if(isEnemy == true){arraypush(enemyflex, classledger);}
+        if(isBroken == true){arraypush(broken, classledger);}
 
 
         console.log(classledger);
@@ -110,6 +122,9 @@ function yesBroken() {return document.getElementById("busted").checked;}
 
   }
 
+function arraypush(array, other){
+  for (i = 0; i < array.length; i++){other.push(array[i]);}
+}
 
   function randint(max){
     return Math.floor(Math.random()*max);
