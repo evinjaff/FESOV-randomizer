@@ -6,9 +6,15 @@
 
     console.log("Name:" + charname)
 
+
+    var e = document.getElementById("tiers");
+    var level = e.options[e.selectedIndex].value;
+
+    console.log("tier:" + level)
+
      //text.style.display = "block";
 
-    playerclass = chooseclass(1, yesAmiibo(), yesEnemy(), yesBroken());
+    playerclass = chooseclass(level, yesAmiibo(), yesEnemy(), yesBroken());
     //setsprite(playerclass);
     //document.write(chooseclass(1))
 
@@ -108,7 +114,7 @@ function yesBroken() {return document.getElementById("busted").checked;}
 
         //console.log("isBroken:" + yesBroken);
         //Amiibo
-        var amiibo = ["Lord (Marth)", "Lord (Corrin)", "Lord(Roy)", "Lord(Lucina)", "Hero (Ike)", "Tactitian (Robin)"];
+        var amiibo = ["Lord (Marth)", "Lord (F. Corrin)", "Lord (Roy)", "Lord (Lucina)", "Hero (Ike)", "Tactitian (Robin)"];
         //Classes lv 1 and 2
         var oneandtwo = ["Mage", "Pegasus Knight", "Cleric", "Mage"];
         //Alm and Celica
@@ -116,7 +122,7 @@ function yesBroken() {return document.getElementById("busted").checked;}
         var almcelica2 = ["Hero (Alm)", "Princess"]
         var almcelica3 = ["Conqueror", "Rigain"]
 
-        var levelone = ["Villager","Archer", "Fighter", "Cavalier", "Soldier", "Mercenary","Boy", "Girl"];
+        var levelone = ["Villager","Archer", "Cavalier", "Soldier", "Mercenary","Boy", "Girl"];
         var leveltwo = ["Myrmidon", "Sniper", "Paladin", "Knight", ];
 
         var levelthree = ["Dread Fighter", "Baron", "Bow Knight", "Gold Knight"];
@@ -139,6 +145,8 @@ function yesBroken() {return document.getElementById("busted").checked;}
         if(level == 1){
           classledger = levelone;
           arraypush(oneandtwo, classledger);
+
+
         }
         if(level == 2){
           classledger = leveltwo;
@@ -148,12 +156,22 @@ function yesBroken() {return document.getElementById("busted").checked;}
         if(level == 3){
           classledger = levelthree;
         }
+        if(level == 4){
+          classledger = overclass;
+        }
 
         //Universal Classes
 
         if(isAmiibo == true){arraypush(amiibo, classledger);}
         if(isEnemy == true){arraypush(enemyflex, classledger);}
         if(isBroken == true){arraypush(broken, classledger);}
+
+        if(isAlm == true){
+          if(level <= 2){arraypush(almcelica1, classledger);}
+          if(level == 3){arraypush(almcelica2, classledger);}
+          if(level == 4){arraypush(almcelica3, classledger);}
+
+        }
 
 
         console.log(classledger);
