@@ -1,4 +1,7 @@
 
+
+var almchars = require('data/alm.js').arr;
+
   function randomize(){
 
     var e = document.getElementById("characters");
@@ -225,28 +228,27 @@ function arraypush(array, other){
 
       //console.log("Alm");
 
-      var routechars = ["Alm", "Lukas", "Tobin", "Kliff", "Faye", "Gray"];
+      //var routechars = ["Alm", "Lukas", "Tobin", "Kliff", "Faye", "Gray"];
 
+/*
       const sleep = (milliseconds) => {
         return new Promise(resolve => setTimeout(resolve, milliseconds))
       }
-
-      for(var i=2;i<routechars.length+2;i++){
-        cstring = routechars[i];
+*/
+      for(var i=2;i<almchars.length+2;i++){
+      // Test code: var i=5;
+        cstring = almchars[i-2];
         console.log("Character: " + cstring);
-        var mychar = chooseclass("1", yesAmiibo(), yesEnemy(), yesBroken(), yesAlm(), yesTier1());
-        var id = "id"+ i;
+        var myclass = chooseclass("1", yesAmiibo(), yesEnemy(), yesBroken(), yesAlm(), yesTier1());
+        var id = 'id'+ i.toString();
+
         console.log(id);
-        htmlify(cstring, id, mychar);
-        sleep(5000);
+        htmlify(cstring, "id8", myclass);
+        //sleep(5000);
     }
 
-    var para = document.createElement("p");
-    var node = document.createTextNode("This is new.");
-    para.appendChild(node);
 
-    var element = document.getElementById("div2");
-    element.appendChild(para);
+
 
 
   }
@@ -255,32 +257,80 @@ function arraypush(array, other){
 
     var myclass = theclass;
 
-    newclass = spacefixer(myclass);
+    var newclass = spacefixer(theclass);
+
+    var printclass = theclass;
 
     //console.log("new class is:" + newclass);
     //Write a space fixer for bow knights - Done!
 
-    var _img = document.getElementById('pic1');
-    var newImg = new Image;
-    newImg.onload = function() {
-    _img.src = this.src;
-    }
-
-    var status = 0;
-
-    var exists = checkImage('img/FE15_' + newclass + '_(' + name + ').gif', function(){
-      //console.log("good");
-      newImg.src = 'img/FE15_' + newclass + '_(' + name + ').gif';
-    },
-      function(){
-        //console.log("not found");
-        newImg.src = 'img/Generic' + newclass + '.gif';
-      });
+    //var _img = document.getElementById('pic1');
 
 
+      var para = document.createElement("p");
+      //var node = document.createTextNode("This is new.");
+      var aclass = document.createTextNode(theclass);
+      var id = document.createTextNode(name + ": ");
+      var br = document.createElement("br");
+
+
+      var img = document.createElement("img");
+
+
+
+      console.log("id: " + id);
+      img.id = id;
+      console.log("img.id: " + img.id);
+
+      img.src = 'img/FE15_' + newclass + '_(' + name + ').gif';
+
+      console.log("does: "+ 'img/FE15_' + newclass + '_(' + name + ').gif' + "exist?");
+      //doesFileExist('img/FE15_' + newclass + '_(' + name + ').gif')
+
+      //var truthtable = false;
+
+      doesexist('img/FE15_' + newclass + '_(' + name + ').gif', function(){ img.src = 'img/FE15_' + newclass + '_(' + name + ').gif'; }, function(){ img.src = 'img/Generic' + newclass + '.gif' } );
+
+        console.log(name + "'s class is: " + newclass + " and img is: ");
+
+
+
+      //img = newImg.src;
+      //img.src = 'img/FE15_' + newclass + '_(' + name + ').gif';
+
+      para.appendChild(id);
+      para.appendChild(aclass);
+      para.appendChild(br);
+      para.appendChild(img);
+
+      var element = document.getElementById("div2");
+      element.appendChild(para);
 
 
     console.log("exists is:" + status);
+
+  }
+
+  function doesexist(imageSrc, good, bad) {
+  var img = new Image();
+  img.onload = good;
+  img.onerror = bad;
+  img.src = imageSrc;
+  }
+
+  //doesexist("foo.gif", function(){ alert("good"); }, function(){ alert("bad");} );
+
+
+
+/*var exists = checkImage('img/FE15_' + newclass + '_(' + name + ').gif', function(){
+  //console.log("good");
+  newImg.src = 'img/FE15_' + newclass + '_(' + name + ').gif';
+},
+  function(){
+    //console.log("not found");
+    newImg.src = 'img/Generic' + newclass + '.gif';
+  });
+
     newImg.src = 'img/FE15_' + theclass + '_(' + name + ').gif';
 
     document.getElementById("h2test").innerHTML = theclass;
