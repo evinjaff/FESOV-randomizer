@@ -4,7 +4,7 @@
     var e = document.getElementById("characters");
     var charname = e.options[e.selectedIndex].text;
 
-    console.log("Name:" + charname)
+    //console.log("Name:" + charname)
 
 
     var e = document.getElementById("tiers");
@@ -20,7 +20,7 @@
 
     //docuemnt.getElementById('characters');
 
-    htmlify(charname);
+    htmladd(charname);
     //var text = input.options[input.selectedIndex].text; // returns the text ie one / two etc
     //var value = input.value; // returns the value ie 1 / 2 / 3 etc
 
@@ -42,12 +42,12 @@
 
   }
 
-  function htmlify(name) {
+  function htmladd(name) {
 
     newclass = spacefixer(playerclass);
 
-    console.log("new class is:" + newclass);
-    //Write a space fixer for bow knights
+    //console.log("new class is:" + newclass);
+    //Write a space fixer for bow knights - Done!
 
     var _img = document.getElementById('id1');
     var newImg = new Image;
@@ -58,11 +58,11 @@
     var status = 0;
 
     var exists = checkImage('img/FE15_' + newclass + '_(' + name + ').gif', function(){
-      console.log("good");
+      //console.log("good");
       newImg.src = 'img/FE15_' + newclass + '_(' + name + ').gif';
     },
       function(){
-        console.log("not found");
+        //console.log("not found");
         newImg.src = 'img/Generic' + newclass + '.gif';
       });
 
@@ -88,7 +88,15 @@
   }
 
 function spacefixer(name){
-  var newname = name.replace(" ","_");
+  //error type = new error(TypeError);
+
+  var newname = name;
+  try{
+  newname = name.replace(" ","_");
+}
+catch(err){
+
+}
 
   return newname;
 }
@@ -211,6 +219,75 @@ function arraypush(array, other){
       var path = "img/";
       var name = pclass;
       return path + name;
+  }
+
+  function AlmRoute(){
+
+      //console.log("Alm");
+
+      var routechars = ["Alm", "Lukas", "Tobin", "Kliff", "Faye", "Gray"];
+
+      const sleep = (milliseconds) => {
+        return new Promise(resolve => setTimeout(resolve, milliseconds))
+      }
+
+      for(var i=2;i<routechars.length+2;i++){
+        cstring = routechars[i];
+        console.log("Character: " + cstring);
+        var mychar = chooseclass("1", yesAmiibo(), yesEnemy(), yesBroken(), yesAlm(), yesTier1());
+        var id = "id"+ i;
+        console.log(id);
+        htmlify(cstring, id, mychar);
+        sleep(5000);
+    }
+
+    var para = document.createElement("p");
+    var node = document.createTextNode("This is new.");
+    para.appendChild(node);
+
+    var element = document.getElementById("div2");
+    element.appendChild(para);
+
+
+  }
+
+  function htmlify(name, id, theclass) {
+
+    var myclass = theclass;
+
+    newclass = spacefixer(myclass);
+
+    //console.log("new class is:" + newclass);
+    //Write a space fixer for bow knights - Done!
+
+    var _img = document.getElementById('pic1');
+    var newImg = new Image;
+    newImg.onload = function() {
+    _img.src = this.src;
+    }
+
+    var status = 0;
+
+    var exists = checkImage('img/FE15_' + newclass + '_(' + name + ').gif', function(){
+      //console.log("good");
+      newImg.src = 'img/FE15_' + newclass + '_(' + name + ').gif';
+    },
+      function(){
+        //console.log("not found");
+        newImg.src = 'img/Generic' + newclass + '.gif';
+      });
+
+
+
+
+    console.log("exists is:" + status);
+    newImg.src = 'img/FE15_' + theclass + '_(' + name + ').gif';
+
+    document.getElementById("h2test").innerHTML = theclass;
+    var child = document.getElementById('p2');
+
+
+      return ;
   }
 
 /*
