@@ -1,6 +1,26 @@
 
 
-var almchars = require('data/alm.js').arr;
+//var almchars = require('data/alm.js').arr;
+
+var almchars = [Alm,Lukas,Gray,Tobin,Kliff,Faye,Silque,Clair,Clive,Forsyth,Python,Luthier,Mathilda,Delthea,Tatiana,Zeke,Mycen]
+
+var Alm = {name: "Alm", gender:"Male", tier:'1'}
+var Lukas = {name: "Lukas", gender:"Male", tier:'1'}
+var Gray = {name: "Gray", gender:"Male", tier:'1'}
+var Tobin = {name: "Tobin", gender:"Male", tier:'1'}
+var Kliff = {name: "Kliff", gender:"Male", tier:'1'}
+var Faye = {name: "Faye", gender:"Female", tier:'1'}
+var Silque = {name: "Silque", gender:"Female", tier:'1'}
+var Clair = {name: "Clair", gender:"Female", tier:'1'}
+var Clive = {name: "Clive", gender:"Male", tier:'1'}
+var Forsyth = {name: "Forsyth", gender:"Male", tier:'1'}
+var Python = {name: "Python", gender:"Male", tier:'1'}
+var Luthier = {name: "Luthier", gender:"Male", tier:'1'}
+var Mathilda = {name: "Mathilda", gender:"Female", tier:'2'}
+var Delthea = {name: "Delthea", gender:"Female", tier:'1'}
+var Tatiana = {name: "Tatiana", gender:"Female", tier:'2'}
+var Zeke = {name: "Zeke", gender:"Female", tier:'3'}
+var Mycen = {name: "Mycen", gender:"Male", tier:'3'}
 
   function randomize(){
 
@@ -224,8 +244,8 @@ function arraypush(array, other){
       return path + name;
   }
 
-  function AlmRoute(){
-
+  function Route(option){
+    //style.display = 'none'
       //console.log("Alm");
 
       //var routechars = ["Alm", "Lukas", "Tobin", "Kliff", "Faye", "Gray"];
@@ -234,24 +254,58 @@ function arraypush(array, other){
       const sleep = (milliseconds) => {
         return new Promise(resolve => setTimeout(resolve, milliseconds))
       }
-*/
+*/ var celicabutton = document.getElementById("CelicaButton");
+var almbutton = document.getElementById("AlmButton");
+var bothbutton = document.getElementById("Both");
+
+    if(option == 'Alm'){
       for(var i=2;i<almchars.length+2;i++){
       // Test code: var i=5;
-        cstring = almchars[i-2];
+        cstring = almchars[i-2].name;
         console.log("Character: " + cstring);
-        var myclass = chooseclass("1", yesAmiibo(), yesEnemy(), yesBroken(), yesAlm(), yesTier1());
+        console.log(cstring + " is: " + almchars[i-2].tier)
+
+        var myclass = chooseclass(almchars[i-2].tier, yesAmiibo(), yesEnemy(), yesBroken(), yesAlm(), yesTier1());
         var id = 'id'+ i.toString();
 
         console.log(id);
         htmlify(cstring, "id8", myclass);
         //sleep(5000);
+
+        almbutton.style.display = 'none';
+        celicabutton.style.display = 'none'
+        //if(celicabutton.style.display = 'none'){
+          //bothbutton.style.display = 'none';
+        //}
+      }
+
+
+    }
+    if(option == 'Celica'){
+      console.log("Celica!");
+
+      celicabutton.style.display = 'none';
+      if(almbutton.style.display == 'none'){
+        bothbutton.style.display = 'none';
+      }
+    }
+
+    if(option == 'Both'){
+      console.log("Both!")
+
+      bothbutton.style.display = 'none';
+
+    }
+
     }
 
 
 
 
 
-  }
+
+
+  //}
 
   function htmlify(name, id, theclass) {
 
