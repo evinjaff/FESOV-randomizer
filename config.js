@@ -14,7 +14,7 @@
 
      //text.style.display = "block";
 
-    playerclass = chooseclass(level, yesAmiibo(), yesEnemy(), yesBroken());
+    playerclass = chooseclass(level, yesAmiibo(), yesEnemy(), yesBroken(), yesAlm(), yesTier1());
     //setsprite(playerclass);
     //document.write(chooseclass(1))
 
@@ -99,24 +99,30 @@ if (chosen.isMega) {
     eligiblePokemon = removeMegas(eligiblePokemon);
 }
 */
+// yesTier1 means Mages at 1
 function yesAmiibo() {return document.getElementById("amiibo").checked;}
 function yesEnemy() {return document.getElementById("enemy").checked;}
+function yesAlm() {return document.getElementById("alm").checked;}
+
+function yesTier1() {return document.getElementById("one").checked;}
 
 function yesBroken() {return document.getElementById("busted").checked;}
 
-  function chooseclass(level, yesamiibo, yesenemy, yesbroken){
+  function chooseclass(level, yesamiibo, yesenemy, yesbroken, yesalm, yestier1){
         //Class data
 
         var isBroken = yesbroken;
         var isEnemy = yesenemy;
         var isAmiibo = yesamiibo;
+        var isAlm = yesalm;
+        var isOne = yestier1;
 
 
         //console.log("isBroken:" + yesBroken);
         //Amiibo
         var amiibo = ["Lord (Marth)", "Lord (F. Corrin)", "Lord (Roy)", "Lord (Lucina)", "Hero (Ike)", "Tactitian (Robin)"];
         //Classes lv 1 and 2
-        var oneandtwo = ["Mage", "Pegasus Knight", "Cleric", "Mage"];
+        var oneandtwo = ["Mage (Male)", "Pegasus Knight", "Cleric", "Mage (Female)"];
         //Alm and Celica
         var almcelica1 = ["Fighter", "Priestess (Celica)"]
         var almcelica2 = ["Hero (Alm)", "Princess"]
@@ -128,7 +134,9 @@ function yesBroken() {return document.getElementById("busted").checked;}
         var levelthree = ["Dread Fighter", "Baron", "Bow Knight", "Gold Knight"];
         var onetwothree = ["Falcon Knight", "Saint", "Sage", "Priestess"];
 
-        var enemyflex = ["Brigand", "Arcanist", "Mogall", "Cantor", "Witch"];
+        //Untiered enemy classes
+        var enemyflex = ["Brigand", "Arcanist", "Mogall", "Witch"];
+        //Tier Two enemy classes
         var enemytwo = ["Cantor", "Vestal"];
 
         var enemythree = ["Mila/Duma Apostole", "Dagon", "Fire Dragon", "Deimos"];
@@ -147,14 +155,24 @@ function yesBroken() {return document.getElementById("busted").checked;}
           arraypush(oneandtwo, classledger);
 
 
+
         }
         if(level == 2){
           classledger = leveltwo;
+          console.log('isEnemy: ' + isEnemy);
+          if(isOne == true){arraypush(onetwothree, classledger);}
+          else{arraypush(oneandtwo, classledger);}
+
           //if(isEnemy == true){for (i = 0; i < enemytwo.length; i++){classledger.push(enemytwo[i]);}}
-          arraypush(enemytwo, classledger);
+          //arraypush(enemytwo, classledger);
+          if(isEnemy == true){arraypush(enemytwo, classledger);}
+
+
         }
         if(level == 3){
           classledger = levelthree;
+          arraypush(onetwothree, classledger);
+          if(isEnemy == true){arraypush(enemythree, classledger);}
         }
         if(level == 4){
           classledger = overclass;
@@ -172,6 +190,7 @@ function yesBroken() {return document.getElementById("busted").checked;}
           if(level == 4){arraypush(almcelica3, classledger);}
 
         }
+
 
 
         console.log(classledger);

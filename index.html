@@ -2,7 +2,9 @@
 <html>
 <body>
 
-<h1>FESOV Random Class Generator</h1>
+<h1>Fire Emblem Echoes Random Class Generator</h1>
+
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
 
 
 <script type="text/javascript" src="config.js""> </script>
@@ -33,15 +35,46 @@
 
 <br>
 
-<input type="checkbox" id="amiibo"> Amiibo Classes?</input>
-<br>
-<input type="checkbox" id="enemy"> Enemy Classes?</input>
-<br>
-<input type="checkbox" id="busted"> Broken Classes?</input>
-<br>
-<input type="checkbox" id="alm"> Alm and Celica Classes?</input>
+Include Classes?
 <br>
 
+<input type="checkbox" id="amiibo"> <div class="tooltip">Amiibo Classes?<span class="tooltiptext">Includes Amiibo classes such as Lords, Robin, Ike</span>
+</div> </input>
+<br>
+<input type="checkbox" id="enemy"> <div class="tooltip">Enemy Classes?<span class="tooltiptext">Includes enemy classes such as Brigands, Cantors, Witches</span>
+</div></input>
+<br>
+<input type="checkbox" id="busted"> <div class="tooltip">Broken/Ugly Classes?<span class="tooltiptext">Includes broken classes like Duma and Deimos</span>
+</div> </input>
+<br>
+<input type="checkbox" id="alm"><div class="tooltip">Alm and Celica Classes?<span class="tooltiptext">Includes Alm and Celica classes (Fighter, Princess, etc.)</span>
+</div> </input>
+<br>
+<br>
+<div class="tooltip">2 Level Class Organization:
+  <span class="tooltiptext">Determines how to randomize classes like Mages and Pegasus Knights</span>
+</div>
+<br>
+
+<input type="radio" id="onetwo" name="onetwo"><div class="tooltip">Base is 1 and 2<span class="tooltiptext">Mage: Tier 1 and 2 Sage: Tier 3</span>
+</div>
+<br></input>
+<input type="radio" id="one" name="onetwo" checked="checked"><div class="tooltip">Base is 1<span class="tooltiptext">Mage: Tier 1 Sage: Tier 2 and 3</span>
+</div>
+<br></input>
+<br>
+
+<!--
+<input type="radio" id="onetwo">onetwo
+<br>
+<input type="radio" id="one">one
+<br>
+
+<input type="radio" id="onetwo" name="onetwo" value="male">
+  <label for="male">Male</label><br>
+  <input type="radio" id="one" name="onetwo" value="female">
+  <label for="female">Female</label><br>
+-->
 <button type="button" onclick="randomize()">Randomize Individual Character</button>
 <button type="button" onclick="Alm()">Randomize Alm's Route</button>
 <button type="button" onclick="Celica()">Randomize Celica's Route</button>
