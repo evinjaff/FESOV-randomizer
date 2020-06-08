@@ -189,7 +189,7 @@ function yesBroken() {return document.getElementById("busted").checked;}
         //Tier Two enemy classes
         var enemytwo = ["Cantor", "Vestal"];
 
-        var enemythree = ["Mila/Duma Apostole", "Dagon", "Fire Dragon", "Deimos"];
+        var enemythree = ["Mila Apostole", "Duma Apostole", "Dagon", "Fire Dragon", "Deimos"];
         var overclass = ["Harrier", "Skogul", "Yasha", "Exemplar", "Guru", "Enchantress", "Oliphantier", "Spartan"];
 
 
