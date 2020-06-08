@@ -276,17 +276,23 @@ function arraypush(array, other){
 */ var celicabutton = document.getElementById("CelicaButton");
 var almbutton = document.getElementById("AlmButton");
 var bothbutton = document.getElementById("Both");
+  if(yesOverclass() == true){
+    var final = 5;
+  }
+  else{
+    var final = 4;
+  }
 
     if(option == 'Alm'){
       for(var i=2;i<almchars.length+2;i++){
       // Test code: var i=5;
-      for(var j=almchars[i-2].tier;j<5;j++){
+      for(var j=almchars[i-2].tier;j<final;j++){
       cstring = almchars[i-2].name;
         cstring = almchars[i-2].name;
         console.log("Character: " + cstring);
         console.log(cstring + " is: " + almchars[i-2].tier)
 
-        var myclass = chooseclass(j, yesAmiibo(), yesEnemy(), yesBroken(), yesAlm(), yesTier1());
+        var myclass = chooseclass(j, yesAmiibo1(), yesEnemy1(), yesBroken1(), yesAlm1(), yesTier11());
         var id = 'id'+ i.toString();
 
         console.log(id);
@@ -309,7 +315,7 @@ var bothbutton = document.getElementById("Both");
 
       for(var i=2;i<celicachars.length+2;i++){
       // Test code: var i=5;
-        for(var j=celicachars[i-2].tier;j<5;j++){
+        for(var j=celicachars[i-2].tier;j<final;j++){
         cstring = celicachars[i-2].name;
         console.log("Character: " + cstring);
         console.log(cstring + " is: " + celicachars[i-2].tier)
@@ -340,8 +346,14 @@ var bothbutton = document.getElementById("Both");
       bothbutton.style.display = 'none';
       if(almdone == true){
           Route('Celica');
+          //break;
       }
-      if(almdone == false){
+      else if (almdone == false){
+        Route('Alm');
+        //break;
+      }
+      else{
+        Route('Alm');
         Route('Celica');
       }
 
@@ -427,6 +439,7 @@ var bothbutton = document.getElementById("Both");
   function yesAlm1() {return document.getElementById("alm1").checked;}
   function yesTier11() {return document.getElementById("one1").checked;}
   function yesBroken1() {return document.getElementById("busted1").checked;}
+  function yesOverclass(){return document.getElementById("overclass1").checked;}
 
   //doesexist("foo.gif", function(){ alert("good"); }, function(){ alert("bad");} );
 
