@@ -1,0 +1,19 @@
+var celicachars = [Celica,Mae,Boey,Genny,Saber,Valbar,Kamui,Leon,Palla,Catria,Atlas,Jesse,Sonya,Deen,Est,Nomah,Conrad];
+
+var Celica = {name: "Celica", gender:"Female", tier:'1'}
+var Mae = {name: "Mae", gender:"Female", tier:'1'}
+var Boey = {name: "Boey", gender:"Male", tier:'1'}
+var Genny  = {name: "Genny", gender:"Female", tier:'1'}
+var Saber = {name: "Saber", gender:"Male", tier:'1'}
+var Valbar = {name: "Valbar", gender:"Male", tier:'2'}
+var Kamui = {name: "Kamui", gender:"Male", tier:'1'}
+var Leon = {name: "Leon", gender:"Male", tier:'1'}
+var Palla = {name: "Palla", gender:"Female", tier:'1'}
+var Catria = {name: "Catria", gender:"Female", tier:'1'}
+var Atlas = {name: "Altlas", gender:"Male", tier:'2'}
+var Jesse = {name: "Jesse", gender:"Male", tier:'1'}
+var Sonya = {name: "Sonya", gender:"Female", tier:'1'}
+var Deen = {name: "Deen", gender:"Male", tier:'2'}
+var Est = {name: "Est", gender:"Female", tier:'1'}
+var Nomah = {name: "Nomah", gender:"Male", tier:'2'}
+var Conrad = {name: "Conrad", gender:"Female", tier:'2'}

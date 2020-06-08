@@ -2,6 +2,8 @@
 
 //var almchars = require('data/alm.js').arr;
 
+var almdone = false;
+
 var almchars = [Alm,Lukas,Gray,Tobin,Kliff,Faye,Silque,Clair,Clive,Forsyth,Python,Luthier,Mathilda,Delthea,Tatiana,Zeke,Mycen]
 
 var Alm = {name: "Alm", gender:"Male", tier:'1'}
@@ -21,6 +23,25 @@ var Delthea = {name: "Delthea", gender:"Female", tier:'1'}
 var Tatiana = {name: "Tatiana", gender:"Female", tier:'2'}
 var Zeke = {name: "Zeke", gender:"Female", tier:'3'}
 var Mycen = {name: "Mycen", gender:"Male", tier:'3'}
+
+var celicachars = [Celica,Mae,Boey,Genny,Saber,Valbar,Kamui,Leon,Palla,Catria,Atlas,Jesse,Sonya,Deen,Est,Nomah,Conrad];
+var Celica = {name: "Celica", gender:"Female", tier:'1'}
+var Mae = {name: "Mae", gender:"Female", tier:'1'}
+var Boey = {name: "Boey", gender:"Male", tier:'1'}
+var Genny  = {name: "Genny", gender:"Female", tier:'1'}
+var Saber = {name: "Saber", gender:"Male", tier:'1'}
+var Valbar = {name: "Valbar", gender:"Male", tier:'2'}
+var Kamui = {name: "Kamui", gender:"Male", tier:'1'}
+var Leon = {name: "Leon", gender:"Male", tier:'1'}
+var Palla = {name: "Palla", gender:"Female", tier:'1'}
+var Catria = {name: "Catria", gender:"Female", tier:'1'}
+var Atlas = {name: "Altlas", gender:"Male", tier:'1'}
+var Jesse = {name: "Jesse", gender:"Male", tier:'1'}
+var Sonya = {name: "Sonya", gender:"Female", tier:'1'}
+var Deen = {name: "Deen", gender:"Male", tier:'2'}
+var Est = {name: "Est", gender:"Female", tier:'1'}
+var Nomah = {name: "Nomah", gender:"Male", tier:'2'}
+var Conrad = {name: "Conrad", gender:"Male", tier:'2'}
 
   function randomize(){
 
@@ -134,9 +155,7 @@ if (chosen.isMega) {
 function yesAmiibo() {return document.getElementById("amiibo").checked;}
 function yesEnemy() {return document.getElementById("enemy").checked;}
 function yesAlm() {return document.getElementById("alm").checked;}
-
 function yesTier1() {return document.getElementById("one").checked;}
-
 function yesBroken() {return document.getElementById("busted").checked;}
 
   function chooseclass(level, yesamiibo, yesenemy, yesbroken, yesalm, yestier1){
@@ -261,19 +280,23 @@ var bothbutton = document.getElementById("Both");
     if(option == 'Alm'){
       for(var i=2;i<almchars.length+2;i++){
       // Test code: var i=5;
+      for(var j=almchars[i-2].tier;j<5;j++){
+      cstring = almchars[i-2].name;
         cstring = almchars[i-2].name;
         console.log("Character: " + cstring);
         console.log(cstring + " is: " + almchars[i-2].tier)
 
-        var myclass = chooseclass(almchars[i-2].tier, yesAmiibo(), yesEnemy(), yesBroken(), yesAlm(), yesTier1());
+        var myclass = chooseclass(j, yesAmiibo(), yesEnemy(), yesBroken(), yesAlm(), yesTier1());
         var id = 'id'+ i.toString();
 
         console.log(id);
         htmlify(cstring, "id8", myclass);
         //sleep(5000);
+      }
 
         almbutton.style.display = 'none';
-        celicabutton.style.display = 'none'
+        celicabutton.style.display = 'none';
+        almdone = true;
         //if(celicabutton.style.display = 'none'){
           //bothbutton.style.display = 'none';
         //}
@@ -282,18 +305,45 @@ var bothbutton = document.getElementById("Both");
 
     }
     if(option == 'Celica'){
-      console.log("Celica!");
+      //console.log("Celica!");
 
-      celicabutton.style.display = 'none';
-      if(almbutton.style.display == 'none'){
-        bothbutton.style.display = 'none';
+      for(var i=2;i<celicachars.length+2;i++){
+      // Test code: var i=5;
+        for(var j=celicachars[i-2].tier;j<5;j++){
+        cstring = celicachars[i-2].name;
+        console.log("Character: " + cstring);
+        console.log(cstring + " is: " + celicachars[i-2].tier)
+
+        var myclass = chooseclass(j, yesAmiibo1(), yesEnemy1(), yesBroken1(), yesAlm1(), yesTier11());
+
+        var id = 'id'+ i.toString();
+
+        console.log(id);
+        htmlify(cstring, "id8", myclass);
+        //sleep(5000);
+
+        almbutton.style.display = 'none';
+        celicabutton.style.display = 'none';
+        //if(celicabutton.style.display = 'none'){
+          //bothbutton.style.display = 'none';
+        //}
       }
+      }
+
+      almbutton.style.display = 'none';
+      celicabutton.style.display = 'none';
     }
 
     if(option == 'Both'){
       console.log("Both!")
 
       bothbutton.style.display = 'none';
+      if(almdone == true){
+          Route('Celica');
+      }
+      if(almdone == false){
+        Route('Celica');
+      }
 
     }
 
@@ -371,6 +421,12 @@ var bothbutton = document.getElementById("Both");
   img.onerror = bad;
   img.src = imageSrc;
   }
+
+  function yesAmiibo1() {return document.getElementById("amiibo1").checked;}
+  function yesEnemy1() {return document.getElementById("enemy1").checked;}
+  function yesAlm1() {return document.getElementById("alm1").checked;}
+  function yesTier11() {return document.getElementById("one1").checked;}
+  function yesBroken1() {return document.getElementById("busted1").checked;}
 
   //doesexist("foo.gif", function(){ alert("good"); }, function(){ alert("bad");} );
 

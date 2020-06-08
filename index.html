@@ -12,6 +12,11 @@
 
 <script data-main="config.js" src="require.js"></script>
 <script type="text/javascript" src="config.js""> </script>
+<script type="text/javascript">
+
+
+
+</script>
 
 <select name="values"  id="characters">
   <option value="alm">Alm</option>
@@ -48,7 +53,7 @@ Include Classes?
 <input type="checkbox" id="enemy"> <div class="tooltip">Enemy Classes?<span class="tooltiptext">Includes enemy classes such as Brigands, Cantors, Witches</span>
 </div></input>
 <br>
-<input type="checkbox" id="busted"> <div class="tooltip">Broken/Ugly Classes?<span class="tooltiptext">Includes broken classes like Duma and Deimos</span>
+<input type="checkbox" id="busted"> <div class="tooltip">Broken/Ugly Classes?<span class="tooltiptext">Includes broken classes that either have crazy stats or won't look good like Duma and Deimos</span>
 </div> </input>
 <br>
 <input type="checkbox" id="alm"><div class="tooltip">Alm and Celica Classes?<span class="tooltiptext">Includes Alm and Celica classes (Fighter, Princess, etc.)</span>
@@ -91,15 +96,45 @@ Include Classes?
 <h2>Randomize a Party:</h2>
 
 <h3>Sonya or Deen? (If Celica's Party or Full Route)</h3>
-<input type="radio" name="sonya">Sonya</button>
-<input type="radio" name="sonya">Deen</button>
+<input type="radio" id="sonya">Sonya</button>
+<input type="radio" id="deen">Deen</button>
 <br>
+<h3>Class Options</h3>
+<input type="checkbox" id="amiibo1"> <div class="tooltip">Amiibo Classes?<span class="tooltiptext">Includes Amiibo classes such as Lords, Robin, Ike</span>
+</div> </input>
+<br>
+<input type="checkbox" id="enemy1"> <div class="tooltip">Enemy Classes?<span class="tooltiptext">Includes enemy classes such as Brigands, Cantors, Witches</span>
+</div></input>
+<br>
+<input type="checkbox" id="busted1"> <div class="tooltip">Broken/Ugly Classes?<span class="tooltiptext">Includes broken classes like Duma and Deimos</span>
+</div> </input>
+<br>
+<input type="checkbox" id="alm1"><div class="tooltip">Alm and Celica Classes?<span class="tooltiptext">Includes Alm and Celica classes (Fighter, Princess, etc.)</span>
+</div> </input>
+<br>
+<input type="checkbox" id="overclass1"> <div class="tooltip">Generate Overclasses?<span class="tooltiptext">Includes DLC Overclasses</span>
+</div> </input>
+<br>
+<br>
+<div class="tooltip">2 Level Class Organization:
+  <span class="tooltiptext">Determines how to randomize classes that only promote once like Mages and Pegasus Knights</span>
+</div>
+<br>
+
+<input type="radio" id="onetwo1" name="onetwo"><div class="tooltip">Base is 1 and 2<span class="tooltiptext">Mage: Tier 1 and 2 Sage: Tier 3</span>
+</div>
+<br></input>
+<input type="radio" id="one1" name="onetwo" checked="checked"><div class="tooltip">Base is 1<span class="tooltiptext">Mage: Tier 1 Sage: Tier 2 and 3</span>
+</div>
+<br></input>
+<br>
+
 <br>
 <button type="button" id="AlmButton" onclick="Route('Alm')">Export Alm's Route</button>
 <button type="button" id="CelicaButton" onclick="Route('Celica')">Randomize Celica's Route</button>
 <button type="button" id="Both" onclick="Route('Both')">Randomize Both Routes</button>
 
-<!-- Block 1 -->
+<!-- Block 1
 <div id="char1">
   <p id="p2"></p>
 </div>
