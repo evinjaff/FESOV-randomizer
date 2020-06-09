@@ -1,49 +1,186 @@
+//var isValid = require(['node_modules/is-valid-path']);
 
-
-//var almchars = require('data/alm.js').arr;
-
+//console.log(isValid('abc.js'));
+//var almchars = ('data/alm.js').arr;
+//Define Global Objects
 var almdone = false;
 
-var almchars = [Alm,Lukas,Gray,Tobin,Kliff,Faye,Silque,Clair,Clive,Forsyth,Python,Luthier,Mathilda,Delthea,Tatiana,Zeke,Mycen]
+var almchars = [Alm, Lukas, Gray, Tobin, Kliff, Faye, Silque, Clair, Clive, Forsyth, Python, Luthier, Mathilda, Delthea, Tatiana, Zeke, Mycen]
 
-var Alm = {name: "Alm", gender:"Male", tier:'1'}
-var Lukas = {name: "Lukas", gender:"Male", tier:'1'}
-var Gray = {name: "Gray", gender:"Male", tier:'1'}
-var Tobin = {name: "Tobin", gender:"Male", tier:'1'}
-var Kliff = {name: "Kliff", gender:"Male", tier:'1'}
-var Faye = {name: "Faye", gender:"Female", tier:'1'}
-var Silque = {name: "Silque", gender:"Female", tier:'1'}
-var Clair = {name: "Clair", gender:"Female", tier:'1'}
-var Clive = {name: "Clive", gender:"Male", tier:'1'}
-var Forsyth = {name: "Forsyth", gender:"Male", tier:'1'}
-var Python = {name: "Python", gender:"Male", tier:'1'}
-var Luthier = {name: "Luthier", gender:"Male", tier:'1'}
-var Mathilda = {name: "Mathilda", gender:"Female", tier:'2'}
-var Delthea = {name: "Delthea", gender:"Female", tier:'1'}
-var Tatiana = {name: "Tatiana", gender:"Female", tier:'2'}
-var Zeke = {name: "Zeke", gender:"Female", tier:'3'}
-var Mycen = {name: "Mycen", gender:"Male", tier:'3'}
+var Alm = {
+    name: "Alm",
+    gender: "Male",
+    tier: '1'
+}
+var Lukas = {
+    name: "Lukas",
+    gender: "Male",
+    tier: '1'
+}
+var Gray = {
+    name: "Gray",
+    gender: "Male",
+    tier: '1'
+}
+var Tobin = {
+    name: "Tobin",
+    gender: "Male",
+    tier: '1'
+}
+var Kliff = {
+    name: "Kliff",
+    gender: "Male",
+    tier: '1'
+}
+var Faye = {
+    name: "Faye",
+    gender: "Female",
+    tier: '1'
+}
+var Silque = {
+    name: "Silque",
+    gender: "Female",
+    tier: '1'
+}
+var Clair = {
+    name: "Clair",
+    gender: "Female",
+    tier: '1'
+}
+var Clive = {
+    name: "Clive",
+    gender: "Male",
+    tier: '1'
+}
+var Forsyth = {
+    name: "Forsyth",
+    gender: "Male",
+    tier: '1'
+}
+var Python = {
+    name: "Python",
+    gender: "Male",
+    tier: '1'
+}
+var Luthier = {
+    name: "Luthier",
+    gender: "Male",
+    tier: '1'
+}
+var Mathilda = {
+    name: "Mathilda",
+    gender: "Female",
+    tier: '2'
+}
+var Delthea = {
+    name: "Delthea",
+    gender: "Female",
+    tier: '1'
+}
+var Tatiana = {
+    name: "Tatiana",
+    gender: "Female",
+    tier: '2'
+}
+var Zeke = {
+    name: "Zeke",
+    gender: "Female",
+    tier: '3'
+}
+var Mycen = {
+    name: "Mycen",
+    gender: "Male",
+    tier: '3'
+}
 
-var celicachars = [Celica,Mae,Boey,Genny,Saber,Valbar,Kamui,Leon,Palla,Catria,Atlas,Jesse,Sonya,Deen,Est,Nomah,Conrad];
-var Celica = {name: "Celica", gender:"Female", tier:'1'}
-var Mae = {name: "Mae", gender:"Female", tier:'1'}
-var Boey = {name: "Boey", gender:"Male", tier:'1'}
-var Genny  = {name: "Genny", gender:"Female", tier:'1'}
-var Saber = {name: "Saber", gender:"Male", tier:'1'}
-var Valbar = {name: "Valbar", gender:"Male", tier:'2'}
-var Kamui = {name: "Kamui", gender:"Male", tier:'1'}
-var Leon = {name: "Leon", gender:"Male", tier:'1'}
-var Palla = {name: "Palla", gender:"Female", tier:'1'}
-var Catria = {name: "Catria", gender:"Female", tier:'1'}
-var Atlas = {name: "Altlas", gender:"Male", tier:'1'}
-var Jesse = {name: "Jesse", gender:"Male", tier:'1'}
-var Sonya = {name: "Sonya", gender:"Female", tier:'1'}
-var Deen = {name: "Deen", gender:"Male", tier:'2'}
-var Est = {name: "Est", gender:"Female", tier:'1'}
-var Nomah = {name: "Nomah", gender:"Male", tier:'2'}
-var Conrad = {name: "Conrad", gender:"Male", tier:'2'}
+var celicachars = [Celica, Mae, Boey, Genny, Saber, Valbar, Kamui, Leon, Palla, Catria, Atlas, Jesse, Sonya, Deen, Est, Nomah, Conrad];
+var Celica = {
+    name: "Celica",
+    gender: "Female",
+    tier: '1'
+}
+var Mae = {
+    name: "Mae",
+    gender: "Female",
+    tier: '1'
+}
+var Boey = {
+    name: "Boey",
+    gender: "Male",
+    tier: '1'
+}
+var Genny = {
+    name: "Genny",
+    gender: "Female",
+    tier: '1'
+}
+var Saber = {
+    name: "Saber",
+    gender: "Male",
+    tier: '1'
+}
+var Valbar = {
+    name: "Valbar",
+    gender: "Male",
+    tier: '2'
+}
+var Kamui = {
+    name: "Kamui",
+    gender: "Male",
+    tier: '1'
+}
+var Leon = {
+    name: "Leon",
+    gender: "Male",
+    tier: '1'
+}
+var Palla = {
+    name: "Palla",
+    gender: "Female",
+    tier: '1'
+}
+var Catria = {
+    name: "Catria",
+    gender: "Female",
+    tier: '1'
+}
+var Atlas = {
+    name: "Altlas",
+    gender: "Male",
+    tier: '1'
+}
+var Jesse = {
+    name: "Jesse",
+    gender: "Male",
+    tier: '1'
+}
+var Sonya = {
+    name: "Sonya",
+    gender: "Female",
+    tier: '1'
+}
+var Deen = {
+    name: "Deen",
+    gender: "Male",
+    tier: '2'
+}
+var Est = {
+    name: "Est",
+    gender: "Female",
+    tier: '1'
+}
+var Nomah = {
+    name: "Nomah",
+    gender: "Male",
+    tier: '2'
+}
+var Conrad = {
+    name: "Conrad",
+    gender: "Male",
+    tier: '2'
+}
 
-  function randomize(){
+function randomize() {
 
     var e = document.getElementById("characters");
     var charname = e.options[e.selectedIndex].text;
@@ -54,9 +191,9 @@ var Conrad = {name: "Conrad", gender:"Male", tier:'2'}
     var e = document.getElementById("tiers");
     var level = e.options[e.selectedIndex].value;
 
-    console.log("tier:" + level)
+    //console.log("tier:" + level)
 
-     //text.style.display = "block";
+    //text.style.display = "block";
 
     playerclass = chooseclass(level, yesAmiibo(), yesEnemy(), yesBroken(), yesAlm(), yesTier1());
     //setsprite(playerclass);
@@ -82,11 +219,11 @@ var Conrad = {name: "Conrad", gender:"Male", tier:'2'}
     parent.replaceChild(para,child);
     */
 
-    return ;
+    return;
 
-  }
+}
 
-  function htmladd(name) {
+function htmladd(name) {
 
     newclass = spacefixer(playerclass);
 
@@ -96,19 +233,19 @@ var Conrad = {name: "Conrad", gender:"Male", tier:'2'}
     var _img = document.getElementById('id1');
     var newImg = new Image;
     newImg.onload = function() {
-    _img.src = this.src;
+        _img.src = this.src;
     }
 
     var status = 0;
 
-    var exists = checkImage('img/FE15_' + newclass + '_(' + name + ').gif', function(){
-      //console.log("good");
-      newImg.src = 'img/FE15_' + newclass + '_(' + name + ').gif';
-    },
-      function(){
-        //console.log("not found");
-        newImg.src = 'img/Generic' + newclass + '.gif';
-      });
+    var exists = checkImage('img/FE15_' + newclass + '_(' + name + ').gif', function() {
+            //console.log("good");
+            newImg.src = 'img/FE15_' + newclass + '_(' + name + ').gif';
+        },
+        function() {
+            //console.log("not found");
+            newImg.src = 'img/Generic' + newclass + '.gif';
+        });
 
 
 
@@ -118,31 +255,30 @@ var Conrad = {name: "Conrad", gender:"Male", tier:'2'}
 
 
 
-      return ;
-  }
+    return;
+}
 
-  function checkImage(imageSrc, good, bad) {
+function checkImage(imageSrc, good, bad) {
     var img = new Image();
     img.onload = good;
     img.onerror = bad;
     img.src = imageSrc;
 
-    return
-
-  }
-
-function spacefixer(name){
-  //error type = new error(TypeError);
-
-  var newname = name;
-  try{
-  newname = name.replace(" ","_");
-}
-catch(err){
+    return;
 
 }
 
-  return newname;
+function spacefixer(name) {
+    //error type = new error(TypeError);
+
+    var newname = name;
+    try {
+        newname = name.replace(" ", "_");
+    } catch (err) {
+
+    }
+
+    return newname;
 }
 //include amiibos
 
@@ -152,224 +288,391 @@ if (chosen.isMega) {
 }
 */
 // yesTier1 means Mages at 1
-function yesAmiibo() {return document.getElementById("amiibo").checked;}
-function yesEnemy() {return document.getElementById("enemy").checked;}
-function yesAlm() {return document.getElementById("alm").checked;}
-function yesTier1() {return document.getElementById("one").checked;}
-function yesBroken() {return document.getElementById("busted").checked;}
-
-  function chooseclass(level, yesamiibo, yesenemy, yesbroken, yesalm, yestier1){
-        //Class data
-
-        var isBroken = yesbroken;
-        var isEnemy = yesenemy;
-        var isAmiibo = yesamiibo;
-        var isAlm = yesalm;
-        var isOne = yestier1;
-
-
-        //console.log("isBroken:" + yesBroken);
-        //Amiibo
-        var amiibo = ["Lord (Marth)", "Lord (F. Corrin)", "Lord (Roy)", "Lord (Lucina)", "Hero (Ike)", "Tactitian (Robin)"];
-        //Classes lv 1 and 2
-        var oneandtwo = ["Mage (Male)", "Pegasus Knight", "Cleric", "Mage (Female)"];
-        //Alm and Celica
-        var almcelica1 = ["Fighter", "Priestess (Celica)"]
-        var almcelica2 = ["Hero (Alm)", "Princess"]
-        var almcelica3 = ["Conqueror", "Rigain"]
-
-        var levelone = ["Villager","Archer", "Cavalier", "Soldier", "Mercenary","Boy", "Girl"];
-        var leveltwo = ["Myrmidon", "Sniper", "Paladin", "Knight", ];
-
-        var levelthree = ["Dread Fighter", "Baron", "Bow Knight", "Gold Knight"];
-        var onetwothree = ["Falcon Knight", "Saint", "Sage", "Priestess"];
-
-        //Untiered enemy classes
-        var enemyflex = ["Brigand", "Arcanist", "Mogall", "Witch"];
-        //Tier Two enemy classes
-        var enemytwo = ["Cantor", "Vestal"];
-
-        var enemythree = ["Mila Apostole", "Duma Apostole", "Dagon", "Fire Dragon", "Deimos"];
-        var overclass = ["Harrier", "Skogul", "Yasha", "Exemplar", "Guru", "Enchantress", "Oliphantier", "Spartan"];
-
-
-
-        //Broken Classes -- Only use if you want a fucked playthrough
-        var broken = ["Fell Dragon", "God", "Player Boat", "Enemy Boat"];
-
-        var classledger = [];
-
-        //Base options
-        if(level == 1){
-          classledger = levelone;
-          arraypush(oneandtwo, classledger);
-
-
-
-        }
-        if(level == 2){
-          classledger = leveltwo;
-          console.log('isEnemy: ' + isEnemy);
-          if(isOne == true){arraypush(onetwothree, classledger);}
-          else{arraypush(oneandtwo, classledger);}
-
-          //if(isEnemy == true){for (i = 0; i < enemytwo.length; i++){classledger.push(enemytwo[i]);}}
-          //arraypush(enemytwo, classledger);
-          if(isEnemy == true){arraypush(enemytwo, classledger);}
-
-
-        }
-        if(level == 3){
-          classledger = levelthree;
-          arraypush(onetwothree, classledger);
-          if(isEnemy == true){arraypush(enemythree, classledger);}
-        }
-        if(level == 4){
-          classledger = overclass;
-        }
-
-        //Universal Classes
-
-        if(isAmiibo == true){arraypush(amiibo, classledger);}
-        if(isEnemy == true){arraypush(enemyflex, classledger);}
-        if(isBroken == true){arraypush(broken, classledger);}
-
-        if(isAlm == true){
-          if(level <= 2){arraypush(almcelica1, classledger);}
-          if(level == 3){arraypush(almcelica2, classledger);}
-          if(level == 4){arraypush(almcelica3, classledger);}
-
-        }
-
-
-
-        console.log(classledger);
-
-        return classledger[randint(classledger.length)];
-
-  }
-
-function arraypush(array, other){
-  for (i = 0; i < array.length; i++){other.push(array[i]);}
+function yesAmiibo() {
+    return document.getElementById("amiibo").checked;
 }
 
-  function randint(max){
-    return Math.floor(Math.random()*max);
-  }
+function yesEnemy() {
+    return document.getElementById("enemy").checked;
+}
 
-  function getSpritePath(pclass) {
-      var path = "img/";
-      var name = pclass;
-      return path + name;
-  }
+function yesAlm() {
+    return document.getElementById("alm").checked;
+}
 
-  function Route(option){
+function yesTier1() {
+    return document.getElementById("one").checked;
+}
+
+function yesBroken() {
+    return document.getElementById("busted").checked;
+}
+
+function chooseclass(level, yesamiibo, yesenemy, yesbroken, yesalm, yestier1) {
+    //Class data
+
+    var isBroken = yesbroken;
+    var isEnemy = yesenemy;
+    var isAmiibo = yesamiibo;
+    var isAlm = yesalm;
+    var isOne = yestier1;
+
+
+    //console.log("isBroken:" + yesBroken);
+    //Amiibo
+    var amiibo = ["Lord (Marth)", "Lord (F. Corrin)", "Lord (Roy)", "Lord (Lucina)", "Hero (Ike)", "Tactitian (Robin)"];
+    //Classes lv 1 and 2
+    var oneandtwo = ["Mage (Male)", "Pegasus Knight", "Cleric", "Mage (Female)"];
+    //Alm and Celica
+    var almcelica1 = ["Fighter", "Priestess (Celica)"]
+    var almcelica2 = ["Hero (Alm)", "Princess"]
+    var almcelica3 = ["Conqueror", "Rigain"]
+
+    var levelone = ["Villager", "Archer", "Cavalier", "Soldier", "Mercenary", "Boy", "Girl"];
+    var leveltwo = ["Myrmidon", "Sniper", "Paladin", "Knight", ];
+
+    var levelthree = ["Dread Fighter", "Baron", "Bow Knight", "Gold Knight"];
+    var onetwothree = ["Falcon Knight", "Saint", "Sage", "Priestess"];
+
+    //Untiered enemy classes
+    var enemyflex = ["Brigand", "Arcanist", "Mogall", "Witch"];
+    //Tier Two enemy classes
+    var enemytwo = ["Cantor", "Vestal"];
+
+    var enemythree = ["Mila Apostole", "Duma Apostole", "Dagon", "Fire Dragon", "Guardian"];
+    var overclass = ["Harrier", "Skogul", "Yasha", "Exemplar", "Guru", "Enchantress", "Oliphantier", "Spartan"];
+
+
+
+    //Broken Classes -- Only use if you want a fucked playthrough
+    var broken = ["Fell Dragon", "God", "Player Boat", "Enemy Boat", "Gargoyle", "Deathgoyle", "Gardua", "Lich", "Deimos", "Titan", "Entombed", "Necodragon", "Fafnir", ];
+
+    var classledger = [];
+
+    //Base options
+    if (level == 1) {
+        classledger = levelone;
+        arraypush(oneandtwo, classledger);
+
+
+
+    }
+    if (level == 2) {
+        classledger = leveltwo;
+        console.log('isEnemy: ' + isEnemy);
+        if (isOne == true) {
+            arraypush(onetwothree, classledger);
+        } else {
+            arraypush(oneandtwo, classledger);
+        }
+
+        //if(isEnemy == true){for (i = 0; i < enemytwo.length; i++){classledger.push(enemytwo[i]);}}
+        //arraypush(enemytwo, classledger);
+        if (isEnemy == true) {
+            arraypush(enemytwo, classledger);
+        }
+
+
+    }
+    if (level == 3) {
+        classledger = levelthree;
+        arraypush(onetwothree, classledger);
+        if (isEnemy == true) {
+            arraypush(enemythree, classledger);
+        }
+    }
+    if (level == 4) {
+        classledger = overclass;
+    }
+
+    //Universal Classes
+
+    if (isAmiibo == true) {
+        arraypush(amiibo, classledger);
+    }
+    if (isEnemy == true) {
+        arraypush(enemyflex, classledger);
+    }
+    if (isBroken == true) {
+        arraypush(broken, classledger);
+    }
+
+    if (isAlm == true) {
+        if (level <= 2) {
+            arraypush(almcelica1, classledger);
+        }
+        if (level == 3) {
+            arraypush(almcelica2, classledger);
+        }
+        if (level == 4) {
+            arraypush(almcelica3, classledger);
+        }
+
+    }
+
+
+
+    //console.log(classledger);
+
+    return classledger[randint(classledger.length)];
+
+}
+
+function arraypush(array, other) {
+    for (i = 0; i < array.length; i++) {
+        other.push(array[i]);
+    }
+}
+
+function randint(max) {
+    return Math.floor(Math.random() * max);
+}
+
+function getSpritePath(pclass) {
+    var path = "img/";
+    var name = pclass;
+    return path + name;
+}
+
+function Route(option) {
     //style.display = 'none'
-      //console.log("Alm");
+    //console.log("Alm");
 
-      //var routechars = ["Alm", "Lukas", "Tobin", "Kliff", "Faye", "Gray"];
+    //var routechars = ["Alm", "Lukas", "Tobin", "Kliff", "Faye", "Gray"];
 
-/*
-      const sleep = (milliseconds) => {
-        return new Promise(resolve => setTimeout(resolve, milliseconds))
-      }
-*/ var celicabutton = document.getElementById("CelicaButton");
-var almbutton = document.getElementById("AlmButton");
-var bothbutton = document.getElementById("Both");
-  if(yesOverclass() == true){
-    var final = 5;
-  }
-  else{
-    var final = 4;
-  }
+    /*
+          const sleep = (milliseconds) => {
+            return new Promise(resolve => setTimeout(resolve, milliseconds))
+          }
+    */
+    var celicabutton = document.getElementById("CelicaButton");
+    var almbutton = document.getElementById("AlmButton");
+    var bothbutton = document.getElementById("Both");
+    if (yesOverclass() == true) {
+        var final = 5;
+    } else {
+        var final = 4;
+    }
 
-    if(option == 'Alm'){
-      for(var i=2;i<almchars.length+2;i++){
-      // Test code: var i=5;
-      for(var j=almchars[i-2].tier;j<final;j++){
-      cstring = almchars[i-2].name;
-        cstring = almchars[i-2].name;
-        console.log("Character: " + cstring);
-        console.log(cstring + " is: " + almchars[i-2].tier)
+    if (option == 'Alm') {
+        for (var i = 2; i < almchars.length + 2; i++) {
+            // Test code: var i=5;
+            for (var j = almchars[i - 2].tier; j < final; j++) {
+                cstring = almchars[i - 2].name;
+                cstring = almchars[i - 2].name;
+                //console.log("Character: " + cstring);
+                //console.log(cstring + " is: " + almchars[i-2].tier)
 
-        var myclass = chooseclass(j, yesAmiibo1(), yesEnemy1(), yesBroken1(), yesAlm1(), yesTier11());
-        var id = 'id'+ i.toString();
+                var myclass = chooseclass(j, yesAmiibo1(), yesEnemy1(), yesBroken1(), yesAlm1(), yesTier11());
+                var id = 'id' + i.toString();
 
-        console.log(id);
-        htmlify(cstring, "id8", myclass);
-        //sleep(5000);
-      }
+                //console.log(id);
+                htmlify(cstring, "id8", myclass);
+                //sleep(5000);
+            }
+
+            almbutton.style.display = 'none';
+            celicabutton.style.display = 'none';
+            almdone = true;
+            //if(celicabutton.style.display = 'none'){
+            //bothbutton.style.display = 'none';
+            //}
+        }
+
+
+    }
+    if (option == 'Celica') {
+        //isValid('config.js');
+        //console.log("Celica!")
+
+        for (var i = 2; i < celicachars.length + 2; i++) {
+            // Test code: var i=5;
+            csstring = celicachars[i - 2].name;
+            var id = document.createTextNode(csstring + ": ");
+            var tablehead = document.createElement("table");
+            var row = document.createElement("tr");
+
+            document.getElementById("div2").appendChild(id);
+            document.getElementById("div2").appendChild(tablehead);
+            document.getElementById("div2").appendChild(row);
+
+
+            var arr = [];
+
+            for (var j = celicachars[i - 2].tier; j < final; j++) {
+
+                var item = document.createElement("td");
+                //item.innerHTML("test");
+                document.getElementById("div2").appendChild(item);
+
+                cstring = celicachars[i - 2].name;
+                //console.log("Character: " + cstring);
+                //console.log(cstring + " is: " + celicachars[i-2].tier)
+
+                var myclass = chooseclass(j, yesAmiibo1(), yesEnemy1(), yesBroken1(), yesAlm1(), yesTier11());
+
+                arr[j] = myclass;
+                var id = 'id' + i.toString();
+
+                //console.log(id);
+                //htmlify(cstring, "id8", myclass);
+                //sleep(5000);
+
+
+                almbutton.style.display = 'none';
+                celicabutton.style.display = 'none';
+                //if(celicabutton.style.display = 'none'){
+                //bothbutton.style.display = 'none';
+                //}
+
+            }
+            tableCreate(arr, yesOverclass(), celicachars[i - 2].name);
+
+            document.getElementById("div2").appendChild(document.createElement("br"));
+        }
 
         almbutton.style.display = 'none';
         celicabutton.style.display = 'none';
-        almdone = true;
-        //if(celicabutton.style.display = 'none'){
-          //bothbutton.style.display = 'none';
+    }
+
+    if (option == 'Both') {
+        //console.log("Both!")
+
+        bothbutton.style.display = 'none';
+        if (almdone == true) {
+            Route('Celica');
+            //break;
+        } else if (almdone == false) {
+            Route('Alm');
+            //break;
+        } else {
+            Route('Alm');
+            Route('Celica');
+        }
+
+    }
+
+}
+
+
+function tableCreate(array, overlevel, name) {
+
+    console.log(array);
+
+    var body = document.getElementById('div2');
+    var tbl = document.createElement('table');
+    tbl.style.width = '100%';
+    tbl.setAttribute('border', '1');
+    tbl.setAttribute('class', 'fixed');
+    /*
+    tbl.setAttribute('cellpadding', '0');
+    tbl.setAttribute('cellspacing', '0');
+    tbl.setAttribute('border', '0');
+    */
+    //cellpadding="0" cellspacing="0" border="0"
+
+    var tbdy = document.createElement('tbody');
+
+
+    //for (var i = 0; i < 4; i++) {
+    var tr = document.createElement('tr');
+
+
+    //div = document.createElement('td');
+    //div.appendChild(tr);
+
+    //Patch in overclass eventually
+    if (overlevel) {
+        var level = 5;
+    } else {
+        var level = 4;
+    }
+    for (var j = 1; j < level; j++) {
+        //l = 0;
+        if (array[j] != null) {
+            var td = document.createElement('td');
+            td.innerHTML = array[j];
+            td.appendChild(document.createTextNode('\u0020'));
+            //i == 1 && j == 1 ? td.setAttribute('rowSpan', '2') : null;
+
+            tr.appendChild(td);
+        } else {
+            var td = document.createElement('td');
+            td.innerHTML = "N/A (Starts at a higher tier)";
+            td.appendChild(document.createTextNode('\u0020'));
+            tr.appendChild(td);
+        }
+
+    }
+
+
+    //}
+    tbdy.appendChild(tr);
+
+    var tr2 = document.createElement('tr');
+
+    //for (var i = 0; i < 4; i++) {
+    //var pics = document.createElement('tr');
+
+
+    //div = document.createElement('td');
+    //div.appendChild(tr);
+
+    //Patch in overclass eventually
+    if (overlevel) {
+        var level = 5;
+    } else {
+        var level = 4;
+    }
+    for (var j = 1; j < level; j++) {
+        //l = 0;
+        console.log("array[" + j + "] = " + array[j]);
+        if (array[j] != null) {
+            var td = document.createElement('td');
+            td.innerHTML = "";
+            //td.innerHTML = array[j];
+            //td.appendChild(document.createTextNode('\u0020'));
+            var img = document.createElement('img');
+
+            //doesexist('img/FE15_' + array[j-1] + '_(' + name + ').gif', function(){ img.src = 'img/FE15_' + array[j-1] + '_(' + name + ').gif'; }, function(){ img.src = 'img/Generic' + array[j-1] + '.gif' } );
+            //console.log(img.src);
+            var aclass = spacefixer(array[j]);
+            //img.src = 'img/FE15_' + aclass + '_(' + name + ').gif';
+
+            img.src = 'img/Generic' + aclass + '.gif';
+
+
+            td.appendChild(img);
+            tr2.appendChild(td);
+        }
+
+
         //}
-      }
+        else {
+            var td = document.createElement('td');
+            td.innerHTML = "";
+            td.appendChild(document.createTextNode('\u0020'));
+            tr2.appendChild(td);
+        }
+
+        tbdy.appendChild(tr2);
 
 
-    }
-    if(option == 'Celica'){
-      //console.log("Celica!");
 
-      for(var i=2;i<celicachars.length+2;i++){
-      // Test code: var i=5;
-        for(var j=celicachars[i-2].tier;j<final;j++){
-        cstring = celicachars[i-2].name;
-        console.log("Character: " + cstring);
-        console.log(cstring + " is: " + celicachars[i-2].tier)
-
-        var myclass = chooseclass(j, yesAmiibo1(), yesEnemy1(), yesBroken1(), yesAlm1(), yesTier11());
-
-        var id = 'id'+ i.toString();
-
-        console.log(id);
-        htmlify(cstring, "id8", myclass);
-        //sleep(5000);
-
-        almbutton.style.display = 'none';
-        celicabutton.style.display = 'none';
-        //if(celicabutton.style.display = 'none'){
-          //bothbutton.style.display = 'none';
-        //}
-      }
-      }
-
-      almbutton.style.display = 'none';
-      celicabutton.style.display = 'none';
-    }
-
-    if(option == 'Both'){
-      console.log("Both!")
-
-      bothbutton.style.display = 'none';
-      if(almdone == true){
-          Route('Celica');
-          //break;
-      }
-      else if (almdone == false){
-        Route('Alm');
-        //break;
-      }
-      else{
-        Route('Alm');
-        Route('Celica');
-      }
-
-    }
 
     }
 
 
+    tbl.appendChild(tbdy);
+    body.appendChild(tbl)
+}
 
 
 
 
+//}
 
-  //}
-
-  function htmlify(name, id, theclass) {
+function htmlify(name, id, theclass) {
 
     var myclass = theclass;
 
@@ -383,65 +686,85 @@ var bothbutton = document.getElementById("Both");
     //var _img = document.getElementById('pic1');
 
 
-      var para = document.createElement("p");
-      //var node = document.createTextNode("This is new.");
-      var aclass = document.createTextNode(theclass);
-      var id = document.createTextNode(name + ": ");
-      var br = document.createElement("br");
+    var para = document.createElement("p");
+    //var node = document.createTextNode("This is new.");
+    var aclass = document.createTextNode(theclass);
+    //var id = document.createTextNode(name + ": ");
+    var br = document.createElement("br");
 
 
-      var img = document.createElement("img");
-
-
-
-      console.log("id: " + id);
-      img.id = id;
-      console.log("img.id: " + img.id);
-
-      img.src = 'img/FE15_' + newclass + '_(' + name + ').gif';
-
-      console.log("does: "+ 'img/FE15_' + newclass + '_(' + name + ').gif' + "exist?");
-      //doesFileExist('img/FE15_' + newclass + '_(' + name + ').gif')
-
-      //var truthtable = false;
-
-      doesexist('img/FE15_' + newclass + '_(' + name + ').gif', function(){ img.src = 'img/FE15_' + newclass + '_(' + name + ').gif'; }, function(){ img.src = 'img/Generic' + newclass + '.gif' } );
-
-        console.log(name + "'s class is: " + newclass + " and img is: ");
+    var img = document.createElement("img");
 
 
 
-      //img = newImg.src;
-      //img.src = 'img/FE15_' + newclass + '_(' + name + ').gif';
-
-      para.appendChild(id);
-      para.appendChild(aclass);
-      para.appendChild(br);
-      para.appendChild(img);
-
-      var element = document.getElementById("div2");
-      element.appendChild(para);
+    //console.log("id: " + id);
+    img.id = id;
+    //console.log("img.id: " + img.id);
 
 
-    console.log("exists is:" + status);
 
-  }
+    //img.src = 'img/FE15_' + newclass + '_(' + name + ').gif';
 
-  function doesexist(imageSrc, good, bad) {
-  var img = new Image();
-  img.onload = good;
-  img.onerror = bad;
-  img.src = imageSrc;
-  }
+    //console.log("does: "+ 'img/FE15_' + newclass + '_(' + name + ').gif' + "exist?");
+    //doesFileExist('img/FE15_' + newclass + '_(' + name + ').gif')
 
-  function yesAmiibo1() {return document.getElementById("amiibo1").checked;}
-  function yesEnemy1() {return document.getElementById("enemy1").checked;}
-  function yesAlm1() {return document.getElementById("alm1").checked;}
-  function yesTier11() {return document.getElementById("one1").checked;}
-  function yesBroken1() {return document.getElementById("busted1").checked;}
-  function yesOverclass(){return document.getElementById("overclass1").checked;}
+    //var truthtable = false;
 
-  //doesexist("foo.gif", function(){ alert("good"); }, function(){ alert("bad");} );
+    //checkImage('img/FE15_' + newclass + '_(' + name + ').gif', function(){ img.src = 'img/FE15_' + newclass + '_(' + name + ').gif'; console.log("good"); }, function(){ img.src = 'img/Generic' + newclass + '.gif' } console.log("bad"); );
+
+    checkImage('img/FE15_' + newclass + '_(' + name + ').gif');
+    //console.log(name + "'s class is: " + newclass + " and img is: ");
+
+
+
+    //img = newImg.src;
+    //img.src = 'img/FE15_' + newclass + '_(' + name + ').gif';
+
+    //para.appendChild(id);
+    para.appendChild(aclass);
+    //para.appendChild(br);
+    para.appendChild(img);
+
+    var element = document.getElementById("div2");
+    element.appendChild(para);
+
+
+    //console.log("exists is:" + status);
+
+}
+
+function doesexist(imageSrc, good, bad) {
+    var img = new Image();
+    img.onload = good;
+    img.onerror = bad;
+    img.src = imageSrc;
+}
+
+function yesAmiibo1() {
+    return document.getElementById("amiibo1").checked;
+}
+
+function yesEnemy1() {
+    return document.getElementById("enemy1").checked;
+}
+
+function yesAlm1() {
+    return document.getElementById("alm1").checked;
+}
+
+function yesTier11() {
+    return document.getElementById("one1").checked;
+}
+
+function yesBroken1() {
+    return document.getElementById("busted1").checked;
+}
+
+function yesOverclass() {
+    return document.getElementById("overclass1").checked;
+}
+
+//doesexist("foo.gif", function(){ alert("good"); }, function(){ alert("bad");} );
 
 
 
