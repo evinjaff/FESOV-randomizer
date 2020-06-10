@@ -10,11 +10,18 @@
 <h1>Fire Emblem Echoes Random Class Generator</h1>
 <h3>By Evin Jaff</h2>
 
-  <a target="_blank" href="https://github.com/evinjaff/FESOV-randomizer/blob/master/readme.md">Read this first!</a>
-  <h2>WARNING: Be EXTREMELY careful about reclassing Alm, as you can potentially softlock the game since he will not be able to break boxes unlike Celica when she's reclassed.</h2>
-<h2>Randomize a Character:</h2>
 
+<div id="link-holder">
+  <a id="link "target="_blank" href="https://github.com/evinjaff/FESOV-randomizer/blob/master/readme.md">Read this first!</a>
+</div>
+  <br>
+  <h2 id="warning">⚠️WARNING⚠️: Be EXTREMELY careful about reclassing Alm, as you can potentially softlock the game inside dungeons since he will not be able to break boxes unlike Celica when she's reclassed.</h2>
+<h2>Randomize a Character:</h2>
+<!--
+<link rel="stylesheet" href="print.css" type="text/css" media="print">
+-->
 <link rel="stylesheet" type="text/css" href="stylesheet.css">
+
 
 
 <script data-main="config.js" src="require.js"></script>
@@ -110,16 +117,16 @@ Include Classes?
 <input type="radio" id="deen">Deen</button>
 <br>
 <h3>Class Options</h3>
-<input type="checkbox" id="amiibo1"> <div class="tooltip">Amiibo Classes?<span class="tooltiptext">Includes Amiibo classes such as Lords, Robin, Ike</span>
+<input type="checkbox" id="amiibo1"> <div class="tooltip"> Amiibo Classes?<span class="tooltiptext">Includes Amiibo classes such as Lords, Robin, Ike</span>
 </div> </input>
 <br>
-<input type="checkbox" id="enemy1"> <div class="tooltip">Enemy Classes?<span class="tooltiptext">Includes enemy classes such as Brigands, Cantors, Witches</span>
+<input type="checkbox" id="enemy1"> <div class="tooltip"> Enemy Classes?<span class="tooltiptext">Includes enemy classes such as Brigands, Cantors, Witches</span>
 </div></input>
 <br>
-<input type="checkbox" id="busted1"> <div class="tooltip">Broken/Ugly Classes?<span class="tooltiptext">Includes broken classes like Duma and Deimos</span>
+<input type="checkbox" id="busted1"> <div class="tooltip"> Broken/Ugly Classes?<span class="tooltiptext">Includes broken classes like Duma and Deimos</span>
 </div> </input>
 <br>
-<input type="checkbox" id="alm1"><div class="tooltip">Alm and Celica Classes?<span class="tooltiptext">Includes Alm and Celica classes (Fighter, Princess, etc.)</span>
+<input type="checkbox" id="alm1"><div class="tooltip">  Alm & Celica Classes?<span class="tooltiptext">Includes Alm and Celica classes (Fighter, Princess, etc.)</span>
 </div> </input>
 <br>
 <input type="checkbox" id="overclass1"> <div class="tooltip">Generate Overclasses?<span class="tooltiptext">Includes DLC Overclasses</span>
@@ -140,7 +147,7 @@ Include Classes?
 <br>
 
 <br>
-<button type="button" id="AlmButton" onclick="Route('Alm')">randomize Alm's Route</button>
+<button type="button" id="AlmButton" onclick="Route('Alm')">Randomize Alm's Route</button>
 <button type="button" id="CelicaButton" onclick="Route('Celica')">Randomize Celica's Route</button>
 <button type="button" id="Both" onclick="Route('Both')">Randomize Both Routes</button>
 
@@ -164,35 +171,7 @@ background-color: #1d3557;
 
 </div>
 
-<style>
-  .tooltip {
-position: relative;
-display: inline-block;
-border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
-}
 
-/* Tooltip text */
-.tooltip .tooltiptext {
-visibility: hidden;
-width: 120px;
-background-color: black;
-color: #fff;
-text-align: center;
-padding: 5px 0;
-border-radius: 6px;
-
-/* Position the tooltip text - see examples below! */
-position: absolute;
-z-index: 1;
-}
-
-/* Show the tooltip text when you mouse over the tooltip container */
-.tooltip:hover .tooltiptext {
-visibility: visible;
-}
-
-/*Import from evinjaff.github.io's css*/
-</style>
 
 
 
