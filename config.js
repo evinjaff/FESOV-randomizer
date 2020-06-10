@@ -100,7 +100,7 @@ var Mycen = {
     tier: '3'
 }
 
-var celicachars = [Celica, Mae, Boey, Genny, Saber, Valbar, Kamui, Leon, Palla, Catria, Atlas, Jesse, Sonya, Deen, Est, Nomah, Conrad];
+var celicachars = [Celica, Mae, Boey, Genny, Saber, Valbar, Kamui, Leon, Palla, Catria, Atlas, Jesse, Est, Nomah, Conrad];
 var Celica = {
     name: "Celica",
     gender: "Female",
@@ -346,7 +346,7 @@ function chooseclass(level, yesamiibo, yesenemy, yesbroken, yesalm, yestier1) {
     //Tier Two enemy classes
     var enemytwo = ["Cantor", "Vestal"];
 
-    var enemythree = ["Mila Apostole", "Duma Apostole", "Dagon", "Fire Dragon", "Guardian"];
+    var enemythree = ["Mila Apostole", "White Dragon", "Duma Apostole", "Dagon", "Fire Dragon", "Guardian"];
     var overclass = ["Harrier", "Skogul", "Yasha", "Exemplar", "Guru", "Enchantress", "Oliphantier", "Spartan"];
 
 
@@ -465,7 +465,15 @@ function Route(option) {
       //isValid('config.js');
       //console.log("Celica!")
 
+      //isValid('config.js');
+      //console.log("Celica!")
+
+      //console.log(celicachars);
+      document.getElementById("reroll").hidden = false;
+
+
       for (var i = 2; i < almchars.length + 2; i++) {
+
           // Test code: var i=5;
           csstring = almchars[i - 2].name;
           var id = document.createTextNode(csstring + ": ");
@@ -482,8 +490,9 @@ function Route(option) {
           for (var j = almchars[i - 2].tier; j < final; j++) {
 
               var item = document.createElement("td");
+              item.id = "tdCelica";
               //item.innerHTML("test");
-              document.getElementById("div2").appendChild(item);
+              //document.getElementById("div2").appendChild(item);
 
               cstring = almchars[i - 2].name;
               //console.log("Character: " + cstring);
@@ -499,24 +508,24 @@ function Route(option) {
               //sleep(5000);
 
 
-              almbutton.style.display = 'none';
-              celicabutton.style.display = 'none';
+
+
+              //celicabutton.style.display = 'none';
               //if(celicabutton.style.display = 'none'){
               //bothbutton.style.display = 'none';
               //}
 
           }
-          tableCreate(arr, yesOverclass(), celicachars[i - 2].name);
+          almbutton.style.display = 'none';
+          var ex = document.getElementById("export");
+          ex.hidden = false;
+          tableCreate(arr, yesOverclass(), almchars[i - 2].name);
 
           document.getElementById("div2").appendChild(document.createElement("br"));
+      }
 
-            almbutton.style.display = 'none';
-            //celicabutton.style.display = 'none';
+      almbutton.style.display = 'none';
 
-            //if(celicabutton.style.display = 'none'){
-            //bothbutton.style.display = 'none';
-            //}
-        }
         almdone = true;
 
 
@@ -524,8 +533,25 @@ function Route(option) {
     if (option == 'Celica') {
         //isValid('config.js');
         //console.log("Celica!")
+        document.getElementById("reroll").hidden = false;
+
+        //console.log(celicachars);
+          if(document.getElementById("deen").checked){
+            celicachars.splice(12, 0, Deen);
+          }
+          if(document.getElementById("sonya").checked){
+            celicachars.splice(12, 0, Sonya);
+          }
+          if(document.getElementById("both").checked){
+
+            celicachars.splice(12, 0, Deen);
+            //console.log(celicachars);
+            celicachars.splice(12, 0, Sonya);
+          }
+          //console.log(celicachars);
 
         for (var i = 2; i < celicachars.length + 2; i++) {
+
             // Test code: var i=5;
             csstring = celicachars[i - 2].name;
             var id = document.createTextNode(csstring + ": ");
@@ -571,6 +597,8 @@ function Route(option) {
 
             document.getElementById("div2").appendChild(document.createElement("br"));
         }
+        var ex = document.getElementById("export");
+        ex.hidden = false;
 
         almbutton.style.display = 'none';
         celicabutton.style.display = 'none';
@@ -590,12 +618,10 @@ function Route(option) {
         if(celicadone == true && almdone == false){
           Route('Alm');
         }
-        if (almdone == false) {
-            if(celicadone == false){
-
-            }
-            //break;
+        if(celicadone == false && almdone == true){
+          Route('Celica');
         }
+
 
     }
     var all = document.getElementsByTagName("td");
@@ -722,13 +748,13 @@ function tableCreate(array, overlevel, name) {
             var img = document.createElement("img");
 
             img.id = name;
-      console.log("img.id: " + img.id);
+      //console.log("img.id: " + img.id);
 
           img.src = 'img/FE15_' + aclass + '_(' + name + ').gif';
 
 
             //img.src = 'img/FE15_' + aclass + '_(' + name + ').gif';
-            console.log("Loading: " + "img/FE15_" + aclass + "_(" + name + ").gif");
+            //console.log("Loading: " + "img/FE15_" + aclass + "_(" + name + ").gif");
             //console.log(loadImage('img/FE15_' + aclass + '_(' + name + ').gif'));
             //doesexist('img/FE15_' + aclass + '_(' + name + ').gif', function(){ img.src = 'img/FE15_' + aclass + '_(' + name + ').gif'; }, function(){ img.src = 'img/Generic' + aclass + '.gif' } );
 
@@ -754,10 +780,10 @@ function tableCreate(array, overlevel, name) {
            */
            var img = new Image();
            img.onload = function() {
-             console.log(this.naturalHeight);
+             //console.log(this.naturalHeight);
            }
             img.src = "img/FE15_" + aclass + "_(" + name + ").gif";
-            console.log("imageExists: " + imageExists);
+            //console.log("imageExists: " + imageExists);
 
             div = document.getElementById("testpull");
 
@@ -946,6 +972,20 @@ function yesBroken1() {
 function yesOverclass() {
     return document.getElementById("overclass1").checked;
 }
+
+function printPage(){
+  removeAll();
+  window.print();
+  return false;
+
+}
+
+function removeAll(){
+    document.getElementById("clutter");
+    clutter.remove();
+    return;
+}
+
 
 //doesexist("foo.gif", function(){ alert("good"); }, function(){ alert("bad");} );
 

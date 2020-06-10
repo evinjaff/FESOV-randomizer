@@ -4,9 +4,17 @@
 
   <!-- Bootstrap Code-->
 
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
 
 
 
+
+  <script data-main="config.js" src="require.js"></script>
+  <script type="text/javascript" src="config.js""> </script>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script type="text/javascript"></script>
+
+<div id="clutter">
 <h1>Fire Emblem Echoes Random Class Generator</h1>
 <h3>By Evin Jaff</h2>
 
@@ -15,19 +23,12 @@
   <a id="link "target="_blank" href="https://github.com/evinjaff/FESOV-randomizer/blob/master/readme.md">Read this first!</a>
 </div>
   <br>
-  <h2 id="warning">⚠️WARNING⚠️: Be EXTREMELY careful about reclassing Alm, as you can potentially softlock the game inside dungeons since he will not be able to break boxes unlike Celica when she's reclassed.</h2>
+  <h2 id="warning">⚠️WARNING⚠️: Be EXTREMELY careful about reclassing Alm, as you can potentially softlock the game inside dungeons since he will not be able to break boxes when he's reclassed into something other than Fighter, Hero, or Conqueror. Through testing, Celica seems to still be able to break boxes for most sword-based classeso I'll leave a full compatibility chart in the tool instructions for anyone curious.</h2>
 <h2>Randomize a Character:</h2>
 <!--
 <link rel="stylesheet" href="print.css" type="text/css" media="print">
 -->
-<link rel="stylesheet" type="text/css" href="stylesheet.css">
 
-
-
-<script data-main="config.js" src="require.js"></script>
-<script type="text/javascript" src="config.js""> </script>
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script type="text/javascript">
 
 
 
@@ -61,9 +62,6 @@
 
 <br>
 
-Include Classes?
-<br>
-
 <input type="checkbox" id="amiibo"> <div class="tooltip">Amiibo Classes?<span class="tooltiptext">Includes Amiibo classes such as Lords, Robin, Ike</span>
 </div> </input>
 <br>
@@ -95,7 +93,6 @@ Include Classes?
 <br>
 <input type="radio" id="one">one
 <br>
-
 <input type="radio" id="onetwo" name="onetwo" value="male">
   <label for="male">Male</label><br>
   <input type="radio" id="one" name="onetwo" value="female">
@@ -110,23 +107,29 @@ Include Classes?
 
 <img src="" id="id1"> </img>
 
+
+
 <h2>Randomize a Party:</h2>
 
 <h3>Sonya or Deen? (If Celica's Party or Full Route)</h3>
-<input type="radio" id="sonya">Sonya</button>
-<input type="radio" id="deen">Deen</button>
+<div style="text-align: center">
+<input type="radio" id="sonya" name="sord" checked="checked">Sonya</input>
+<input type="radio" id="deen" name="sord">Deen</input>
+<input type="radio" id="both" name="sord">Both</input>
+
+</div>
 <br>
 <h3>Class Options</h3>
-<input type="checkbox" id="amiibo1"> <div class="tooltip"> Amiibo Classes?<span class="tooltiptext">Includes Amiibo classes such as Lords, Robin, Ike</span>
+<input type="checkbox" id="amiibo1"> <div class="tooltip">Amiibo Classes?<span class="tooltiptext">Includes Amiibo classes such as Lords, Robin, Ike</span>
 </div> </input>
 <br>
-<input type="checkbox" id="enemy1"> <div class="tooltip"> Enemy Classes?<span class="tooltiptext">Includes enemy classes such as Brigands, Cantors, Witches</span>
+<input type="checkbox" id="enemy1"> <div class="tooltip">Enemy Classes?<span class="tooltiptext">Includes enemy classes such as Brigands, Cantors, Witches</span>
 </div></input>
 <br>
-<input type="checkbox" id="busted1"> <div class="tooltip"> Broken/Ugly Classes?<span class="tooltiptext">Includes broken classes like Duma and Deimos</span>
+<input type="checkbox" id="busted1"> <div class="tooltip">Broken/Ugly Classes?<span class="tooltiptext">Includes broken classes like Duma and Deimos</span>
 </div> </input>
 <br>
-<input type="checkbox" id="alm1"><div class="tooltip">  Alm & Celica Classes?<span class="tooltiptext">Includes Alm and Celica classes (Fighter, Princess, etc.)</span>
+<input type="checkbox" id="alm1"><div class="tooltip">Alm and Celica Classes?<span class="tooltiptext">Includes Alm and Celica classes (Fighter, Princess, etc.)</span>
 </div> </input>
 <br>
 <input type="checkbox" id="overclass1"> <div class="tooltip">Generate Overclasses?<span class="tooltiptext">Includes DLC Overclasses</span>
@@ -151,6 +154,16 @@ Include Classes?
 <button type="button" id="CelicaButton" onclick="Route('Celica')">Randomize Celica's Route</button>
 <button type="button" id="Both" onclick="Route('Both')">Randomize Both Routes</button>
 
+<div id="export" hidden>
+<br>
+<a href="" id="print-button" onclick="printPage()" style="hidden">Export Class List (via Print)</a>
+</div>
+
+<br>
+
+<div id="reroll" hidden>
+<a href="index.html"> Retry?</a>
+</div>
 <!-- Block 1
 <div id="char1">
   <p id="p2"></p>
@@ -160,9 +173,10 @@ Include Classes?
 <!-- Test Set
 <style>body {
 background-color: #1d3557;
+
 }</style>
 -->
-
+</div>
 <div id="testpull">
 
 <img src="" id="pic1"> </img>
