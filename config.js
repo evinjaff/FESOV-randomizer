@@ -1,9 +1,16 @@
-//var isValid = require(['node_modules/is-valid-path']);
 
+// false
 //console.log(isValid('abc.js'));
 //var almchars = ('data/alm.js').arr;
 //Define Global Objects
+
+var script = document.createElement('script');
+
+script.src = 'https://code.jquery.com/jquery-3.5.1.min.js';
+document.getElementsByTagName('head')[0].appendChild(script);
+
 var almdone = false;
+var celicadone = false;
 
 var almchars = [Alm, Lukas, Gray, Tobin, Kliff, Faye, Silque, Clair, Clive, Forsyth, Python, Luthier, Mathilda, Delthea, Tatiana, Zeke, Mycen]
 
@@ -145,7 +152,7 @@ var Catria = {
     tier: '1'
 }
 var Atlas = {
-    name: "Altlas",
+    name: "Atlas",
     gender: "Male",
     tier: '1'
 }
@@ -359,7 +366,7 @@ function chooseclass(level, yesamiibo, yesenemy, yesbroken, yesalm, yestier1) {
     }
     if (level == 2) {
         classledger = leveltwo;
-        console.log('isEnemy: ' + isEnemy);
+        //console.log('isEnemy: ' + isEnemy);
         if (isOne == true) {
             arraypush(onetwothree, classledger);
         } else {
@@ -455,29 +462,62 @@ function Route(option) {
     }
 
     if (option == 'Alm') {
-        for (var i = 2; i < almchars.length + 2; i++) {
-            // Test code: var i=5;
-            for (var j = almchars[i - 2].tier; j < final; j++) {
-                cstring = almchars[i - 2].name;
-                cstring = almchars[i - 2].name;
-                //console.log("Character: " + cstring);
-                //console.log(cstring + " is: " + almchars[i-2].tier)
+      //isValid('config.js');
+      //console.log("Celica!")
 
-                var myclass = chooseclass(j, yesAmiibo1(), yesEnemy1(), yesBroken1(), yesAlm1(), yesTier11());
-                var id = 'id' + i.toString();
+      for (var i = 2; i < almchars.length + 2; i++) {
+          // Test code: var i=5;
+          csstring = almchars[i - 2].name;
+          var id = document.createTextNode(csstring + ": ");
+          var tablehead = document.createElement("table");
+          var row = document.createElement("tr");
 
-                //console.log(id);
-                htmlify(cstring, "id8", myclass);
-                //sleep(5000);
-            }
+          document.getElementById("div2").appendChild(id);
+          document.getElementById("div2").appendChild(tablehead);
+          document.getElementById("div2").appendChild(row);
+
+
+          var arr = [];
+
+          for (var j = almchars[i - 2].tier; j < final; j++) {
+
+              var item = document.createElement("td");
+              //item.innerHTML("test");
+              document.getElementById("div2").appendChild(item);
+
+              cstring = almchars[i - 2].name;
+              //console.log("Character: " + cstring);
+              //console.log(cstring + " is: " + celicachars[i-2].tier)
+
+              var myclass = chooseclass(j, yesAmiibo1(), yesEnemy1(), yesBroken1(), yesAlm1(), yesTier11());
+
+              arr[j] = myclass;
+              var id = 'id' + i.toString();
+
+              //console.log(id);
+              //htmlify(cstring, "id8", myclass);
+              //sleep(5000);
+
+
+              almbutton.style.display = 'none';
+              celicabutton.style.display = 'none';
+              //if(celicabutton.style.display = 'none'){
+              //bothbutton.style.display = 'none';
+              //}
+
+          }
+          tableCreate(arr, yesOverclass(), celicachars[i - 2].name);
+
+          document.getElementById("div2").appendChild(document.createElement("br"));
 
             almbutton.style.display = 'none';
-            celicabutton.style.display = 'none';
-            almdone = true;
+            //celicabutton.style.display = 'none';
+
             //if(celicabutton.style.display = 'none'){
             //bothbutton.style.display = 'none';
             //}
         }
+        almdone = true;
 
 
     }
@@ -533,21 +573,28 @@ function Route(option) {
 
         almbutton.style.display = 'none';
         celicabutton.style.display = 'none';
+        celicadone = true;
     }
 
     if (option == 'Both') {
         //console.log("Both!")
 
         bothbutton.style.display = 'none';
-        if (almdone == true) {
-            Route('Celica');
-            //break;
-        } else if (almdone == false) {
-            Route('Alm');
-            //break;
-        } else {
+        console.log("almdone: " + almdone);
+
+        if (almdone == false && celicadone == false) {
             Route('Alm');
             Route('Celica');
+            //break;
+        }
+        if(celicadone == true && almdone == false){
+          Route('Alm');
+        }
+        if (almdone == false) {
+            if(celicadone == false){
+
+            }
+            //break;
         }
 
     }
@@ -557,7 +604,7 @@ function Route(option) {
 
 function tableCreate(array, overlevel, name) {
 
-    console.log(array);
+    //console.log(array);
 
     var body = document.getElementById('div2');
     var tbl = document.createElement('table');
@@ -601,6 +648,7 @@ function tableCreate(array, overlevel, name) {
             td.innerHTML = "N/A (Starts at a higher tier)";
             td.appendChild(document.createTextNode('\u0020'));
             tr.appendChild(td);
+
         }
 
     }
@@ -610,6 +658,7 @@ function tableCreate(array, overlevel, name) {
     tbdy.appendChild(tr);
 
     var tr2 = document.createElement('tr');
+
 
     //for (var i = 0; i < 4; i++) {
     //var pics = document.createElement('tr');
@@ -626,23 +675,82 @@ function tableCreate(array, overlevel, name) {
     }
     for (var j = 1; j < level; j++) {
         //l = 0;
-        console.log("array[" + j + "] = " + array[j]);
+        //console.log("array[" + j + "] = " + array[j]);
         if (array[j] != null) {
             var td = document.createElement('td');
             td.innerHTML = "";
             //td.innerHTML = array[j];
             //td.appendChild(document.createTextNode('\u0020'));
+            var aclass = spacefixer(array[j]);
             var img = document.createElement('img');
+
+
+            //img.setAttribute('onerror', "myFunction()" );
+
+
+
+            //img.src = "img/FE15_" + aclass + "_(" + name + ").gif";
+
 
             //doesexist('img/FE15_' + array[j-1] + '_(' + name + ').gif', function(){ img.src = 'img/FE15_' + array[j-1] + '_(' + name + ').gif'; }, function(){ img.src = 'img/Generic' + array[j-1] + '.gif' } );
             //console.log(img.src);
-            var aclass = spacefixer(array[j]);
+            var img = document.createElement("img");
+
+            img.id = name;
+      console.log("img.id: " + img.id);
+
+          img.src = 'img/FE15_' + aclass + '_(' + name + ').gif';
+
+
             //img.src = 'img/FE15_' + aclass + '_(' + name + ').gif';
+            console.log("Loading: " + "img/FE15_" + aclass + "_(" + name + ").gif");
+            //console.log(loadImage('img/FE15_' + aclass + '_(' + name + ').gif'));
+            //doesexist('img/FE15_' + aclass + '_(' + name + ').gif', function(){ img.src = 'img/FE15_' + aclass + '_(' + name + ').gif'; }, function(){ img.src = 'img/Generic' + aclass + '.gif' } );
 
-            img.src = 'img/Generic' + aclass + '.gif';
+            //td.appendChild(img);
 
+            var imageExists = false;
+            /*
+            var image = document.createElement('img');
+            image.src = 'img/Hero.gif';
+            console.log(image);
+            //console.log(imagenotreal);
+            console.log("attribute:");
+            console.log(image.attr('width'));
 
+            if (image.attr('width') > 0){
+              console.log("wide boi");
+             imageExists = true;
+             //image.src
+           }
+            else{
+             imageExists = false;
+           }
+           */
+           var img = new Image();
+           img.onload = function() {
+             console.log(this.naturalHeight);
+           }
+            img.src = "img/FE15_" + aclass + "_(" + name + ").gif";
+            console.log("imageExists: " + imageExists);
+
+            div = document.getElementById("testpull");
+
+            //img.setAttribute('onerror', "this.onerror=null; this.src='img/Hero.gif'");
+            img.setAttribute('onerror', "this.onerror=null; this.src='img/Generic" + aclass + ".gif'");
+
+            var para = document.createElement("p");
+
+            //para.appendChild(img);
+
+            var element = document.getElementById("div2");
+      //element.appendChild(para);
+
+            //var imageUrl = 'img/FE15_' + aclass + '_(' + name + ').gif';
             td.appendChild(img);
+
+
+
             tr2.appendChild(td);
         }
 
@@ -664,13 +772,28 @@ function tableCreate(array, overlevel, name) {
 
 
     tbl.appendChild(tbdy);
-    body.appendChild(tbl)
+    body.appendChild(tbl);
+
 }
 
 
 
+function checkImage1(src) {
+  var img = new Image();
+  img.onload = function() {
+    // code to set the src on success
 
-//}
+  };
+  img.onerror = function() {
+    // doesn't exist or error loading
+    img.src = 'img/Generic' + newclass + '.gif';
+  };
+
+  img.src = src; // fires off loading of image
+
+
+  return img;
+}
 
 function htmlify(name, id, theclass) {
 
@@ -712,7 +835,10 @@ function htmlify(name, id, theclass) {
 
     //checkImage('img/FE15_' + newclass + '_(' + name + ').gif', function(){ img.src = 'img/FE15_' + newclass + '_(' + name + ').gif'; console.log("good"); }, function(){ img.src = 'img/Generic' + newclass + '.gif' } console.log("bad"); );
 
-    checkImage('img/FE15_' + newclass + '_(' + name + ').gif');
+
+
+
+
     //console.log(name + "'s class is: " + newclass + " and img is: ");
 
 
@@ -732,12 +858,44 @@ function htmlify(name, id, theclass) {
     //console.log("exists is:" + status);
 
 }
+/*
+function loadImage(variable){
+var image = new Image();
+//var url_image = "img/FE15_" + variable + "_(" + name + ").gif";
+var url_image = variable;
+
+var testdiv = document.getElementById("testpull");
+testdiv.appendChild(image);
+
+console.log("url_image: " + url_image);
+
+console.log(image.width);
+
+image.src = url_image;
+
+if (image.width == 0) {
+   return false;
+} else {
+   return true;
+}
+}
+*/
+/*
+function makeGeneric(){
+  console.log(this.src);
+  console.log(this);
+  this.src = "img/Hero.gif";
+}
+*/
+// Sample usage
+
 
 function doesexist(imageSrc, good, bad) {
     var img = new Image();
+    img.src = imageSrc;
     img.onload = good;
     img.onerror = bad;
-    img.src = imageSrc;
+
 }
 
 function yesAmiibo1() {
@@ -976,4 +1134,10 @@ function yesOverclass() {
   function randomInteger(maxExclusive) {
       return Math.floor(Math.random() * maxExclusive);
   }
-  */
+  */function myFunction(){
+  //alert("Test that it works");
+  this.src = "img/Hero.gif"
+  this.innerHTML = " ";
+  //this.refresh;
+  return;
+}

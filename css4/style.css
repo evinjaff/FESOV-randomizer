@@ -1,0 +1,58 @@
+
+/*--------------------------------------------FrameWork------------------------*/
+{
+  font-family: 'PT Sans Caption', sans-serif, 'arial', 'Times New Roman';
+}
+{{ site.baseurl }}sub/page/
+{{ site.baseurl }}sub/sub/page
+/* Error Page */
+.topnav {
+    background-color: #343a40;
+    overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 19px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+    background-color: #1d809f;
+    color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+h1{
+    background-color: rgba(0, 0, 0, 0.15);
+    display: inline;
+    color: #f5f5f5;
+    line-height: 20px; /* 4px +12px + 4px */
+}
+.center {
+    line-height: 2.95;
+}
+
+body{
+    background-image: url(https://78.media.tumblr.com/tumblr_m6qyybDaS11qzw1qyo1_500.gif);
+    background-position: down;
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
