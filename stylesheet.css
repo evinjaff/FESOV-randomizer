@@ -598,7 +598,7 @@ screen and (max-width: 480px) {
 
 .tooltip .tooltiptext {
 	visibility: hidden;
-	width: 120px;
+	width: 200px;
 	background-color: #2b272b;
 	/*color: #f1faee;*/
 	color: #f1faee;

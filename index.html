@@ -9,8 +9,8 @@
 
 
 
-  <script data-main="config.js" src="require.js"></script>
-  <script type="text/javascript" src="config.js""> </script>
+  <script data-main="config-min.js" src="require.js"></script>
+  <script type="text/javascript" src="config-min.js""> </script>
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script type="text/javascript"></script>
 
@@ -23,7 +23,7 @@
   <a id="link "target="_blank" href="https://github.com/evinjaff/FESOV-randomizer/blob/master/readme.md">Read this first!</a>
 </div>
   <br>
-  <h2 id="warning">⚠️WARNING⚠️: Be EXTREMELY careful about reclassing Alm, as you can potentially softlock the game inside dungeons since he will not be able to break boxes when he's reclassed into something other than Fighter, Hero, or Conqueror. Through testing, Celica seems to still be able to break boxes for most sword-based classeso I'll leave a full compatibility chart in the tool instructions for anyone curious.</h2>
+  <h2 id="warning">⚠️WARNING⚠️: Be EXTREMELY careful about reclassing Alm, as you can potentially softlock the game inside dungeons since he will not be able to break boxes when he's reclassed into something other than Fighter, Hero, or Conqueror. Through testing, Celica seems to still be able to break boxes for every class, even ones like Grima that would normally crash the game.</h2>
 <h2>Randomize a Character:</h2>
 <!--
 <link rel="stylesheet" href="print.css" type="text/css" media="print">
@@ -36,6 +36,7 @@
 
 </script>
 
+<div style="text-align: center">
 <select name="values"  id="characters">
   <option value="alm">Alm</option>
   <option value="celica">Celica</option>
@@ -106,7 +107,7 @@
 </div>
 
 <img src="" id="id1"> </img>
-
+</div>
 
 
 <h2>Randomize a Party:</h2>
@@ -119,14 +120,20 @@
 
 </div>
 <br>
+<div style="text-align: center">
 <h3>Class Options</h3>
+</div>
+<div style="text-align: center">
 <input type="checkbox" id="amiibo1"> <div class="tooltip">Amiibo Classes?<span class="tooltiptext">Includes Amiibo classes such as Lords, Robin, Ike</span>
 </div> </input>
 <br>
 <input type="checkbox" id="enemy1"> <div class="tooltip">Enemy Classes?<span class="tooltiptext">Includes enemy classes such as Brigands, Cantors, Witches</span>
 </div></input>
 <br>
-<input type="checkbox" id="busted1"> <div class="tooltip">Broken/Ugly Classes?<span class="tooltiptext">Includes broken classes like Duma and Deimos</span>
+
+
+
+<input type="checkbox" id="busted1"> <div class="tooltip">Broken/Ugly Classes?<span class="tooltiptext">Includes broken classes and classes that would normally look ugly like Duma and Deimos (Broken characters due to potential glitches/Unplayable classes such as Duma, Grima, Boats are untiered, and characters that just don't look nice are appropriately tiered)</span>
 </div> </input>
 <br>
 <input type="checkbox" id="alm1"><div class="tooltip">Alm and Celica Classes?<span class="tooltiptext">Includes Alm and Celica classes (Fighter, Princess, etc.)</span>
@@ -139,6 +146,8 @@
 <div class="tooltip">2 Level Class Organization:
   <span class="tooltiptext">Determines how to randomize classes that only promote once like Mages and Pegasus Knights</span>
 </div>
+
+
 <br>
 
 <input type="radio" id="onetwo1" name="onetwo"><div class="tooltip">Base is 1 and 2<span class="tooltiptext">Mage: Tier 1 and 2 Sage: Tier 3</span>
@@ -149,19 +158,22 @@
 <br></input>
 <br>
 
+
+
 <br>
 <button type="button" id="AlmButton" onclick="Route('Alm')">Randomize Alm's Route</button>
 <button type="button" id="CelicaButton" onclick="Route('Celica')">Randomize Celica's Route</button>
 <button type="button" id="Both" onclick="Route('Both')">Randomize Both Routes</button>
+</div>
 
-<div id="export" hidden>
+<div id="export" hidden style="text-align: center">
 <br>
-<a href="" id="print-button" onclick="printPage()" style="hidden">Export Class List (via Print)</a>
+<a href="" id="print-button" onclick="printPage()" style="hidden" style="text-align: center">Export Class List (via Print)</a>
 </div>
 
 <br>
 
-<div id="reroll" hidden>
+<div id="reroll" hidden style="text-align: center">
 <a href="index.html"> Retry?</a>
 </div>
 <!-- Block 1
