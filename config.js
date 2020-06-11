@@ -12,6 +12,8 @@ document.getElementsByTagName('head')[0].appendChild(script);
 var almdone = false;
 var celicadone = false;
 
+console.log("almdone: " + almdone + " celicadone: " + celicadone)
+
 var almchars = [Alm, Lukas, Gray, Tobin, Kliff, Faye, Silque, Clair, Clive, Forsyth, Python, Luthier, Mathilda, Delthea, Tatiana, Zeke, Mycen]
 
 var Alm = {
@@ -609,36 +611,27 @@ function Route(option) {
 
         bothbutton.style.display = 'none';
         console.log("almdone: " + almdone);
+          console.log("almdone: " + almdone);
+            console.log("celicadone: " + celicadone);
 
-        if (almdone == false && celicadone == false) {
-            Route('Alm');
-            Route('Celica');
-            //break;
-        }
         if(celicadone == true && almdone == false){
           Route('Alm');
         }
-        if(celicadone == false && almdone == true){
+        else if (celicadone == false && almdone == true){
           Route('Celica');
+        }
+        else{
+          console.log("almdone: " + almdone);
+            Route('Alm');
+            console.log("almdone: " + almdone);
+            Route('Celica');
         }
 
 
     }
-    var all = document.getElementsByTagName("td");
-    arraypush(document.getElementsByTagName("tr"), all);
-
-    console.log(all);
-
-    for (var i=0, max=all.length; i < max; i++) {
-      //console.log(all);
-     // Do something with the element here
-     if(all[i].innerHTML == ""){
 
 
-       var element = all[i];
-       element.parentNode.removeChild(element);
-     }
-    }
+  
 
 }
 
