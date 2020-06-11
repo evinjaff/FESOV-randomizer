@@ -1,1 +1,594 @@
-var script=document.createElement("script");script.src="https://code.jquery.com/jquery-3.5.1.min.js",document.getElementsByTagName("head")[0].appendChild(script);var almdone=!1,celicadone=!1;console.log("almdone: "+almdone+" celicadone: "+celicadone);var almchars=[Alm,Lukas,Gray,Tobin,Kliff,Faye,Silque,Clair,Clive,Forsyth,Python,Luthier,Mathilda,Delthea,Tatiana,Zeke,Mycen],Alm={name:"Alm",gender:"Male",tier:"1"},Lukas={name:"Lukas",gender:"Male",tier:"1"},Gray={name:"Gray",gender:"Male",tier:"1"},Tobin={name:"Tobin",gender:"Male",tier:"1"},Kliff={name:"Kliff",gender:"Male",tier:"1"},Faye={name:"Faye",gender:"Female",tier:"1"},Silque={name:"Silque",gender:"Female",tier:"1"},Clair={name:"Clair",gender:"Female",tier:"1"},Clive={name:"Clive",gender:"Male",tier:"1"},Forsyth={name:"Forsyth",gender:"Male",tier:"1"},Python={name:"Python",gender:"Male",tier:"1"},Luthier={name:"Luthier",gender:"Male",tier:"1"},Mathilda={name:"Mathilda",gender:"Female",tier:"2"},Delthea={name:"Delthea",gender:"Female",tier:"1"},Tatiana={name:"Tatiana",gender:"Female",tier:"2"},Zeke={name:"Zeke",gender:"Female",tier:"3"},Mycen={name:"Mycen",gender:"Male",tier:"3"},celicachars=[Celica,Mae,Boey,Genny,Saber,Valbar,Kamui,Leon,Palla,Catria,Atlas,Jesse,Est,Nomah,Conrad],Celica={name:"Celica",gender:"Female",tier:"1"},Mae={name:"Mae",gender:"Female",tier:"1"},Boey={name:"Boey",gender:"Male",tier:"1"},Genny={name:"Genny",gender:"Female",tier:"1"},Saber={name:"Saber",gender:"Male",tier:"1"},Valbar={name:"Valbar",gender:"Male",tier:"2"},Kamui={name:"Kamui",gender:"Male",tier:"1"},Leon={name:"Leon",gender:"Male",tier:"1"},Palla={name:"Palla",gender:"Female",tier:"1"},Catria={name:"Catria",gender:"Female",tier:"1"},Atlas={name:"Atlas",gender:"Male",tier:"1"},Jesse={name:"Jesse",gender:"Male",tier:"1"},Sonya={name:"Sonya",gender:"Female",tier:"1"},Deen={name:"Deen",gender:"Male",tier:"2"},Est={name:"Est",gender:"Female",tier:"1"},Nomah={name:"Nomah",gender:"Male",tier:"2"},Conrad={name:"Conrad",gender:"Male",tier:"2"};function randomize(){var e,n=(e=document.getElementById("characters")).options[e.selectedIndex].text,t=(e=document.getElementById("tiers")).options[e.selectedIndex].value;playerclass=chooseclass(t,yesAmiibo(),yesEnemy(),yesBroken(),yesAlm(),yesTier1()),htmladd(n),document.getElementById("p1").innerHTML=playerclass;document.getElementById("p1")}function htmladd(e){newclass=spacefixer(playerclass);var n=document.getElementById("id1"),t=new Image;t.onload=function(){n.src=this.src};checkImage("img/FE15_"+newclass+"_("+e+").gif",function(){t.src="img/FE15_"+newclass+"_("+e+").gif"},function(){t.src="img/Generic"+newclass+".gif"});console.log("exists is:0"),t.src="img/FE15_"+playerclass+"_("+e+").gif"}function checkImage(e,n,t){var a=new Image;a.onload=n,a.onerror=t,a.src=e}function spacefixer(e){var n=e;try{n=e.replace(" ","_")}catch(e){}return n}function yesAmiibo(){return document.getElementById("amiibo").checked}function yesEnemy(){return document.getElementById("enemy").checked}function yesAlm(){return document.getElementById("alm").checked}function yesTier1(){return document.getElementById("one").checked}function yesBroken(){return document.getElementById("busted").checked}function chooseclass(e,n,t,a,r,l){var i=a,d=t,c=n,o=r,m=l,s=["Mage (Male)","Pegasus Knight","Cleric","Mage (Female)"],u=["Falcon Knight","Saint","Sage","Priestess"],g=[];return 1==e&&arraypush(s,g=["Villager","Archer","Cavalier","Soldier","Mercenary","Boy","Girl"]),2==e&&(arraypush(1==m?u:s,g=["Myrmidon","Sniper","Paladin","Knight"]),1==d&&arraypush(enemytwo,g)),3==e&&(arraypush(u,g=["Dread Fighter","Baron","Bow Knight","Gold Knight"]),1==d&&arraypush(["Mila Apostole","White Dragon","Duma Apostole","Dagon","Fire Dragon","Guardian"],g)),4==e&&(g=["Harrier","Skogul","Yasha","Exemplar","Guru","Enchantress","Oliphantier","Spartan"]),1==c&&arraypush(["Lord (Marth)","Lord (F. Corrin)","Lord (Roy)","Lord (Lucina)","Hero (Ike)","Tactitian (Robin)"],g),1==d&&arraypush(["Brigand","Arcanist","Cantor","Witch"],g),1==i&&arraypush(broken,g),1==o&&(e<=2&&arraypush(["Fighter","Priestess (Celica)"],g),3==e&&arraypush(["Hero (Alm)","Princess"],g),4==e&&arraypush(["Conqueror","Rigain"],g)),g[randint(g.length)]}function arraypush(e,n){for(i=0;i<e.length;i++)n.push(e[i])}function randint(e){return Math.floor(Math.random()*e)}function getSpritePath(e){return"img/"+e}function Route(e){var n=document.getElementById("CelicaButton"),t=document.getElementById("AlmButton"),a=document.getElementById("Both");if(1==yesOverclass())var r=5;else r=4;if("Alm"==e){document.getElementById("reroll").hidden=!1;for(var l=2;l<almchars.length+2;l++){csstring=almchars[l-2].name;var i=document.createTextNode(csstring+": "),d=document.createElement("table"),c=document.createElement("tr");document.getElementById("div2").appendChild(i),document.getElementById("div2").appendChild(d),document.getElementById("div2").appendChild(c);for(var o=[],m=almchars[l-2].tier;m<r;m++){document.createElement("td").id="tdCelica",cstring=almchars[l-2].name;var s=chooseclass(m,yesAmiibo1(),yesEnemy1(),yesBroken1(),yesAlm1(),yesTier11());o[m]=s;i="id"+l.toString()}t.style.display="none",document.getElementById("export").hidden=!1,tableCreate(o,yesOverclass(),almchars[l-2].name),document.getElementById("div2").appendChild(document.createElement("br"))}t.style.display="none",almdone=!0}if("Celica"==e){document.getElementById("reroll").hidden=!1,document.getElementById("deen").checked&&celicachars.splice(12,0,Deen),document.getElementById("sonya").checked&&celicachars.splice(12,0,Sonya),document.getElementById("both").checked&&(celicachars.splice(12,0,Deen),celicachars.splice(12,0,Sonya));for(l=2;l<celicachars.length+2;l++){csstring=celicachars[l-2].name;i=document.createTextNode(csstring+": "),d=document.createElement("table"),c=document.createElement("tr");document.getElementById("div2").appendChild(i),document.getElementById("div2").appendChild(d),document.getElementById("div2").appendChild(c);for(o=[],m=celicachars[l-2].tier;m<r;m++){document.createElement("td").id="tdCelica",cstring=celicachars[l-2].name;s=chooseclass(m,yesAmiibo1(),yesEnemy1(),yesBroken1(),yesAlm1(),yesTier11());o[m]=s;i="id"+l.toString();t.style.display="none",n.style.display="none"}tableCreate(o,yesOverclass(),celicachars[l-2].name),document.getElementById("div2").appendChild(document.createElement("br"))}document.getElementById("export").hidden=!1,t.style.display="none",n.style.display="none",celicadone=!0}"Both"==e&&(a.style.display="none",console.log("almdone: "+almdone),console.log("almdone: "+almdone),console.log("celicadone: "+celicadone),1==celicadone&&0==almdone?Route("Alm"):0==celicadone&&1==almdone?Route("Celica"):(console.log("almdone: "+almdone),Route("Alm"),console.log("almdone: "+almdone),Route("Celica")))}function tableCreate(e,n,t){var a=document.getElementById("div2"),r=document.createElement("table");r.style.width="100%",r.id="test",r.setAttribute("class","fixed");var l=document.createElement("tbody");l.id="test";var i=document.createElement("tr");if(i.id="test",n)var d=5;else d=4;for(var c=1;c<d;c++){if(null!=e[c])(u=document.createElement("td")).id="test",u.innerHTML=e[c],u.appendChild(document.createTextNode(" ")),i.appendChild(u);else(u=document.createElement("td")).innerHTML="N/A (Starts at a higher tier)",u.appendChild(document.createTextNode(" ")),i.appendChild(u)}l.appendChild(i);var o=document.createElement("tr");if(o.id="tr2",n)d=5;else d=4;for(c=1;c<d;c++){if(null!=e[c]){(u=document.createElement("td")).innerHTML=" ",u.id="test";var m=spacefixer(e[c]),s=document.createElement("img");(s=document.createElement("img")).id=t,s.src="img/FE15_"+m+"_("+t+").gif";(s=new Image).onload=function(){},s.src="img/FE15_"+m+"_("+t+").gif",div=document.getElementById("testpull"),s.setAttribute("onerror","this.onerror=null; this.src='img/Generic"+m+".gif'");document.createElement("p"),document.getElementById("div2");u.appendChild(s),o.appendChild(u)}else{var u;(u=document.createElement("td")).innerHTML=" ",u.appendChild(document.createTextNode(" ")),o.appendChild(u)}l.appendChild(o)}r.appendChild(l),a.appendChild(r)}function checkImage1(e){var n=new Image;return n.onload=function(){},n.onerror=function(){n.src="img/Generic"+newclass+".gif"},n.src=e,n}function htmlify(e,n,t){spacefixer(t);var a=document.createElement("p"),r=document.createTextNode(t),l=(document.createElement("br"),document.createElement("img"));l.id=n,a.appendChild(r),a.appendChild(l),document.getElementById("div2").appendChild(a)}function doesexist(e,n,t){var a=new Image;a.src=e,a.onload=n,a.onerror=t}function yesAmiibo1(){return document.getElementById("amiibo1").checked}function yesEnemy1(){return document.getElementById("enemy1").checked}function yesAlm1(){return document.getElementById("alm1").checked}function yesTier11(){return document.getElementById("one1").checked}function yesBroken1(){return document.getElementById("busted1").checked}function yesOverclass(){return document.getElementById("overclass1").checked}function printPage(){return removeAll(),window.print(),!1}function removeAll(){document.getElementById("clutter"),clutter.remove()}function myFunction(){this.src="img/Hero.gif",this.innerHTML=" "}
+var script = document.createElement('script');
+script.src = 'https://code.jquery.com/jquery-3.5.1.min.js';
+document.getElementsByTagName('head')[0].appendChild(script);
+var almdone = false;
+var celicadone = false;
+console.log("almdone: " + almdone + " celicadone: " + celicadone)
+var almchars = [Alm, Lukas, Gray, Tobin, Kliff, Faye, Silque, Clair, Clive, Forsyth, Python, Luthier, Mathilda, Delthea, Tatiana, Zeke, Mycen]
+var Alm = {
+	name: "Alm",
+	gender: "Male",
+	tier: '1'
+}
+var Lukas = {
+	name: "Lukas",
+	gender: "Male",
+	tier: '1'
+}
+var Gray = {
+	name: "Gray",
+	gender: "Male",
+	tier: '1'
+}
+var Tobin = {
+	name: "Tobin",
+	gender: "Male",
+	tier: '1'
+}
+var Kliff = {
+	name: "Kliff",
+	gender: "Male",
+	tier: '1'
+}
+var Faye = {
+	name: "Faye",
+	gender: "Female",
+	tier: '1'
+}
+var Silque = {
+	name: "Silque",
+	gender: "Female",
+	tier: '1'
+}
+var Clair = {
+	name: "Clair",
+	gender: "Female",
+	tier: '1'
+}
+var Clive = {
+	name: "Clive",
+	gender: "Male",
+	tier: '1'
+}
+var Forsyth = {
+	name: "Forsyth",
+	gender: "Male",
+	tier: '1'
+}
+var Python = {
+	name: "Python",
+	gender: "Male",
+	tier: '1'
+}
+var Luthier = {
+	name: "Luthier",
+	gender: "Male",
+	tier: '1'
+}
+var Mathilda = {
+	name: "Mathilda",
+	gender: "Female",
+	tier: '2'
+}
+var Delthea = {
+	name: "Delthea",
+	gender: "Female",
+	tier: '1'
+}
+var Tatiana = {
+	name: "Tatiana",
+	gender: "Female",
+	tier: '2'
+}
+var Zeke = {
+	name: "Zeke",
+	gender: "Female",
+	tier: '3'
+}
+var Mycen = {
+	name: "Mycen",
+	gender: "Male",
+	tier: '3'
+}
+var celicachars = [Celica, Mae, Boey, Genny, Saber, Valbar, Kamui, Leon, Palla, Catria, Atlas, Jesse, Est, Nomah, Conrad];
+var Celica = {
+	name: "Celica",
+	gender: "Female",
+	tier: '1'
+}
+var Mae = {
+	name: "Mae",
+	gender: "Female",
+	tier: '1'
+}
+var Boey = {
+	name: "Boey",
+	gender: "Male",
+	tier: '1'
+}
+var Genny = {
+	name: "Genny",
+	gender: "Female",
+	tier: '1'
+}
+var Saber = {
+	name: "Saber",
+	gender: "Male",
+	tier: '1'
+}
+var Valbar = {
+	name: "Valbar",
+	gender: "Male",
+	tier: '2'
+}
+var Kamui = {
+	name: "Kamui",
+	gender: "Male",
+	tier: '1'
+}
+var Leon = {
+	name: "Leon",
+	gender: "Male",
+	tier: '1'
+}
+var Palla = {
+	name: "Palla",
+	gender: "Female",
+	tier: '1'
+}
+var Catria = {
+	name: "Catria",
+	gender: "Female",
+	tier: '1'
+}
+var Atlas = {
+	name: "Atlas",
+	gender: "Male",
+	tier: '1'
+}
+var Jesse = {
+	name: "Jesse",
+	gender: "Male",
+	tier: '1'
+}
+var Sonya = {
+	name: "Sonya",
+	gender: "Female",
+	tier: '1'
+}
+var Deen = {
+	name: "Deen",
+	gender: "Male",
+	tier: '2'
+}
+var Est = {
+	name: "Est",
+	gender: "Female",
+	tier: '1'
+}
+var Nomah = {
+	name: "Nomah",
+	gender: "Male",
+	tier: '2'
+}
+var Conrad = {
+	name: "Conrad",
+	gender: "Male",
+	tier: '2'
+}
+
+function randomize() {
+	var e = document.getElementById("characters");
+	var charname = e.options[e.selectedIndex].text;
+	var e = document.getElementById("tiers");
+	var level = e.options[e.selectedIndex].value;
+	playerclass = chooseclass(level, yesAmiibo(), yesEnemy(), yesBroken(), yesAlm(), yesTier1(), yesUgly());
+	htmladd(charname);
+	document.getElementById("p1").innerHTML = playerclass;
+	var child = document.getElementById("p1");
+	return;
+}
+
+function htmladd(name) {
+	newclass = spacefixer(playerclass);
+	var _img = document.getElementById('id1');
+	var newImg = new Image;
+	newImg.onload = function() {
+		_img.src = this.src;
+	}
+	var status = 0;
+	var exists = checkImage('img/FE15_' + newclass + '_(' + name + ').gif', function() {
+		newImg.src = 'img/FE15_' + newclass + '_(' + name + ').gif';
+	}, function() {
+		newImg.src = 'img/Generic' + newclass + '.gif';
+	});
+	console.log("exists is:" + status);
+	newImg.src = 'img/FE15_' + playerclass + '_(' + name + ').gif';
+	return;
+}
+
+function checkImage(imageSrc, good, bad) {
+	var img = new Image();
+	img.onload = good;
+	img.onerror = bad;
+	img.src = imageSrc;
+	return;
+}
+
+function spacefixer(name) {
+	var newname = name;
+	try {
+		newname = name.replace(" ", "_");
+	} catch (err) {}
+	return newname;
+}
+
+function yesAmiibo() {
+	return document.getElementById("amiibo").checked;
+}
+
+function yesEnemy() {
+	return document.getElementById("enemy").checked;
+}
+
+function yesAlm() {
+	return document.getElementById("alm").checked;
+}
+
+function yesTier1() {
+	return document.getElementById("one").checked;
+}
+
+function yesBroken() {
+	return document.getElementById("busted").checked;
+}
+
+function Ugly() {
+	return document.getElementById("ugly").checked;
+}
+
+
+function chooseclass(level, yesamiibo, yesenemy, yesbroken, yesalm, yestier1, yesugly) {
+	var isBroken = yesbroken;
+	var isEnemy = yesenemy;
+	var isAmiibo = yesamiibo;
+	var isAlm = yesalm;
+	var isOne = yestier1;
+  var isUgly = yesugly;
+
+	var amiibo = ["Lord (Marth)", "Lord (F. Corrin)", "Lord (Roy)", "Lord (Lucina)", "Hero (Ike)", "Tactitian (Robin)"];
+	var oneandtwo = ["Mage (Male)", "Pegasus Knight", "Cleric", "Mage (Female)"];
+	var almcelica1 = ["Fighter", "Priestess (Celica)"]
+	var almcelica2 = ["Hero (Alm)", "Princess"]
+	var almcelica3 = ["Conqueror", "Rigain"]
+	var levelone = ["Villager", "Archer", "Cavalier", "Soldier", "Mercenary", "Boy", "Girl"];
+	var leveltwo = ["Myrmidon", "Sniper", "Paladin", "Knight", ];
+	var levelthree = ["Dread Fighter", "Baron", "Bow Knight", "Gold Knight"];
+	var onetwothree = ["Falcon Knight", "Saint", "Sage", "Priestess"];
+	var enemyone = ["Mogall", "Brigand"];
+  var enemytwo = ["Mogall", "Brigand"];
+	var enemyflex = [ "Arcanist", "Cantor", "Witch"];
+	var enemythree = ["Dagon", "Fire Dragon", "Fiend", "Guardian", "Balor"];
+	var overclass = ["Harrier", "Skogul", "Yasha", "Exemplar", "Guru", "Enchantress", "Oliphantier", "Spartan"];
+	var brokenuni = ["Fell Dragon", "God"];
+
+	var uglyone = ["Gargoyle", "Entombed (Normal)", "Revenant (Normal)", "Bonewalker"];
+	var uglythree = ["Deathgoyle", "Lich", "Garuda", "Deimos", "Vestal", "Mila Apostole", "White Dragon", "Duma Apostole"];
+	var uglytwo = ["Entombed (Numbing)", "Entombed (Venin)", "Revenant (Numbing)",  "Revenant (Numbing)", "Titan", "Lich", "Necodragon", "Fafnir", "Bonewalker"];
+
+	var classledger = [];
+
+	if (level == 1) {
+		classledger = levelone;
+		arraypush(oneandtwo, classledger);
+    if (yesugly == true) {
+      arraypush(uglyone, classledger);
+    }
+	}
+	if (level == 2) {
+		classledger = leveltwo;
+		if (isOne == true) {
+			arraypush(onetwothree, classledger);
+		} else {
+			arraypush(oneandtwo, classledger);
+		}
+		if (isEnemy == true) {
+			arraypush(enemytwo, classledger);
+		}
+    if (yesugly == true) {
+      arraypush(uglytwo, classledger);
+    }
+	}
+	if (level == 3) {
+		classledger = levelthree;
+		arraypush(onetwothree, classledger);
+		if (isEnemy == true) {
+			arraypush(enemythree, classledger);
+		}
+    if (yesugly == true) {
+      arraypush(uglythree, classledger);
+    }
+	}
+	if (level == 4) {
+		classledger = overclass;
+	}
+	if (isAmiibo == true) {
+		arraypush(amiibo, classledger);
+	}
+	if (isEnemy == true) {
+		arraypush(enemyflex, classledger);
+	}
+	if (isBroken == true) {
+		arraypush(brokenuni, classledger);
+	}
+
+	if (isAlm == true) {
+		if (level <= 2) {
+			arraypush(almcelica1, classledger);
+		}
+		if (level == 3) {
+			arraypush(almcelica2, classledger);
+		}
+		if (level == 4) {
+			arraypush(almcelica3, classledger);
+		}
+	}
+	return classledger[randint(classledger.length)];
+}
+
+function arraypush(array, other) {
+	for (i = 0; i < array.length; i++) {
+		other.push(array[i]);
+	}
+}
+
+function randint(max) {
+	return Math.floor(Math.random() * max);
+}
+
+function getSpritePath(pclass) {
+	var path = "img/";
+	var name = pclass;
+	return path + name;
+}
+
+function Route(option) {
+	var celicabutton = document.getElementById("CelicaButton");
+	var almbutton = document.getElementById("AlmButton");
+	var bothbutton = document.getElementById("Both");
+	if (yesOverclass() == true) {
+		var final = 5;
+	} else {
+		var final = 4;
+	}
+	if (option == 'Alm') {
+		document.getElementById("reroll").hidden = false;
+		for (var i = 2; i < almchars.length + 2; i++) {
+			csstring = almchars[i - 2].name;
+			var id = document.createTextNode(csstring + ": ");
+			var tablehead = document.createElement("table");
+			var row = document.createElement("tr");
+			document.getElementById("div2").appendChild(id);
+			document.getElementById("div2").appendChild(tablehead);
+			document.getElementById("div2").appendChild(row);
+			var arr = [];
+			for (var j = almchars[i - 2].tier; j < final; j++) {
+				var item = document.createElement("td");
+				item.id = "tdCelica";
+				cstring = almchars[i - 2].name;
+				var myclass = chooseclass(j, yesAmiibo1(), yesEnemy1(), yesBroken1(), yesAlm1(), yesTier11(), yesUgly1());
+				arr[j] = myclass;
+				var id = 'id' + i.toString();
+			}
+			almbutton.style.display = 'none';
+			var ex = document.getElementById("export");
+			ex.hidden = false;
+			tableCreate(arr, yesOverclass(), almchars[i - 2].name);
+			document.getElementById("div2").appendChild(document.createElement("br"));
+		}
+		almbutton.style.display = 'none';
+		almdone = true;
+	}
+	if (option == 'Celica') {
+		document.getElementById("reroll").hidden = false;
+		if (document.getElementById("deen").checked) {
+			celicachars.splice(12, 0, Deen);
+		}
+		if (document.getElementById("sonya").checked) {
+			celicachars.splice(12, 0, Sonya);
+		}
+		if (document.getElementById("both").checked) {
+			celicachars.splice(12, 0, Deen);
+			celicachars.splice(12, 0, Sonya);
+		}
+		for (var i = 2; i < celicachars.length + 2; i++) {
+			csstring = celicachars[i - 2].name;
+			var id = document.createTextNode(csstring + ": ");
+			var tablehead = document.createElement("table");
+			var row = document.createElement("tr");
+			document.getElementById("div2").appendChild(id);
+			document.getElementById("div2").appendChild(tablehead);
+			document.getElementById("div2").appendChild(row);
+			var arr = [];
+			for (var j = celicachars[i - 2].tier; j < final; j++) {
+				var item = document.createElement("td");
+				item.id = "tdCelica";
+				cstring = celicachars[i - 2].name;
+				var myclass = chooseclass(j, yesAmiibo1(), yesEnemy1(), yesBroken1(), yesAlm1(), yesTier11(), yesUgly1());
+				arr[j] = myclass;
+				var id = 'id' + i.toString();
+				almbutton.style.display = 'none';
+				celicabutton.style.display = 'none';
+			}
+			tableCreate(arr, yesOverclass(), celicachars[i - 2].name);
+			document.getElementById("div2").appendChild(document.createElement("br"));
+		}
+		var ex = document.getElementById("export");
+		ex.hidden = false;
+		almbutton.style.display = 'none';
+		celicabutton.style.display = 'none';
+		celicadone = true;
+	}
+	if (option == 'Both') {
+		bothbutton.style.display = 'none';
+		console.log("almdone: " + almdone);
+		console.log("almdone: " + almdone);
+		console.log("celicadone: " + celicadone);
+		if (celicadone == true && almdone == false) {
+			Route('Alm');
+		} else if (celicadone == false && almdone == true) {
+			Route('Celica');
+		} else {
+			console.log("almdone: " + almdone);
+			Route('Alm');
+			console.log("almdone: " + almdone);
+			Route('Celica');
+		}
+	}
+}
+
+function tableCreate(array, overlevel, name) {
+	var body = document.getElementById('div2');
+	var tbl = document.createElement('table');
+	tbl.style.width = '100%';
+	tbl.id = "test";
+	tbl.setAttribute('class', 'fixed');
+	var tbdy = document.createElement('tbody');
+	tbdy.id = "test";
+	var tr = document.createElement('tr');
+	tr.id = "test";
+	if (overlevel) {
+		var level = 5;
+	} else {
+		var level = 4;
+	}
+	for (var j = 1; j < level; j++) {
+		if (array[j] != null) {
+			var td = document.createElement('td');
+			td.id = "test";
+			td.innerHTML = array[j];
+			td.appendChild(document.createTextNode('\u0020'));
+			tr.appendChild(td);
+		} else {
+			var td = document.createElement('td');
+			td.innerHTML = "N/A (Starts at a higher tier)";
+			td.appendChild(document.createTextNode('\u0020'));
+			tr.appendChild(td);
+		}
+	}
+	tbdy.appendChild(tr);
+	var tr2 = document.createElement('tr');
+	tr2.id = "tr2";
+	if (overlevel) {
+		var level = 5;
+	} else {
+		var level = 4;
+	}
+	for (var j = 1; j < level; j++) {
+		if (array[j] != null) {
+			var td = document.createElement('td');
+			td.innerHTML = " ";
+			td.id = "test";
+			var aclass = spacefixer(array[j]);
+			var img = document.createElement('img');
+			var img = document.createElement("img");
+			img.id = name;
+			img.src = 'img/FE15_' + aclass + '_(' + name + ').gif';
+			var imageExists = false;
+			var img = new Image();
+			img.onload = function() {}
+			img.src = "img/FE15_" + aclass + "_(" + name + ").gif";
+			div = document.getElementById("testpull");
+			img.setAttribute('onerror', "this.onerror=null; this.src='img/Generic" + aclass + ".gif'");
+			var para = document.createElement("p");
+			var element = document.getElementById("div2");
+			td.appendChild(img);
+			tr2.appendChild(td);
+		} else {
+			var td = document.createElement('td');
+			td.innerHTML = " ";
+			td.appendChild(document.createTextNode('\u0020'));
+			tr2.appendChild(td);
+		}
+		tbdy.appendChild(tr2);
+	}
+	tbl.appendChild(tbdy);
+	body.appendChild(tbl);
+}
+
+function checkImage1(src) {
+	var img = new Image();
+	img.onload = function() {};
+	img.onerror = function() {
+		img.src = 'img/Generic' + newclass + '.gif';
+	};
+	img.src = src;
+	return img;
+}
+
+function htmlify(name, id, theclass) {
+	var myclass = theclass;
+	var newclass = spacefixer(theclass);
+	var printclass = theclass;
+	var para = document.createElement("p");
+	var aclass = document.createTextNode(theclass);
+	var br = document.createElement("br");
+	var img = document.createElement("img");
+	img.id = id;
+	para.appendChild(aclass);
+	para.appendChild(img);
+	var element = document.getElementById("div2");
+	element.appendChild(para);
+}
+
+function doesexist(imageSrc, good, bad) {
+	var img = new Image();
+	img.src = imageSrc;
+	img.onload = good;
+	img.onerror = bad;
+}
+
+function yesAmiibo1() {
+	return document.getElementById("amiibo1").checked;
+}
+
+function yesEnemy1() {
+	return document.getElementById("enemy1").checked;
+}
+
+function yesAlm1() {
+	return document.getElementById("alm1").checked;
+}
+
+function yesTier11() {
+	return document.getElementById("one1").checked;
+}
+
+function yesBroken1() {
+	return document.getElementById("busted1").checked;
+}
+
+function yesOverclass() {
+	return document.getElementById("overclass1").checked;
+}
+function yesUgly1() {
+	return document.getElementById("ugly1").checked;
+}
+
+function printPage() {
+	removeAll();
+	window.print();
+	return false;
+}
+
+function removeAll() {
+	document.getElementById("clutter");
+	clutter.remove();
+	return;
+}
+
+function myFunction() {
+	this.src = "img/Hero.gif"
+	this.innerHTML = " ";
+	return;
+}
