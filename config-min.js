@@ -189,6 +189,10 @@ function randomize() {
 	return;
 }
 
+function yesUgly(){
+  return document.getElementById("ugly").checked;
+}
+
 function htmladd(name) {
 	newclass = spacefixer(playerclass);
 	var _img = document.getElementById('id1');
