@@ -4,8 +4,9 @@ Current Version: 1.1 (Ugly and Broken Divorce Edition)
 ## 1.1 Updates:
 
 - Updated documentation/guide to be more helpful
-- Split Ugly classes vs mean classes
+- Split Ugly classes and broken classes
 - Fixed bugs relating to generating randomization for both parties
+- Added more Animated GIF Sprites
 
 ## WTF is this?/What is this for?
 
