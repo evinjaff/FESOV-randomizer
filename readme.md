@@ -1,12 +1,11 @@
 # Fire Emblem Echoes: Shadows of Valentia Randomizer
 Current Version: 1.1 (Ugly and Broken Divorce Edition) 
 
-## 1.1 Updates:
+## 1.2 Updates:
 
-- Updated documentation/guide to be more helpful
-- Split Ugly classes and broken classes
-- Fixed bugs relating to generating randomization for both parties
-- Added more Animated GIF Sprites
+- Crushed some bugs!
+- Allowed unselecting of base classes with warning
+- Updated documentation and manuals
 
 ## WTF is this?/What is this for?
 
@@ -203,11 +202,7 @@ I'm working on two main things: One, I'm grabbing game asset data and sifting th
 
 Yes! Thank you for asking. Below are some rulesets I typed up that you might enjoy using:
 
-[Vanilla Iron Man](https://evinjaff.github.io/FESOV-randomizer/rules/VanillaIronMan.pdf)
-
-[Bad Guy Run](https://evinjaff.github.io/FESOV-randomizer/rules/BadGuy.pdf)
-
-[]()
+[Vanilla Iron Man](https://evinjaff.github.io/FESOV-randomizer/rules/VanillaIronMan.pdf)		[Bad Guy Run](https://evinjaff.github.io/FESOV-randomizer/rules/BadGuy.pdf)		[Complete Chaos](https://evinjaff.github.io/FESOV-randomizer/rules/CompleteChaos.pdf)		[Smash Emblem](https://evinjaff.github.io/FESOV-randomizer/rules/SmashEmblem.pdf)		[Base Class Run](https://evinjaff.github.io/FESOV-randomizer/rules/NoPromote.pdf)
 
 # I like this but I think you should do/change xyz..
 
