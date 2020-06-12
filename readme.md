@@ -203,6 +203,12 @@ I'm working on two main things: One, I'm grabbing game asset data and sifting th
 
 Yes! Thank you for asking. Below are some rulesets I typed up that you might enjoy using:
 
+[Vanilla Iron Man](https://evinjaff.github.io/FESOV-randomizer/rules/Vanilla%20Iron%20Man%20Run.pdf])
+
+[No-Promote Run](https://evinjaff.github.io/FESOV-randomizer/rules/Vanilla%20Iron%20Man%20Run.pdf])
+
+
+
 # I like this but I think you should do/change xyz..
 
 Thanks for your suggestion! If you think there's something I should change, feel free to submit an issue or email me. I know that there's a lot of stuff that I haven't done efficiently since most of my experience is with Java, so I wrote a lot of my JS and JS libraries so I mostly wrote this in pure JavaScript with no additional packages or libraries as they ended up being a little more difficult to implement than I thought. In the future though, I do hope to genericize this 

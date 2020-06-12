@@ -87,9 +87,11 @@
 </select>
 
 <br>
-
 <br>
-
+<h3>Class Options (Pick at least one)</h3>
+<input type="checkbox" checked="checked" id="base"> <div class="tooltip">Standard Classes?<span class="tooltiptext">Includes standard classes such as Archer, Cavalier, Baron</span>
+</div> </input>
+<br>
 <input type="checkbox" id="amiibo"> <div class="tooltip">Amiibo Classes?<span class="tooltiptext">Includes Amiibo classes such as Lords, Robin, Ike</span>
 </div> </input>
 <br>
@@ -111,24 +113,15 @@
 </div>
 <br>
 
-<input type="radio" id="onetwo" name="onetwo"><div class="tooltip">Base is 1 and 2<span class="tooltiptext">Mage: Tier 1 and 2 Sage: Tier 3</span>
+<input checked type="radio" id="onetwo" name="onetwo"><div class="tooltip">Base is 1 and 2<span class="tooltiptext">Mage: Tier 1 and 2 Sage: Tier 3</span>
 </div>
 <br></input>
-<input type="radio" id="one" name="onetwo" checked="checked"><div class="tooltip">Base is 1<span class="tooltiptext">Mage: Tier 1 Sage: Tier 2 and 3</span>
+<input type="radio" id="one" name="onetwo" ><div class="tooltip">Base is 1<span class="tooltiptext">Mage: Tier 1 Sage: Tier 2 and 3</span>
 </div>
 <br></input>
 <br>
 
-<!--
-<input type="radio" id="onetwo">onetwo
-<br>
-<input type="radio" id="one">one
-<br>
-<input type="radio" id="onetwo" name="onetwo" value="male">
-  <label for="male">Male</label><br>
-  <input type="radio" id="one" name="onetwo" value="female">
-  <label for="female">Female</label><br>
--->
+
 <button type="button" onclick="randomize()">Randomize Individual Character</button>
 <br>
 
@@ -151,9 +144,12 @@
 </div>
 <br>
 <div style="text-align: center">
-<h3>Class Options</h3>
+<h3>Class Options (Pick at least one)</h3>
 </div>
 <div style="text-align: center">
+  <input type="checkbox" checked="checked" id="base1"> <div class="tooltip">Standard Classes?<span class="tooltiptext">Includes standard classes such as Archer, Cavalier, Baron</span>
+  </div> </input>
+  <br>
 <input type="checkbox" id="amiibo1"> <div class="tooltip">Amiibo Classes?<span class="tooltiptext">Includes Amiibo classes such as Lords, Robin, Ike</span>
 </div> </input>
 <br>

@@ -3,7 +3,6 @@ script.src = 'https://code.jquery.com/jquery-3.5.1.min.js';
 document.getElementsByTagName('head')[0].appendChild(script);
 var almdone = false;
 var celicadone = false;
-console.log("almdone: " + almdone + " celicadone: " + celicadone)
 var almchars = [Alm, Lukas, Gray, Tobin, Kliff, Faye, Silque, Clair, Clive, Forsyth, Python, Luthier, Mathilda, Delthea, Tatiana, Zeke, Mycen]
 var Alm = {
 	name: "Alm",
@@ -178,11 +177,29 @@ var Conrad = {
 }
 
 function randomize() {
+  var truths = [yesAmiibo(), yesEnemy(), yesBroken(), yesAlm(), yesTier1(), yesUgly(), yesBase()];
+  var noinput = true;
+  var anybad = true;
+  for(var i=0;i<truths.length;i++){
+    if(!truths[i]){
+
+
+    }
+    else{
+      anybad = false;
+    }
+  }
+  if(anybad){
+   alert("Error: no class selected");
+   return;
+  }
+
+
 	var e = document.getElementById("characters");
 	var charname = e.options[e.selectedIndex].text;
 	var e = document.getElementById("tiers");
 	var level = e.options[e.selectedIndex].value;
-	playerclass = chooseclass(level, yesAmiibo(), yesEnemy(), yesBroken(), yesAlm(), yesTier1(), yesUgly());
+	playerclass = chooseclass(level, yesAmiibo(), yesEnemy(), yesBroken(), yesAlm(), yesTier1(), yesUgly(), yesBase());
 	htmladd(charname);
 	document.getElementById("p1").innerHTML = playerclass;
 	var child = document.getElementById("p1");
@@ -206,8 +223,10 @@ function htmladd(name) {
 	}, function() {
 		newImg.src = 'img/Generic' + newclass + '.gif';
 	});
-	console.log("exists is:" + status);
+
+
 	newImg.src = 'img/FE15_' + playerclass + '_(' + name + ').gif';
+  //removeElement( newImg.id );
 	return;
 }
 
@@ -227,6 +246,9 @@ function spacefixer(name) {
 	return newname;
 }
 
+function yesBase() {
+	return document.getElementById("base").checked;
+}
 function yesAmiibo() {
 	return document.getElementById("amiibo").checked;
 }
@@ -252,15 +274,16 @@ function Ugly() {
 }
 
 
-function chooseclass(level, yesamiibo, yesenemy, yesbroken, yesalm, yestier1, yesugly) {
+function chooseclass(level, yesamiibo, yesenemy, yesbroken, yesalm, yestier1, yesugly, yesBase) {
 	var isBroken = yesbroken;
 	var isEnemy = yesenemy;
 	var isAmiibo = yesamiibo;
 	var isAlm = yesalm;
 	var isOne = yestier1;
   var isUgly = yesugly;
+  var base = yesBase;
 
-	var amiibo = ["Lord (Marth)", "Lord (F. Corrin)", "Lord (Roy)", "Lord (Lucina)", "Hero (Ike)", "Tactitian (Robin)"];
+	var amiibo = ["Lord (Marth)",  "Lord (M. Corrin)", "Lord (F. Corrin)", "Lord (Roy)", "Lord (Lucina)", "Hero (Ike)", "Tactitian (Robin)"];
 	var oneandtwo = ["Mage (Male)", "Pegasus Knight", "Cleric", "Mage (Female)"];
 	var almcelica1 = ["Fighter", "Priestess (Celica)"]
 	var almcelica2 = ["Hero (Alm)", "Princess"]
@@ -283,19 +306,27 @@ function chooseclass(level, yesamiibo, yesenemy, yesbroken, yesalm, yestier1, ye
 	var classledger = [];
 
 	if (level == 1) {
+    if(base == true){
 		classledger = levelone;
+  }
+  if(base == true){
 		arraypush(oneandtwo, classledger);
+  }
     if (yesugly == true) {
       arraypush(uglyone, classledger);
     }
 	}
 	if (level == 2) {
+    if(base == true){
 		classledger = leveltwo;
+    }
+    if(base == true){
 		if (isOne == true) {
 			arraypush(onetwothree, classledger);
 		} else {
 			arraypush(oneandtwo, classledger);
 		}
+  }
 		if (isEnemy == true) {
 			arraypush(enemytwo, classledger);
 		}
@@ -304,8 +335,12 @@ function chooseclass(level, yesamiibo, yesenemy, yesbroken, yesalm, yestier1, ye
     }
 	}
 	if (level == 3) {
+    if(base == true){
 		classledger = levelthree;
+    }
+    if(base == true){
 		arraypush(onetwothree, classledger);
+  }
 		if (isEnemy == true) {
 			arraypush(enemythree, classledger);
 		}
@@ -314,7 +349,9 @@ function chooseclass(level, yesamiibo, yesenemy, yesbroken, yesalm, yestier1, ye
     }
 	}
 	if (level == 4) {
+    if(base == true){
 		classledger = overclass;
+    }
 	}
 	if (isAmiibo == true) {
 		arraypush(amiibo, classledger);
@@ -337,6 +374,7 @@ function chooseclass(level, yesamiibo, yesenemy, yesbroken, yesalm, yestier1, ye
 			arraypush(almcelica3, classledger);
 		}
 	}
+
 	return classledger[randint(classledger.length)];
 }
 
@@ -365,6 +403,21 @@ function Route(option) {
 	} else {
 		var final = 4;
 	}
+  var truths = [yesAmiibo1(), yesEnemy1(), yesBroken1(), yesAlm1(), yesTier11(), yesUgly1()];
+  var noinput = true;
+  var anybad = true;
+  for(var i=0;i<truths.length;i++){
+    if(!truths[i]){
+    }
+    else{
+      anybad = false;
+    }
+  }
+  if(anybad){
+   alert("Error: no class selected");
+   return;
+  }
+
 	if (option == 'Alm') {
 		document.getElementById("reroll").hidden = false;
 		for (var i = 2; i < almchars.length + 2; i++) {
@@ -435,17 +488,15 @@ function Route(option) {
 	}
 	if (option == 'Both') {
 		bothbutton.style.display = 'none';
-		console.log("almdone: " + almdone);
-		console.log("almdone: " + almdone);
-		console.log("celicadone: " + celicadone);
+
 		if (celicadone == true && almdone == false) {
 			Route('Alm');
 		} else if (celicadone == false && almdone == true) {
 			Route('Celica');
 		} else {
-			console.log("almdone: " + almdone);
+
 			Route('Alm');
-			console.log("almdone: " + almdone);
+
 			Route('Celica');
 		}
 	}
@@ -552,6 +603,9 @@ function doesexist(imageSrc, good, bad) {
 	img.onerror = bad;
 }
 
+function yesBase1() {
+	return document.getElementById("base1").checked;
+}
 function yesAmiibo1() {
 	return document.getElementById("amiibo1").checked;
 }
