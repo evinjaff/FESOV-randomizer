@@ -203,11 +203,11 @@ I'm working on two main things: One, I'm grabbing game asset data and sifting th
 
 Yes! Thank you for asking. Below are some rulesets I typed up that you might enjoy using:
 
-[Vanilla Iron Man](https://evinjaff.github.io/FESOV-randomizer/rules/Vanilla%20Iron%20Man%20Run.pdf])
+[Vanilla Iron Man](https://evinjaff.github.io/FESOV-randomizer/rules/VanillaIronMan.pdf)
 
-[No-Promote Run](https://evinjaff.github.io/FESOV-randomizer/rules/Vanilla%20Iron%20Man%20Run.pdf])
+[Bad Guy Run](https://evinjaff.github.io/FESOV-randomizer/rules/BadGuy.pdf)
 
-
+[]()
 
 # I like this but I think you should do/change xyz..
 
