@@ -354,10 +354,14 @@ function chooseclass(level, yesamiibo, yesenemy, yesbroken, yesalm, yestier1, ye
     }
 	}
 	if (isAmiibo == true) {
+		if(level < 4){
 		arraypush(amiibo, classledger);
 	}
+}
 	if (isEnemy == true) {
+		if(level < 4){
 		arraypush(enemyflex, classledger);
+		}
 	}
 	if (isBroken == true) {
 		arraypush(brokenuni, classledger);
