@@ -190,7 +190,7 @@ function randomize() {
     }
   }
   if(anybad){
-   alert("Error: no class selected");
+   alert("Error: no classes selected");
    return;
   }
 
@@ -403,7 +403,7 @@ function Route(option) {
 	} else {
 		var final = 4;
 	}
-  var truths = [yesAmiibo1(), yesEnemy1(), yesBroken1(), yesAlm1(), yesTier11(), yesUgly1()];
+  var truths = [yesBase1(), yesAmiibo1(), yesEnemy1(), yesBroken1(), yesAlm1(), yesTier11(), yesUgly1()];
   var noinput = true;
   var anybad = true;
   for(var i=0;i<truths.length;i++){
@@ -414,7 +414,7 @@ function Route(option) {
     }
   }
   if(anybad){
-   alert("Error: no class selected");
+   alert("Error: no classes selected");
    return;
   }
 
@@ -433,7 +433,7 @@ function Route(option) {
 				var item = document.createElement("td");
 				item.id = "tdCelica";
 				cstring = almchars[i - 2].name;
-				var myclass = chooseclass(j, yesAmiibo1(), yesEnemy1(), yesBroken1(), yesAlm1(), yesTier11(), yesUgly1());
+				var myclass = chooseclass(j, yesAmiibo1(), yesEnemy1(), yesBroken1(), yesAlm1(), yesTier11(), yesUgly1(), yesBase1());
 				arr[j] = myclass;
 				var id = 'id' + i.toString();
 			}
@@ -471,7 +471,7 @@ function Route(option) {
 				var item = document.createElement("td");
 				item.id = "tdCelica";
 				cstring = celicachars[i - 2].name;
-				var myclass = chooseclass(j, yesAmiibo1(), yesEnemy1(), yesBroken1(), yesAlm1(), yesTier11(), yesUgly1());
+				var myclass = chooseclass(j, yesAmiibo1(), yesEnemy1(), yesBroken1(), yesAlm1(), yesTier11(), yesUgly1(), yesBase1());
 				arr[j] = myclass;
 				var id = 'id' + i.toString();
 				almbutton.style.display = 'none';

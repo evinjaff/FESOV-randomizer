@@ -23,10 +23,13 @@
 
 
 <div id="link-holder">
-  <a id="link "target="_blank" href="https://github.com/evinjaff/FESOV-randomizer/blob/master/readme.md">Read this first!</a>
+  <a id="link "target="_blank" href="README/README.html">READ THIS FIRST!</a>
+</div>
+<div id="link-holder">
+  <a id="link "target="_blank" href="README/BLOG.html">Blog documenting my randomized adventures</a>
 </div>
   <br>
-  <h2 id="warning">⚠️WARNING⚠️: Be EXTREMELY careful about reclassing Alm, as you can potentially softlock the game inside dungeons since he will not be able to break boxes when he's reclassed into something other than Fighter, Hero, or Conqueror. Through testing, Celica seems to still be able to break boxes for every class, even ones like Grima that would normally crash the game.</h2>
+  <h2 id="warning">⚠️WARNING: Be EXTREMELY careful about reclassing Alm, as you can potentially softlock the game inside dungeons since he will not be able to break boxes when he's reclassed into something other than Fighter, Hero, or Conqueror. Through testing, Celica seems to still be able to break boxes for every class, even ones like Grima that are at risk of crashing the game.</h2>
 <h2>Randomize a Character:</h2>
 <!--
 <link rel="stylesheet" href="print.css" type="text/css" media="print">
@@ -98,10 +101,10 @@
 <input type="checkbox" id="enemy"> <div class="tooltip">Enemy Classes?<span class="tooltiptext">Includes enemy classes such as Brigands, Cantors, Witches</span>
 </div></input>
 <br>
-<input type="checkbox" id="ugly"> <div class="tooltip">Ugly Classes?<span class="tooltiptext">Includes classes that were never designed to be human and look horrid.</span>
+<input type="checkbox" id="ugly"> <div class="tooltip">Ugly Classes?<span class="tooltiptext">Includes classes that human's weren't designed to class into and don't look good.</span>
 </div> </input>
 <br>
-<input type="checkbox" id="busted"> <div class="tooltip">Broken Classes?<span class="tooltiptext">Includes broken classes that have crazy stats & don't work</span>
+<input type="checkbox" id="busted"> <div class="tooltip">Broken Classes?<span class="tooltiptext">Includes broken classes that have crazy stats or partially don't work</span>
 </div> </input>
 <br>
 <input type="checkbox" id="alm"><div class="tooltip">Alm and Celica Classes?<span class="tooltiptext">Includes Alm and Celica classes (Fighter, Princess, etc.)</span>
@@ -109,14 +112,16 @@
 <br>
 <br>
 <div class="tooltip">2 Level Class Organization:
-  <span class="tooltiptext">Determines how to randomize classes like Mages and Pegasus Knights</span>
+  <span class="tooltiptext">Determines how to randomize classes that only promote once like Mages and Pegasus Knights</span>
 </div>
+
+
 <br>
 
-<input checked type="radio" id="onetwo" name="onetwo"><div class="tooltip">Base is 1 and 2<span class="tooltiptext">Mage: Tier 1 and 2 Sage: Tier 3</span>
+<input type="radio" id="onetwo" name="onetwo3" checked="checked"><div class="tooltip">Base is 1 and 2<span class="tooltiptext">Mage: Tier 1 and 2 Sage: Tier 3</span>
 </div>
 <br></input>
-<input type="radio" id="one" name="onetwo" ><div class="tooltip">Base is 1<span class="tooltiptext">Mage: Tier 1 Sage: Tier 2 and 3</span>
+<input type="radio" id="one" name="onetwo3"><div class="tooltip">Base is 1<span class="tooltiptext">Mage: Tier 1 Sage: Tier 2 and 3</span>
 </div>
 <br></input>
 <br>
@@ -159,10 +164,10 @@
 
 
 
-<input type="checkbox" id="busted1"> <div class="tooltip">Broken Classes?<span class="tooltiptext">Includes broken classes and classes that would normally look ugly like Duma and Deimos (Broken characters due to potential glitches/Unplayable classes such as Duma, Grima, Boats are untiered, and characters that just don't look nice are appropriately tiered)</span>
+<input type="checkbox" id="busted1"> <div class="tooltip">Broken Classes?<span class="tooltiptext">Includes broken classes that have crazy stats or partially don't work</span>
 </div> </input>
 <br>
-<input type="checkbox" id="ugly1"> <div class="tooltip">Ugly Classes?<span class="tooltiptext">Includes classes that were never designed to be human and look horrid.</span>
+<input type="checkbox" id="ugly1"> <div class="tooltip">Ugly Classes?<span class="tooltiptext">Includes classes that human's weren't designed to class into and don't look good.</span>
 </div> </input>
 <br>
 <input type="checkbox" id="alm1"><div class="tooltip">Alm and Celica Classes?<span class="tooltiptext">Includes Alm and Celica classes (Fighter, Princess, etc.)</span>

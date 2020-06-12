@@ -1,5 +1,5 @@
 # Fire Emblem Echoes: Shadows of Valentia Randomizer
-Current Version: 1.2 (L'Arachel Edition)
+Current Version: 1.2 (Faye Edition)
 
 ## 1.2 Updates:
 
@@ -199,23 +199,22 @@ I'm working on two main things: One, I'm grabbing game asset data and sifting th
 * **Starting Items (In Progress!):** Randomizes the starting item that a character will get. Currently testing categorization and ability to apply rules to starting item.
 * **Quantum Randomization (In Progress):** I'm looking at a way to use quantum randomness to randomize the classes instead of just a traditional pseudo-random generation, especially since you can see the flaws of pseudorandomness manifest with a lot of duplicate class assignments.
 * **Genericized Randomization (Future):** In the future, I'm looking to genericize this tool so that it will eventually be plug'n'play so that you can just import a CSV of characters and a dump of sprites.
-* **Starting class save editing (Far Future):** In the far future, am intending on building an add-on for FEST or a save file editor/generator in C++ that pre-randomizes the starting classes via Hex editing. This allows for easy randomization.
-* **Class Tree (Far-Far Future):** In the distant future when I get good at writng patches of 3DS games, I am planning on building a C++ Application/Patch that randomizes the game similar to the Universal Pokemon Randomizer for Pokemon games.
+* **Starting class save editing (Far Future):** In the far future, am intending on building an add-on for FEST or a save file editor & generator in C++ that pre-randomizes the starting classes via Hex editing. This allows for easy randomization.
+* **Class Tree (Far-Far Future):** In the distant future when I get good at writng patches of 3DS games, I am planning on building a C++ application & patch that randomizes the game similar to the Universal Pokemon Randomizer for Pokemon games or how ROM hacks like Storm Silver patches its roms.
 
 ## Awesome! I'd love to do a randomized run, any suggestions?
 
 Yes! Thank you for asking. Below are some rulesets I typed up that you might enjoy using:
 
+<a href = "https://evinjaff.github.io/FESOV-randomizer/rules/VanillaIronMan.pdf" target="_blank">Vanilla Iron Man</a>
 
-[Vanilla Iron Man](https://evinjaff.github.io/FESOV-randomizer/rules/VanillaIronMan.pdf)
+<a href = "https://evinjaff.github.io/FESOV-randomizer/rules/BadGuy.pdf" target="_blank">Bad Guy Run</a>
 
-[Bad Guy Run](https://evinjaff.github.io/FESOV-randomizer/rules/BadGuy.pdf)
+<a href = "https://evinjaff.github.io/FESOV-randomizer/rules/CompleteChaos.pdf" target="_blank">Complete Chaos</a>
 
-[Complete Chaos](https://evinjaff.github.io/FESOV-randomizer/rules/CompleteChaos.pdf)
+<a href = "https://evinjaff.github.io/FESOV-randomizer/rules/SmashEmblem.pdf" target="_blank">Smash Emblem</a>
 
-[Smash Emblem](https://evinjaff.github.io/FESOV-randomizer/rules/SmashEmblem.pdf)
-
-[Base Class Run](https://evinjaff.github.io/FESOV-randomizer/rules/NoPromote.pdf)
+<a href = "https://evinjaff.github.io/FESOV-randomizer/rules/NoPromote.pdf" target="_blank">Base Class Run</a>
 
 # I like this but I think you should do/change xyz..
 
