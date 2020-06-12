@@ -1,5 +1,5 @@
 # Fire Emblem Echoes: Shadows of Valentia Randomizer
-Current Version: 1.1 (Ugly and Broken Divorce Edition)
+Current Version: 1.2 (L'Arachel Edition)
 
 ## 1.2 Updates:
 
