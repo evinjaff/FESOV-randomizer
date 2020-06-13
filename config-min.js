@@ -3,7 +3,7 @@ script.src = 'https://code.jquery.com/jquery-3.5.1.min.js';
 document.getElementsByTagName('head')[0].appendChild(script);
 var almdone = false;
 var celicadone = false;
-var almchars = [Alm, Lukas, Gray, Tobin, Kliff, Faye, Silque, Clair, Clive, Forsyth, Python, Luthier, Mathilda, Delthea, Tatiana, Zeke, Mycen]
+var almchars = [Alm, Lukas, Gray, Tobin, Kliff, Faye, Silque, Clair, Clive, Forsyth, Python, Luthier, Mathilda, Delthea, Tatiana, Zeke, Mycen];
 var Alm = {
 	name: "Alm",
 	gender: "Male",
