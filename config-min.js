@@ -389,7 +389,11 @@ function arraypush(array, other) {
 }
 
 function randint(max) {
+
+
+
 	return Math.floor(Math.random() * max);
+
 }
 
 function getSpritePath(pclass) {
