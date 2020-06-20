@@ -739,7 +739,7 @@ function printPage() {
 	var encodedUri = encodeURI(csvContent);
 	var link = document.createElement("a");
 	link.setAttribute("href", encodedUri);
-	link.setAttribute("download", "my_data.csv");
+	link.setAttribute("download", "FESoV-RandomClasses.csv");
 	document.body.appendChild(link); // Required for FF
 
 	link.click(); // This will download the data file named "my_data.csv".
