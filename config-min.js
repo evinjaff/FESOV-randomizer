@@ -1,179 +1,233 @@
 var script = document.createElement('script');
 script.src = 'https://code.jquery.com/jquery-3.5.1.min.js';
 document.getElementsByTagName('head')[0].appendChild(script);
+var rows = [
+["Character", "Tier 1 Class", "Tier 2 Class", "Tier 3 Class", "Overclass"] ];
+
 var almdone = false;
 var celicadone = false;
 var almchars = [Alm, Lukas, Gray, Tobin, Kliff, Faye, Silque, Clair, Clive, Forsyth, Python, Luthier, Mathilda, Delthea, Tatiana, Zeke, Mycen];
 var Alm = {
 	name: "Alm",
 	gender: "Male",
-	tier: '1'
+	tier: '1',
+	item: false
 }
 var Lukas = {
 	name: "Lukas",
 	gender: "Male",
-	tier: '1'
+	tier: '1',
+	item: false
 }
 var Gray = {
 	name: "Gray",
 	gender: "Male",
-	tier: '1'
+	tier: '1',
+	item: false
 }
 var Tobin = {
 	name: "Tobin",
 	gender: "Male",
-	tier: '1'
+	tier: '1',
+	item: true,
+	eq: "Carrot"
 }
 var Kliff = {
 	name: "Kliff",
 	gender: "Male",
-	tier: '1'
+	tier: '1',
+	item: true,
+	eq: "Carrot"
 }
 var Faye = {
 	name: "Faye",
 	gender: "Female",
-	tier: '1'
+	tier: '1',
+	item: true,
+	eq: "Orange"
 }
 var Silque = {
 	name: "Silque",
 	gender: "Female",
-	tier: '1'
+	tier: '1',
+	item: false
+
 }
 var Clair = {
 	name: "Clair",
 	gender: "Female",
-	tier: '1'
+	tier: '1',
+	item: false
 }
 var Clive = {
 	name: "Clive",
 	gender: "Male",
-	tier: '1'
+	tier: '1',
+	item: true,
+	eq: "Steel Lance"
 }
 var Forsyth = {
 	name: "Forsyth",
 	gender: "Male",
-	tier: '1'
+	tier: '1',
+	item: false
 }
 var Python = {
 	name: "Python",
 	gender: "Male",
-	tier: '1'
+	tier: '1',
+	item: false
 }
 var Luthier = {
 	name: "Luthier",
 	gender: "Male",
-	tier: '1'
+	tier: '1',
+	item: true,
+	eq: "Mana Herbs"
 }
 var Mathilda = {
 	name: "Mathilda",
 	gender: "Female",
-	tier: '2'
+	tier: '2',
+	item: false
 }
 var Delthea = {
 	name: "Delthea",
 	gender: "Female",
-	tier: '1'
+	tier: '1',
+	item: true,
+	eq: "Prayer Ring"
 }
 var Tatiana = {
 	name: "Tatiana",
 	gender: "Female",
-	tier: '2'
+	tier: '2',
+	item: false
 }
 var Zeke = {
 	name: "Zeke",
 	gender: "Female",
-	tier: '3'
+	tier: '3',
+	item: false
 }
 var Mycen = {
 	name: "Mycen",
 	gender: "Male",
-	tier: '3'
+	tier: '3',
+	item: false
 }
 var celicachars = [Celica, Mae, Boey, Genny, Saber, Valbar, Kamui, Leon, Palla, Catria, Atlas, Jesse, Est, Nomah, Conrad];
 var Celica = {
 	name: "Celica",
 	gender: "Female",
-	tier: '1'
+	tier: '1',
+	item: true,
+	eq: "Golden Dagger"
 }
 var Mae = {
 	name: "Mae",
 	gender: "Female",
-	tier: '1'
+	tier: '1',
+	item: true,
+	eq: "Sweet Cookie"
 }
 var Boey = {
 	name: "Boey",
 	gender: "Male",
-	tier: '1'
+	tier: '1',
+	item: true,
+	eq: "Drinking Water"
 }
 var Genny = {
 	name: "Genny",
 	gender: "Female",
-	tier: '1'
+	tier: '1',
+	item: true,
+	eq: "Holey Cheese"
 }
 var Saber = {
 	name: "Saber",
 	gender: "Male",
-	tier: '1'
+	tier: '1',
+	item: false
 }
 var Valbar = {
 	name: "Valbar",
 	gender: "Male",
-	tier: '2'
+	tier: '2',
+	item: false
 }
 var Kamui = {
 	name: "Kamui",
 	gender: "Male",
-	tier: '1'
+	tier: '1',
+	item: false
 }
 var Leon = {
 	name: "Leon",
 	gender: "Male",
-	tier: '1'
+	tier: '1',
+	item: true,
+	eq: "Iron Bow"
 }
 var Palla = {
 	name: "Palla",
 	gender: "Female",
-	tier: '1'
+	tier: '1',
+	item: true,
+	eq: "Javelin"
 }
 var Catria = {
 	name: "Catria",
 	gender: "Female",
-	tier: '1'
+	tier: '1',
+	item: true,
+	eq: "Angel Ring"
 }
 var Atlas = {
 	name: "Atlas",
 	gender: "Male",
-	tier: '1'
+	tier: '1',
+	item: false
 }
 var Jesse = {
 	name: "Jesse",
 	gender: "Male",
-	tier: '1'
+	tier: '1',
+	item: false
 }
 var Sonya = {
 	name: "Sonya",
 	gender: "Female",
-	tier: '1'
+	tier: '1',
+	item: true,
+	eq: "Steel Shield"
 }
 var Deen = {
 	name: "Deen",
 	gender: "Male",
-	tier: '2'
+	tier: '2',
+	item: true,
+	eq: "Brave Sword"
 }
 var Est = {
 	name: "Est",
 	gender: "Female",
-	tier: '1'
+	tier: '1',
+	item: false
 }
 var Nomah = {
 	name: "Nomah",
 	gender: "Male",
-	tier: '2'
+	tier: '2',
+	item: false
 }
 var Conrad = {
 	name: "Conrad",
 	gender: "Male",
-	tier: '2'
+	tier: '2',
+	item: true,
+	eq: "Blessed Lance"
 }
 
 function randomize() {
@@ -427,9 +481,21 @@ function Route(option) {
   }
 
 	if (option == 'Alm') {
+
+			//CSV test
+
+
+
+
+			//End CSV test
+
+
+
 		document.getElementById("reroll").hidden = false;
 		for (var i = 2; i < almchars.length + 2; i++) {
 			csstring = almchars[i - 2].name;
+			var csvclass = [almchars[i - 2].name];
+			console.log(csvclass);
 			var id = document.createTextNode(csstring + ": ");
 			var tablehead = document.createElement("table");
 			var row = document.createElement("tr");
@@ -443,6 +509,7 @@ function Route(option) {
 				cstring = almchars[i - 2].name;
 				var myclass = chooseclass(j, yesAmiibo1(), yesEnemy1(), yesBroken1(), yesAlm1(), yesTier11(), yesUgly1(), yesBase1());
 				arr[j] = myclass;
+				csvclass[j] = myclass;
 				var id = 'id' + i.toString();
 			}
 			almbutton.style.display = 'none';
@@ -450,9 +517,19 @@ function Route(option) {
 			ex.hidden = false;
 			tableCreate(arr, yesOverclass(), almchars[i - 2].name);
 			document.getElementById("div2").appendChild(document.createElement("br"));
+			rows[rows.length] = csvclass;
+			console.log(rows);
 		}
 		almbutton.style.display = 'none';
 		almdone = true;
+
+
+
+
+
+
+	return;
+
 	}
 	if (option == 'Celica') {
 		document.getElementById("reroll").hidden = false;
@@ -467,6 +544,8 @@ function Route(option) {
 			celicachars.splice(12, 0, Sonya);
 		}
 		for (var i = 2; i < celicachars.length + 2; i++) {
+			var csvclass = [celicachars[i - 2].name];
+			console.log(csvclass);
 			csstring = celicachars[i - 2].name;
 			var id = document.createTextNode(csstring + ": ");
 			var tablehead = document.createElement("table");
@@ -482,11 +561,15 @@ function Route(option) {
 				var myclass = chooseclass(j, yesAmiibo1(), yesEnemy1(), yesBroken1(), yesAlm1(), yesTier11(), yesUgly1(), yesBase1());
 				arr[j] = myclass;
 				var id = 'id' + i.toString();
+				csvclass[j] = myclass;
 				almbutton.style.display = 'none';
 				celicabutton.style.display = 'none';
 			}
 			tableCreate(arr, yesOverclass(), celicachars[i - 2].name);
 			document.getElementById("div2").appendChild(document.createElement("br"));
+			console.log(csvclass);
+			rows[rows.length] = csvclass;
+			console.log(rows);
 		}
 		var ex = document.getElementById("export");
 		ex.hidden = false;
@@ -642,8 +725,24 @@ function yesUgly1() {
 }
 
 function printPage() {
-	removeAll();
+	//removeAll();
+	/*
 	window.print();
+	return false;
+	*/
+	let csvContent = "data:text/csv;charset=utf-8,";
+	rows.forEach(function(rowArray) {
+	let row = rowArray.join(",");
+	csvContent += row + "\r\n";
+	});
+
+	var encodedUri = encodeURI(csvContent);
+	var link = document.createElement("a");
+	link.setAttribute("href", encodedUri);
+	link.setAttribute("download", "my_data.csv");
+	document.body.appendChild(link); // Required for FF
+
+	link.click(); // This will download the data file named "my_data.csv".
 	return false;
 }
 
