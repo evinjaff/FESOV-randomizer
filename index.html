@@ -6,11 +6,12 @@
 
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
 
+<script type="application/javascript" src="characters.js"></script>
 
 
 
   <script data-main="config-min.js" src="require.js"></script>
-  <script type="text/javascript" src="config-min.js""> </script>
+  <script type="text/javascript" src="config-min.js"> </script>
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script type="text/javascript"></script>
 
@@ -203,7 +204,11 @@
 <div id="export" hidden style="text-align: center">
 <br>
 <a href="" id="print-button" onclick="printPage()" style="hidden" style="text-align: center">Export Class List (via CSV)</a>
+<br>
+<a id="print-button" onclick="JSONgenerate()" style="text-align: center">Export Class List (via JSON)</a>
 </div>
+
+<!-- style="hidden" -->
 
 <br>
 

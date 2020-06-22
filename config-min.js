@@ -1,120 +1,157 @@
+/*
 var script = document.createElement('script');
 script.src = 'https://code.jquery.com/jquery-3.5.1.min.js';
 document.getElementsByTagName('head')[0].appendChild(script);
+*/
+
+
+
+
+
+var script = document.createElement('script');
+script.src = 'https://code.jquery.com/jquery-3.4.1.min.js';
+script.type = 'text/javascript';
+document.getElementsByTagName('head')[0].appendChild(script);
+
 var rows = [
 ["Character", "Tier 1 Class", "Tier 2 Class", "Tier 3 Class", "Overclass"] ];
+
+/*
+var request = new XMLHttpRequest();
+	request.open("GET", "../../data.json", false);
+	request.send(null)
+	var my_JSON_object = JSON.parse(request.responseText);
+	alert (my_JSON_object.result[0]);
+*/
 
 var almdone = false;
 var celicadone = false;
 var almchars = [Alm, Lukas, Gray, Tobin, Kliff, Faye, Silque, Clair, Clive, Forsyth, Python, Luthier, Mathilda, Delthea, Tatiana, Zeke, Mycen];
+
 var Alm = {
 	name: "Alm",
 	gender: "Male",
 	tier: '1',
-	item: false
+	item: false,
+	id: "PID_アルム"
 }
 var Lukas = {
 	name: "Lukas",
 	gender: "Male",
 	tier: '1',
-	item: false
+	id: "PID_ルカ"
 }
 var Gray = {
 	name: "Gray",
 	gender: "Male",
 	tier: '1',
-	item: false
+	item: false,
+	id: "PID_グレイ"
 }
 var Tobin = {
 	name: "Tobin",
 	gender: "Male",
 	tier: '1',
 	item: true,
-	eq: "Carrot"
+	eq: "Carrot",
+	id: "PID_ロビン"
 }
 var Kliff = {
 	name: "Kliff",
 	gender: "Male",
 	tier: '1',
 	item: true,
-	eq: "Carrot"
+	eq: "Carrot",
+	id: "PID_クリフ"
 }
 var Faye = {
 	name: "Faye",
 	gender: "Female",
 	tier: '1',
 	item: true,
-	eq: "Orange"
+	eq: "Orange",
+	id: "PID_エフィ"
 }
 var Silque = {
 	name: "Silque",
 	gender: "Female",
 	tier: '1',
-	item: false
+	item: false,
+	id: "PID_シルク"
 
 }
 var Clair = {
 	name: "Clair",
 	gender: "Female",
 	tier: '1',
-	item: false
+	item: false,
+	id: "PID_クレア"
 }
 var Clive = {
 	name: "Clive",
 	gender: "Male",
 	tier: '1',
 	item: true,
-	eq: "Steel Lance"
+	eq: "Steel Lance",
+	id: "PID_クレーベ"
 }
 var Forsyth = {
 	name: "Forsyth",
 	gender: "Male",
 	tier: '1',
-	item: false
+	item: false,
+	id: "PID_フォルス"
 }
 var Python = {
 	name: "Python",
 	gender: "Male",
 	tier: '1',
-	item: false
+	item: false,
+	id:"PID_パイソン"
 }
 var Luthier = {
 	name: "Luthier",
 	gender: "Male",
 	tier: '1',
 	item: true,
-	eq: "Mana Herbs"
+	eq: "Mana Herbs",
+	id: "PID_リュート"
 }
 var Mathilda = {
 	name: "Mathilda",
 	gender: "Female",
 	tier: '2',
-	item: false
+	item: false,
+	id:"PID_マチルダ"
 }
 var Delthea = {
 	name: "Delthea",
 	gender: "Female",
 	tier: '1',
 	item: true,
-	eq: "Prayer Ring"
+	eq: "Prayer Ring",
+	id: "PID_デューテ"
 }
 var Tatiana = {
 	name: "Tatiana",
 	gender: "Female",
 	tier: '2',
-	item: false
+	item: false,
+	id: "PID_ティータ"
 }
 var Zeke = {
 	name: "Zeke",
 	gender: "Female",
 	tier: '3',
-	item: false
+	item: false,
+	id: "PID_ジーク"
 }
 var Mycen = {
 	name: "Mycen",
 	gender: "Male",
 	tier: '3',
-	item: false
+	item: false,
+	id: "PID_マイセン"
 }
 var celicachars = [Celica, Mae, Boey, Genny, Saber, Valbar, Kamui, Leon, Palla, Catria, Atlas, Jesse, Est, Nomah, Conrad];
 var Celica = {
@@ -122,7 +159,8 @@ var Celica = {
 	gender: "Female",
 	tier: '1',
 	item: true,
-	eq: "Golden Dagger"
+	eq: "Golden Dagger",
+
 }
 var Mae = {
 	name: "Mae",
@@ -229,6 +267,44 @@ var Conrad = {
 	item: true,
 	eq: "Blessed Lance"
 }
+function JSONgenerate(){
+
+	//console.log(data);
+
+
+	var saveData = (function () {
+    var a = document.createElement("a");
+    document.body.appendChild(a);
+    a.style = "display: none";
+    return function (data, fileName) {
+        var json = JSON.stringify(data),
+            blob = new Blob([json], {type: "octet/stream"}),
+            url = window.URL.createObjectURL(blob);
+        a.href = url;
+        a.download = fileName;
+        a.click();
+        window.URL.revokeObjectURL(url);
+    };
+}());
+
+//var data = { x: 42, s: "hello, world", d: new Date() },
+fileName = "my-download.json";
+
+
+saveData(data[0], fileName);
+
+	//alert("click!");
+	//console.log(almchars[0].id);
+	//console.log(data);
+	//console.log( data[0].Modules.Characters[almchars[0].id].Name.value);
+
+	//console.log(classmap);
+	//console.log(classmap.get("Villager (M)"));
+
+	return;
+
+}
+
 
 function randomize() {
   var truths = [yesAmiibo(), yesEnemy(), yesBroken(), yesAlm(), yesTier1(), yesUgly(), yesBase()];
@@ -417,7 +493,7 @@ function chooseclass(level, yesamiibo, yesenemy, yesbroken, yesalm, yestier1, ye
 		arraypush(enemyflex, classledger);
 		}
 	}
-	if (isBroken == true) {
+	if (isBroken == true && level <= 3) {
 		arraypush(brokenuni, classledger);
 	}
 
@@ -503,22 +579,48 @@ function Route(option) {
 			document.getElementById("div2").appendChild(tablehead);
 			document.getElementById("div2").appendChild(row);
 			var arr = [];
+
+			var firsttime = true;
+
+
 			for (var j = almchars[i - 2].tier; j < final; j++) {
 				var item = document.createElement("td");
 				item.id = "tdCelica";
 				cstring = almchars[i - 2].name;
+
+
+
+
 				var myclass = chooseclass(j, yesAmiibo1(), yesEnemy1(), yesBroken1(), yesAlm1(), yesTier11(), yesUgly1(), yesBase1());
 				arr[j] = myclass;
 				csvclass[j] = myclass;
 				var id = 'id' + i.toString();
+
+				//Start JSON Collection
+				//console.log("First Time:");
+				//console.log(firsttime);
+				if(firsttime){
+						//console.log(myclass);
+
+
+						//console.log(stringfix(myclass, almchars[i - 2].gender));
+
+						var playerjid = classmap.get(stringfix(myclass, almchars[i - 2].gender));
+						data[0].Modules.Characters[almchars[i-2].id].JID = playerjid;
+
+				}
+				firsttime = false;
 			}
+
+			//End JSON
 			almbutton.style.display = 'none';
 			var ex = document.getElementById("export");
 			ex.hidden = false;
 			tableCreate(arr, yesOverclass(), almchars[i - 2].name);
 			document.getElementById("div2").appendChild(document.createElement("br"));
 			rows[rows.length] = csvclass;
-			console.log(rows);
+			//console.log(rows);
+
 		}
 		almbutton.style.display = 'none';
 		almdone = true;
@@ -744,6 +846,59 @@ function printPage() {
 
 	link.click(); // This will download the data file named "my_data.csv".
 	return false;
+}
+
+function stringfix(string, gender){
+
+
+	switch(string) {
+  case "Cavalier":
+	case "Villager":
+	case "Paladin":
+	case "Mage":
+	case "Gold Knight":
+	{
+    if(gender == "Male"){
+			var output = string + " (M)";
+		}
+		if(gender == "Female"){
+			var output = string + " (M)";
+		}
+		return output;
+	}
+
+	case "Lord (Corrin)":
+	{
+		if(gender == "Male"){
+			var output = "Lord (M. Corrin)"
+		}
+		if(gender == "Female"){
+			var output = "Lord (F. Corrin)"
+		}
+		return output;
+	}
+
+	case "Mage (Male)": {
+			return "Mage (M)";
+	}
+	case "Mage (Female)":{
+			return "Mage (F)";
+	}
+	case "Mila Apostole":{
+		return "Mila's Servant";
+	}
+	case "Duma Apostole":{
+		return "Duma's Apostole";
+	}
+
+  default:
+	{
+    // code block
+		return string;
+	}
+
+	}
+
 }
 
 function removeAll() {

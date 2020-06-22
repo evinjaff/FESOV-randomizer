@@ -1,0 +1,25 @@
+{
+  "name": "fesov-randomizer",
+  "version": "1.0.0",
+  "description": "Fire Emblem Echoes randomizer",
+  "main": "config-min.js",
+  "dependencies": {
+    "jQuery": "^1.7.4",
+    "jquery": "^3.5.1",
+    "mersenne-twister": "^1.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evinjaff/FESOV-randomizer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/evinjaff/FESOV-randomizer/issues"
+  },
+  "homepage": "https://github.com/evinjaff/FESOV-randomizer#readme"
+}
