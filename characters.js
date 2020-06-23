@@ -74,6 +74,28 @@ classmap.set("Lord (M. Corrin)" , "JID_幻影カムイ男");
 classmap.set("Lord (F. Corrin)" , "JID_幻影カムイ女");
 
 
+var amiibo = ["Lord (Marth)",  "Lord (M. Corrin)", "Lord (F. Corrin)", "Lord (Roy)", "Lord (Lucina)", "Hero (Ike)", "Tactitian (Robin)"];
+var oneandtwo = ["Mage (Male)", "Pegasus Knight", "Cleric", "Mage (Female)"];
+var almcelica1 = ["Fighter", "Priestess (Celica)"]
+var almcelica2 = ["Hero (Alm)", "Princess"]
+var almcelica3 = ["Conqueror", "Rigain"]
+var levelone = ["Villager", "Archer", "Cavalier", "Soldier", "Mercenary", "Boy", "Girl"];
+var leveltwo = ["Myrmidon", "Sniper", "Paladin", "Knight", ];
+var levelthree = ["Dread Fighter", "Baron", "Bow Knight", "Gold Knight"];
+var onetwothree = ["Falcon Knight", "Saint", "Sage", "Priestess"];
+var enemyone = ["Mogall", "Brigand"];
+var enemytwo = ["Mogall", "Brigand"];
+var enemyflex = [ "Arcanist", "Cantor", "Witch"];
+var enemythree = ["Dagon", "Fire Dragon", "Fiend", "Guardian", "Balor"];
+var overclass = ["Harrier", "Skogul", "Yasha", "Exemplar", "Guru", "Enchantress", "Oliphantier", "Spartan"];
+var brokenuni = ["Fell Dragon", "God"];
+
+var uglyone = ["Gargoyle", "Entombed (Normal)", "Revenant (Normal)", "Bonewalker"];
+var uglythree = ["Deathgoyle", "Lich", "Garuda", "Deimos", "Vestal", "Mila Apostole", "White Dragon", "Duma Apostole"];
+var uglytwo = ["Entombed (Numbing)", "Entombed (Venin)", "Revenant (Numbing)",  "Revenant (Numbing)", "Titan", "Lich", "Necodragon", "Fafnir", "Bonewalker"];
+
+
+
 var data = [{
     "Modules": {
         "Characters": {

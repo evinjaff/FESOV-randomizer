@@ -160,6 +160,7 @@ var Celica = {
 	tier: '1',
 	item: true,
 	eq: "Golden Dagger",
+	id: "PID_セリカ"
 
 }
 var Mae = {
@@ -167,105 +168,121 @@ var Mae = {
 	gender: "Female",
 	tier: '1',
 	item: true,
-	eq: "Sweet Cookie"
+	eq: "Sweet Cookie",
+	id: "PID_メイ"
 }
 var Boey = {
 	name: "Boey",
 	gender: "Male",
 	tier: '1',
 	item: true,
-	eq: "Drinking Water"
+	eq: "Drinking Water",
+	id: "PID_ボーイ"
 }
 var Genny = {
 	name: "Genny",
 	gender: "Female",
 	tier: '1',
 	item: true,
-	eq: "Holey Cheese"
+	eq: "Holey Cheese",
+	id: "PID_ジェニー"
 }
 var Saber = {
 	name: "Saber",
 	gender: "Male",
 	tier: '1',
-	item: false
+	item: false,
+	id: "PID_セーバー"
 }
 var Valbar = {
 	name: "Valbar",
 	gender: "Male",
 	tier: '2',
-	item: false
+	item: false,
+	id: "PID_バルボ"
 }
 var Kamui = {
 	name: "Kamui",
 	gender: "Male",
 	tier: '1',
-	item: false
+	item: false,
+	id: "PID_カムイ"
 }
 var Leon = {
 	name: "Leon",
 	gender: "Male",
 	tier: '1',
 	item: true,
-	eq: "Iron Bow"
+	eq: "Iron Bow",
+	id: "PID_レオ"
 }
 var Palla = {
 	name: "Palla",
 	gender: "Female",
 	tier: '1',
 	item: true,
-	eq: "Javelin"
+	eq: "Javelin",
+	id: "PID_パオラ"
 }
 var Catria = {
 	name: "Catria",
 	gender: "Female",
 	tier: '1',
 	item: true,
-	eq: "Angel Ring"
+	eq: "Angel Ring",
+	id: "PID_カチュア"
 }
 var Atlas = {
 	name: "Atlas",
 	gender: "Male",
 	tier: '1',
-	item: false
+	item: false,
+	id: "PID_アトラス"
 }
 var Jesse = {
 	name: "Jesse",
 	gender: "Male",
 	tier: '1',
-	item: false
+	item: false,
+	id: "PID_ジェシー"
 }
 var Sonya = {
 	name: "Sonya",
 	gender: "Female",
 	tier: '1',
 	item: true,
-	eq: "Steel Shield"
+	eq: "Steel Shield",
+	id: "PID_ソニア"
 }
 var Deen = {
 	name: "Deen",
 	gender: "Male",
 	tier: '2',
 	item: true,
-	eq: "Brave Sword"
+	eq: "Brave Sword",
+	id: "PID_ディーン"
 }
 var Est = {
 	name: "Est",
 	gender: "Female",
 	tier: '1',
-	item: false
+	item: false,
+	id: "PID_エスト"
 }
 var Nomah = {
 	name: "Nomah",
 	gender: "Male",
 	tier: '2',
-	item: false
+	item: false,
+	id: "PID_ノーマ"
 }
 var Conrad = {
 	name: "Conrad",
 	gender: "Male",
 	tier: '2',
 	item: true,
-	eq: "Blessed Lance"
+	eq: "Blessed Lance",
+	id: "PID_コンラート"
 }
 function JSONgenerate(){
 
@@ -413,102 +430,86 @@ function chooseclass(level, yesamiibo, yesenemy, yesbroken, yesalm, yestier1, ye
   var isUgly = yesugly;
   var base = yesBase;
 
-	var amiibo = ["Lord (Marth)",  "Lord (M. Corrin)", "Lord (F. Corrin)", "Lord (Roy)", "Lord (Lucina)", "Hero (Ike)", "Tactitian (Robin)"];
-	var oneandtwo = ["Mage (Male)", "Pegasus Knight", "Cleric", "Mage (Female)"];
-	var almcelica1 = ["Fighter", "Priestess (Celica)"]
-	var almcelica2 = ["Hero (Alm)", "Princess"]
-	var almcelica3 = ["Conqueror", "Rigain"]
-	var levelone = ["Villager", "Archer", "Cavalier", "Soldier", "Mercenary", "Boy", "Girl"];
-	var leveltwo = ["Myrmidon", "Sniper", "Paladin", "Knight", ];
-	var levelthree = ["Dread Fighter", "Baron", "Bow Knight", "Gold Knight"];
-	var onetwothree = ["Falcon Knight", "Saint", "Sage", "Priestess"];
-	var enemyone = ["Mogall", "Brigand"];
-  var enemytwo = ["Mogall", "Brigand"];
-	var enemyflex = [ "Arcanist", "Cantor", "Witch"];
-	var enemythree = ["Dagon", "Fire Dragon", "Fiend", "Guardian", "Balor"];
-	var overclass = ["Harrier", "Skogul", "Yasha", "Exemplar", "Guru", "Enchantress", "Oliphantier", "Spartan"];
-	var brokenuni = ["Fell Dragon", "God"];
-
-	var uglyone = ["Gargoyle", "Entombed (Normal)", "Revenant (Normal)", "Bonewalker"];
-	var uglythree = ["Deathgoyle", "Lich", "Garuda", "Deimos", "Vestal", "Mila Apostole", "White Dragon", "Duma Apostole"];
-	var uglytwo = ["Entombed (Numbing)", "Entombed (Venin)", "Revenant (Numbing)",  "Revenant (Numbing)", "Titan", "Lich", "Necodragon", "Fafnir", "Bonewalker"];
 
 	var classledger = [];
 
-	if (level == 1) {
-    if(base == true){
-		classledger = levelone;
-  }
-  if(base == true){
-		arraypush(oneandtwo, classledger);
-  }
-    if (yesugly == true) {
-      arraypush(uglyone, classledger);
-    }
-	}
-	if (level == 2) {
-    if(base == true){
-		classledger = leveltwo;
-    }
-    if(base == true){
-		if (isOne == true) {
-			arraypush(onetwothree, classledger);
-		} else {
-			arraypush(oneandtwo, classledger);
-		}
-  }
-		if (isEnemy == true) {
-			arraypush(enemytwo, classledger);
-		}
-    if (yesugly == true) {
-      arraypush(uglytwo, classledger);
-    }
-	}
-	if (level == 3) {
-    if(base == true){
-		classledger = levelthree;
-    }
-    if(base == true){
-		arraypush(onetwothree, classledger);
-  }
-		if (isEnemy == true) {
-			arraypush(enemythree, classledger);
-		}
-    if (yesugly == true) {
-      arraypush(uglythree, classledger);
-    }
-	}
-	if (level == 4) {
-    if(base == true){
-		classledger = overclass;
-    }
-	}
-	if (isAmiibo == true) {
-		if(level < 4){
-		arraypush(amiibo, classledger);
-	}
-}
-	if (isEnemy == true) {
-		if(level < 4){
-		arraypush(enemyflex, classledger);
-		}
-	}
-	if (isBroken == true && level <= 3) {
-		arraypush(brokenuni, classledger);
-	}
 
-	if (isAlm == true) {
-		if (level <= 2) {
-			arraypush(almcelica1, classledger);
+
+		if (level == 1) {
+	    if(base == true){
+			classledger = levelone;
+	  }
+	  if(base == true){
+			arraypush(oneandtwo, classledger);
+	  }
+	    if (yesugly == true) {
+	      arraypush(uglyone, classledger);
+	    }
+		}
+		if (level == 2) {
+	    if(base == true){
+			classledger = leveltwo;
+	    }
+	    if(base == true){
+			if (isOne == true) {
+				arraypush(onetwothree, classledger);
+			} else {
+				arraypush(oneandtwo, classledger);
+			}
+	  }
+			if (isEnemy == true) {
+				arraypush(enemytwo, classledger);
+			}
+	    if (yesugly == true) {
+	      arraypush(uglytwo, classledger);
+	    }
 		}
 		if (level == 3) {
-			arraypush(almcelica2, classledger);
+	    if(base == true){
+			classledger = levelthree;
+	    }
+	    if(base == true){
+			arraypush(onetwothree, classledger);
+	  }
+			if (isEnemy == true) {
+				arraypush(enemythree, classledger);
+			}
+	    if (yesugly == true) {
+	      arraypush(uglythree, classledger);
+	    }
 		}
 		if (level == 4) {
-			arraypush(almcelica3, classledger);
+	    if(base == true){
+			classledger = overclass;
+	    }
+		}
+		if (isAmiibo == true) {
+			if(level < 4){
+			arraypush(amiibo, classledger);
 		}
 	}
+		if (isEnemy == true) {
+			if(level < 4){
+			arraypush(enemyflex, classledger);
+			}
+		}
+		if (isBroken == true && level <= 3) {
+			arraypush(brokenuni, classledger);
+		}
 
+		if (isAlm == true) {
+			if (level <= 2) {
+				arraypush(almcelica1, classledger);
+			}
+			if (level == 3) {
+				arraypush(almcelica2, classledger);
+			}
+			if (level == 4) {
+				arraypush(almcelica3, classledger);
+			}
+		}
+
+		return classledger[randint(classledger.length)];
 	return classledger[randint(classledger.length)];
 }
 
@@ -556,7 +557,9 @@ function Route(option) {
    return;
   }
 
-	if (option == 'Alm') {
+	switch(option){
+
+	case "Alm": {
 
 			//CSV test
 
@@ -622,18 +625,29 @@ function Route(option) {
 			//console.log(rows);
 
 		}
-		almbutton.style.display = 'none';
+
 		almdone = true;
 
+		if(celicabutton.style.display == 'none'){
+			celicabutton.style.display = 'none';
+			bothbutton.style.display = 'none';
+			almbutton.style.display = 'none';
+
+		}
+		else{
+			almbutton.style.display = 'none';
+			celicabutton.style.display = 'none';
+		}
 
 
 
 
+		break;
 
 	return;
 
 	}
-	if (option == 'Celica') {
+	case "Celica": {
 		document.getElementById("reroll").hidden = false;
 		if (document.getElementById("deen").checked) {
 			celicachars.splice(12, 0, Deen);
@@ -665,13 +679,11 @@ function Route(option) {
 				arr[j] = myclass;
 				var id = 'id' + i.toString();
 				csvclass[j] = myclass;
-				almbutton.style.display = 'none';
-				celicabutton.style.display = 'none';
+				//almbutton.style.display = 'none';
+				//celicabutton.style.display = 'none';
 
 				if(firsttime){
 						//console.log(myclass);
-
-
 						//console.log(stringfix(myclass, almchars[i - 2].gender));
 
 						var playerjid = classmap.get(stringfix(myclass, celicachars[i - 2].gender));
@@ -689,15 +701,28 @@ function Route(option) {
 		}
 		var ex = document.getElementById("export");
 		ex.hidden = false;
-		almbutton.style.display = 'none';
-		celicabutton.style.display = 'none';
+		console.log(almbutton);
+		if(almbutton.style.display == 'none'){
+			celicabutton.style.display = 'none';
+			bothbutton.style.display = 'none';
+			almbutton.style.display = 'none';
+
+		}
+		else{
+			almbutton.style.display = 'none';
+			celicabutton.style.display = 'none';
+		}
+
 		celicadone = true;
+		break;
 	}
-	if (option == 'Both') {
+
+	case "Both": {
 		bothbutton.style.display = 'none';
 
 		if (celicadone == true && almdone == false) {
 			Route('Alm');
+			return;
 		} else if (celicadone == false && almdone == true) {
 			Route('Celica');
 		} else {
@@ -707,6 +732,7 @@ function Route(option) {
 			Route('Celica');
 		}
 	}
+}
 }
 
 function tableCreate(array, overlevel, name) {
