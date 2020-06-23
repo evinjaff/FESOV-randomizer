@@ -288,7 +288,7 @@ function JSONgenerate(){
 }());
 
 //var data = { x: 42, s: "hello, world", d: new Date() },
-fileName = "my-download.json";
+fileName = "RandomizedClasses.json";
 
 
 saveData(data[0], fileName);
@@ -646,6 +646,7 @@ function Route(option) {
 			celicachars.splice(12, 0, Sonya);
 		}
 		for (var i = 2; i < celicachars.length + 2; i++) {
+			var firsttime = true;
 			var csvclass = [celicachars[i - 2].name];
 			console.log(csvclass);
 			csstring = celicachars[i - 2].name;
@@ -666,6 +667,19 @@ function Route(option) {
 				csvclass[j] = myclass;
 				almbutton.style.display = 'none';
 				celicabutton.style.display = 'none';
+
+				if(firsttime){
+						//console.log(myclass);
+
+
+						//console.log(stringfix(myclass, almchars[i - 2].gender));
+
+						var playerjid = classmap.get(stringfix(myclass, celicachars[i - 2].gender));
+						data[0].Modules.Characters[celicachars[i-2].id].JID = playerjid;
+
+				}
+				firsttime = false;
+
 			}
 			tableCreate(arr, yesOverclass(), celicachars[i - 2].name);
 			document.getElementById("div2").appendChild(document.createElement("br"));
