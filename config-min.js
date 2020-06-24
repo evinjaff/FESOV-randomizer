@@ -574,7 +574,7 @@ function Route(option) {
 		for (var i = 2; i < almchars.length + 2; i++) {
 			csstring = almchars[i - 2].name;
 			var csvclass = [almchars[i - 2].name];
-			console.log(csvclass);
+
 			var id = document.createTextNode(csstring + ": ");
 			var tablehead = document.createElement("table");
 			var row = document.createElement("tr");
@@ -606,7 +606,21 @@ function Route(option) {
 						//console.log(myclass);
 
 
+
 						//console.log(stringfix(myclass, almchars[i - 2].gender));
+
+
+						if(data[0].Modules.Characters[almchars[i-2].id]["Equipped Item"] != null){
+							//console.log(almchars[i-2].name + " has an item!");
+							//console.log(data[0].Modules.Characters[almchars[i-2].id]["Equipped Item"])
+							//console.log("New Item: ");
+							if(document.getElementById("item").checked){
+							data[0].Modules.Characters[almchars[i-2].id]["Equipped Item"] = 	itemmap[randint(itemmap.length)];
+							//console.log(data[0].Modules.Characters[almchars[i-2].id]["Equipped Item"]);
+
+							}
+						}
+
 
 						var playerjid = classmap.get(stringfix(myclass, almchars[i - 2].gender));
 						data[0].Modules.Characters[almchars[i-2].id].JID = playerjid;
@@ -685,9 +699,25 @@ function Route(option) {
 				if(firsttime){
 						//console.log(myclass);
 						//console.log(stringfix(myclass, almchars[i - 2].gender));
+						if(document.getElementById("item").checked){
+							console.log(data[0].Modules.Characters[celicachars[i-2].id]["Equipped Item"] );
+							if(data[0].Modules.Characters[celicachars[i-2].id]["Equipped Item"] != null){
+						data[0].Modules.Characters[celicachars[i-2].id]["Equipped Item"] = 	itemmap[randint(itemmap.length)];
+						//console.log(data[0].Modules.Characters[almchars[i-2].id]["Equipped Item"]);
+						var itemico = document.createElement("img");
+						itemico.src = "img/boy.gif";
+						st = document.createElement("p");
+						var excstr = "exc" + i-2
+						st.id = excstr;
+						st.innerHTML = "Starting Item: ";
+						document.getElementById("div2").appendChild(st);
+						st.appendChild(itemico);
+						}
+						}
 
 						var playerjid = classmap.get(stringfix(myclass, celicachars[i - 2].gender));
 						data[0].Modules.Characters[celicachars[i-2].id].JID = playerjid;
+
 
 				}
 				firsttime = false;
