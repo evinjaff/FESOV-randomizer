@@ -74,7 +74,9 @@ classmap.set("Lord (M. Corrin)" , "JID_幻影カムイ男");
 classmap.set("Lord (F. Corrin)" , "JID_幻影カムイ女");
 
 
-var itemmap = ["IID_鉄の剣" ,
+var weapons = [
+
+"IID_鉄の剣" ,
 "IID_鋼の剣" ,
 "IID_銀の剣" ,
 "IID_勇者の剣" ,
@@ -91,39 +93,32 @@ var itemmap = ["IID_鉄の剣" ,
 "IID_宝剣ソフィア" ,
 "IID_イルウーン" ,
 "IID_レイピア" ,
-"IID_やり" ,
 "IID_鉄の槍" ,
 "IID_鋼の槍" ,
 "IID_銀の槍" ,
 "IID_手やり" ,
 "IID_聖なる槍" ,
-"IID_ナイトキラー" , 
+"IID_ナイトキラー" ,
 "IID_グラディウス" ,
 "IID_太陽" ,
 "IID_ドーマの槍" ,
 "IID_皇帝の槍" ,
-"IID_クリムヒルド" ,
 "IID_ロムファイア" ,
 "IID_サウニオン" ,
-"IID_おの" ,
 "IID_薪割り斧" ,
 "IID_デビルアクス" ,
-"IID_ゆみ" ,
 "IID_鉄の弓" ,
 "IID_鋼の弓" ,
 "IID_銀の弓" ,
 "IID_聖なる弓" ,
 "IID_月光" ,
 "IID_パルティア" ,
-"IID_ミラの弓" ,
 "IID_長弓" ,
 "IID_キラーボウ" ,
 "IID_シャイニングボウ" ,
-"IID_神剣ファルシオン" ,
-"IID_裏剣ファルシオン" ,
-"IID_ラグネル" ,
-"IID_封印の剣" ,
-"IID_夜刀神" ,
+
+
+
 "IID_錆びた剣" ,
 "IID_錆びた槍" ,
 "IID_錆びた弓" ,
@@ -146,7 +141,6 @@ var itemmap = ["IID_鉄の剣" ,
 "IID_魔封じの盾" ,
 "IID_竜の盾" ,
 "IID_皇帝の盾" ,
-"IID_ドーマの盾" ,
 "IID_王家の盾" ,
 "IID_賢者の盾" ,
 "IID_聖なる指輪" ,
@@ -157,14 +151,13 @@ var itemmap = ["IID_鉄の剣" ,
 "IID_奥義書" ,
 "IID_サンゴの指輪" ,
 "IID_ミラの指輪" ,
-"IID_怨嗟の指輪" ,
 "IID_悪魔の指輪" ,
-"IID_形見の指輪" ,
+"IID_形見の指輪" ]
 
-"IID_お土産の人形" ,
+var questitems = [
+"IID_お土産の人形" , //Handmade doll
 "IID_ガーゴイルの耳" ,
 "IID_銀の盆" ,
-"IID_牢獄の鍵" ,
 "IID_透明なひげ" ,
 "IID_スケルトン油" ,
 "IID_竜のうろこ" ,
@@ -174,12 +167,19 @@ var itemmap = ["IID_鉄の剣" ,
 "IID_木彫りのミラ" ,
 "IID_木彫りのドーマ" ,
 "IID_サンゴのかけら" ,
-"IID_黒真珠" ,
-
+"IID_黒真珠",
 "IID_赤い三角帽子" ,
 "IID_怪しい仮面" ,
 "IID_ドーマの兜" ,
-"IID_ミラの髪飾り" ,
+"IID_ミラの髪飾り"]
+
+var amiiboenemy = ["IID_神剣ファルシオン" ,
+"IID_裏剣ファルシオン" ,
+"IID_ラグネル" ,
+"IID_封印の剣" ,
+"IID_夜刀神", "IID_怨嗟の指輪" , "IID_ドーマの盾" , "IID_ミラの弓", "IID_クリムヒルド"]
+
+var provisions = [
 "IID_エール" ,
 "IID_のみかけのエール" ,
 "IID_スープ" ,
@@ -210,7 +210,10 @@ var itemmap = ["IID_鉄の剣" ,
 "IID_マナの草" ,
 "IID_小麦粉" ,
 "IID_穴あきチーズ" ,
-"IID_青カビチーズ" ,
+"IID_青カビチーズ"]
+
+var statboosters = [
+
 "IID_スイートクッキー" ,
 "IID_聖獣のチーズ" ,
 "IID_ネクタル" ,
@@ -218,16 +221,18 @@ var itemmap = ["IID_鉄の剣" ,
 "IID_アンブロシア" ,
 "IID_黄金のリンゴ" ,
 "IID_ソーマ" ,
-"IID_冥府のざくろ" ,
-"IID_金貨" ,
-"IID_金貨袋" ,
+"IID_冥府のざくろ" ,]
+
+//Rusted Weapons
+var rusted = [
 "IID_錆びた剣_鋼" ,
 "IID_錆びた槍_鋼" ,
 "IID_錆びた弓_鋼" ,
 "IID_錆びた盾_鉄" ,
 "IID_錆びた盾_鋼" ,
-"IID_錆びた斧_悪魔" ,
+"IID_錆びた斧_悪魔" ]
 
+var dlc = [
 "IID_ブーツ" ,
 "IID_セブンソード" ,
 "IID_イレブンシールド" ,
@@ -236,30 +241,178 @@ var itemmap = ["IID_鉄の剣" ,
 "IID_コラボの食べ物３" ,
 "IID_コラボの食べ物４" ,
 "IID_コラボの食べ物５" ,
-"IID_コラボの食べ物６" ,"" ]
+"IID_コラボの食べ物６"]
+
+var jpmap = new Map();
+
+
+jpmap.set("IID_鉄の剣", "Iron Sword");
+jpmap.set("IID_鋼の剣", "Steel Sword");
+jpmap.set("IID_銀の剣", "Silver Sword");
+jpmap.set("IID_勇者の剣", "Brave Sword");
+jpmap.set("IID_暗黒の剣", "Shadow Sword");
+jpmap.set("IID_いかづちの剣", "Lightning Sword");
+jpmap.set("IID_聖なる剣", "Blessed Sword");
+jpmap.set("IID_王家の剣", "Royal Sword");
+jpmap.set("IID_ファルシオン", "Falchion");
+jpmap.set("IID_流星", "Astra");
+jpmap.set("IID_黄金の短剣", "Golden Dagger");
+jpmap.set("IID_ツヴァイハンダー", "Zweihander");
+jpmap.set("IID_レディソード", "Ladyblade");
+jpmap.set("IID_メリクルソード", "Mercurius");
+jpmap.set("IID_宝剣ソフィア", "Beloved Zofia");
+jpmap.set("IID_イルウーン", "Ilwoon");
+jpmap.set("IID_レイピア", "Rapier");
+
+jpmap.set("IID_鉄の槍", "Iron Lance");
+jpmap.set("IID_鋼の槍", "Steel Lance");
+jpmap.set("IID_銀の槍", "Silver Lance");
+jpmap.set("IID_手やり", "Javelin");
+jpmap.set("IID_聖なる槍", "Blessed Lance");
+jpmap.set("IID_ナイトキラー", "Ridersbane");
+jpmap.set("IID_グラディウス", "Gradivus");
+jpmap.set("IID_太陽", "Sol");
+jpmap.set("IID_ドーマの槍", "Duma's Lance");
+jpmap.set("IID_皇帝の槍", "Emperor Lance");
+jpmap.set("IID_クリムヒルド", "Kriemhild");
+jpmap.set("IID_ロムファイア", "Rhomphaia");
+jpmap.set("IID_サウニオン", "Saunion");
+//jpmap.set("IID_おの", "Axe");
+jpmap.set("IID_薪割り斧", "Splitting Axe");
+jpmap.set("IID_デビルアクス", "Devil Axe");
+//jpmap.set("IID_ゆみ", "Bow
+jpmap.set("IID_鉄の弓", "Iron Bow");
+jpmap.set("IID_鋼の弓", "Steel Bow");
+jpmap.set("IID_銀の弓", "Silver Bow");
+jpmap.set("IID_聖なる弓", "Blessed Bow");
+jpmap.set("IID_月光", "Luna");
+jpmap.set("IID_パルティア", "Parthia");
+jpmap.set("IID_ミラの弓", "Mila's Bow");
+jpmap.set("IID_長弓", "Longbow");
+jpmap.set("IID_キラーボウ", "Killer Bow");
+jpmap.set("IID_シャイニングボウ", "Radiant Bow");
+jpmap.set("IID_神剣ファルシオン", "Exalted Falchion");
+jpmap.set("IID_裏剣ファルシオン", "Parallel Falchion");
+jpmap.set("IID_ラグネル", "Ragnell");
+jpmap.set("IID_封印の剣", "Binding Blade");
+jpmap.set("IID_夜刀神", "Yato");
+jpmap.set("IID_錆びた剣", "Rusted Sword");
+jpmap.set("IID_錆びた槍", "Rusted Lance");
+jpmap.set("IID_錆びた弓", "Rusted Bow");
+jpmap.set("IID_錆びた盾", "Rusted Shield");
+jpmap.set("IID_錆びた斧", "Rusted Axe");
+jpmap.set("IID_錆びた指輪", "Rusted Ring");
+jpmap.set("IID_毒の剣", "Venin Sword");
+jpmap.set("IID_毒の槍", "Venin Lance");
+jpmap.set("IID_毒の弓", "Venin Bow");
+jpmap.set("IID_毒の斧", "Venin Axe");
+jpmap.set("IID_革の盾", "Leather Shield");
+jpmap.set("IID_鉄の盾", "Iron Shield");
+jpmap.set("IID_鋼の盾", "Steel Shield");
+jpmap.set("IID_リオン家の盾", "Rion Shield");
+jpmap.set("IID_フーガ家の盾", "Fugue Shield");
+jpmap.set("IID_銀の盾", "Silver Shield");
+jpmap.set("IID_聖なる盾", "Blessed Shield");
+jpmap.set("IID_魔封じの盾", "Hexlock Shield");
+jpmap.set("IID_竜の盾", "Dracoshield");
+jpmap.set("IID_皇帝の盾", "Emperor Shield");
+jpmap.set("IID_ドーマの盾", "Duma's Shield");
+jpmap.set("IID_王家の盾", "Royal Shield");
+jpmap.set("IID_賢者の盾", "Sage's Shield");
+jpmap.set("IID_聖なる指輪", "Blessed Ring");
+jpmap.set("IID_天使の指輪", "Angel Ring");
+jpmap.set("IID_速さの指輪", "Speed Ring");
+jpmap.set("IID_魔道の指輪", "Mage Ring");
+jpmap.set("IID_祈りの指輪", "Prayer Ring");
+jpmap.set("IID_奥義書", "Grimoire Ring");
+jpmap.set("IID_サンゴの指輪", "Coral Ring");
+jpmap.set("IID_ミラの指輪", "Mila's Ring");
+jpmap.set("IID_怨嗟の指輪", "Animus Ring");
+jpmap.set("IID_悪魔の指輪", "Demon Ring");
+jpmap.set("IID_形見の指輪", "Keepsake Ring");
+
+jpmap.set("IID_お土産の人形", "Handmade Doll");
+jpmap.set("IID_ガーゴイルの耳", "Gargoyle Ear");
+jpmap.set("IID_銀の盆", "Silver Platter");
+jpmap.set("IID_牢獄の鍵", "Cell Key");
+jpmap.set("IID_透明なひげ", "Gossamer Hair");
+jpmap.set("IID_スケルトン油", "Bonewalker Oil");
+jpmap.set("IID_竜のうろこ", "Dragon Scale");
+jpmap.set("IID_リマ家の腕輪", "Lima Armlet");
+jpmap.set("IID_息子の日記", "A Son's Journal");
+jpmap.set("IID_木彫りのクマ", "Bear Carving");
+jpmap.set("IID_木彫りのミラ", "Mila Carving");
+jpmap.set("IID_木彫りのドーマ", "Duma Carving");
+jpmap.set("IID_サンゴのかけら", "Coral Fragment");
+jpmap.set("IID_黒真珠", "Black Pearl");
+
+jpmap.set("IID_赤い三角帽子", "Red Tricorn");
+jpmap.set("IID_怪しい仮面", "Dubious mask");
+jpmap.set("IID_ドーマの兜", "Duma's Helm");
+jpmap.set("IID_ミラの髪飾り", "Mila's Diadem");
+jpmap.set("IID_エール", "Ale");
+jpmap.set("IID_のみかけのエール", "Leftover Ale");
+jpmap.set("IID_スープ", "Soup");
+jpmap.set("IID_さめたスープ", "Cold Soup");
+jpmap.set("IID_葡萄酒", "Wine");
+jpmap.set("IID_にんにく", "Garlic");
+jpmap.set("IID_ラムの葡萄酒", "Ram Wine");
+jpmap.set("IID_飲み水", "Drinking Water");
+jpmap.set("IID_ドーマのコケ", "Duma moss");
+jpmap.set("IID_ニシン", "HerRing");
+jpmap.set("IID_ダゴンのきりみ", "Dagon Fillet");
+jpmap.set("IID_発酵乳", "Yogurt");
+jpmap.set("IID_薬草のリキュール", "Medicinal Syrup");
+jpmap.set("IID_オレンジ", "Orange");
+jpmap.set("IID_異国のスパイス", "Exotic Spice");
+jpmap.set("IID_ソーセージ", "Sausage");
+jpmap.set("IID_タテウオのひもの", "Dried Shellfish");
+jpmap.set("IID_にんじん", "Carrot");
+jpmap.set("IID_バター", "Butter");
+jpmap.set("IID_はちみつ", "Honey");
+jpmap.set("IID_ハム", "Ham");
+jpmap.set("IID_パン", "Bread");
+jpmap.set("IID_かじったパン", "Leftover Bread");
+jpmap.set("IID_パンのかけら", "Bread Piece");
+jpmap.set("IID_かたいパン", "Hard Bread");
+jpmap.set("IID_ほしにく", "Dried Meat");
+jpmap.set("IID_なまにく", "Raw Meat");
+jpmap.set("IID_マナの草", "Mana Herbs");
+jpmap.set("IID_小麦粉", "Flour");
+jpmap.set("IID_穴あきチーズ", "Holey Cheese");
+jpmap.set("IID_青カビチーズ", "Blue Cheese");
+jpmap.set("IID_スイートクッキー", "Sweet Cookie");
+jpmap.set("IID_聖獣のチーズ", "Pegasus Cheese");
+jpmap.set("IID_ネクタル", "Nectar");
+jpmap.set("IID_生命の木の実", "Fruit of Life");
+jpmap.set("IID_アンブロシア", "Ambrosia");
+jpmap.set("IID_黄金のリンゴ", "Golden Apple");
+jpmap.set("IID_ソーマ", "Soma");
+jpmap.set("IID_冥府のざくろ", "Nethergranate");
 
 
 
+jpmap.set("IID_錆びた剣_鋼", "Rusted Sword");
+jpmap.set("IID_錆びた槍_鋼", "Rusted Lance");
+jpmap.set("IID_錆びた弓_鋼", "Rusted Bow");
+jpmap.set("IID_錆びた盾_鉄", "Rusted Shield");
+jpmap.set("IID_錆びた盾_鋼", "Rusted Shield");
+jpmap.set("IID_錆びた斧_悪魔", "Rusted Axe");
 
-var amiibo = ["Lord (Marth)",  "Lord (M. Corrin)", "Lord (F. Corrin)", "Lord (Roy)", "Lord (Lucina)", "Hero (Ike)", "Tactitian (Robin)"];
-var oneandtwo = ["Mage (Male)", "Pegasus Knight", "Cleric", "Mage (Female)"];
-var almcelica1 = ["Fighter", "Priestess (Celica)"]
-var almcelica2 = ["Hero (Alm)", "Princess"]
-var almcelica3 = ["Conqueror", "Rigain"]
-var levelone = ["Villager", "Archer", "Cavalier", "Soldier", "Mercenary", "Boy", "Girl"];
-var leveltwo = ["Myrmidon", "Sniper", "Paladin", "Knight", ];
-var levelthree = ["Dread Fighter", "Baron", "Bow Knight", "Gold Knight"];
-var onetwothree = ["Falcon Knight", "Saint", "Sage", "Priestess"];
-var enemyone = ["Mogall", "Brigand"];
-var enemytwo = ["Mogall", "Brigand"];
-var enemyflex = [ "Arcanist", "Cantor", "Witch"];
-var enemythree = ["Dagon", "Fire Dragon", "Fiend", "Guardian", "Balor"];
-var overclass = ["Harrier", "Skogul", "Yasha", "Exemplar", "Guru", "Enchantress", "Oliphantier", "Spartan"];
-var brokenuni = ["Fell Dragon", "God"];
 
-var uglyone = ["Gargoyle", "Entombed (Normal)", "Revenant (Normal)", "Bonewalker"];
-var uglythree = ["Deathgoyle", "Lich", "Garuda", "Deimos", "Vestal", "Mila Apostole", "White Dragon", "Duma Apostole"];
-var uglytwo = ["Entombed (Numbing)", "Entombed (Venin)", "Revenant (Numbing)",  "Revenant (Numbing)", "Titan", "Lich", "Necodragon", "Fafnir", "Bonewalker"];
+
+jpmap.set("IID_ブーツ", "Boots");
+jpmap.set("IID_セブンソード", "Seven Sword");
+jpmap.set("IID_イレブンシールド", "Eleven Shield");
+jpmap.set("IID_コラボの食べ物１", "Boiled Chicken");
+jpmap.set("IID_コラボの食べ物２", "Moist Bread");
+jpmap.set("IID_コラボの食べ物３", "Spicy Chicken");
+jpmap.set("IID_コラボの食べ物４", "Mille Crepe");
+jpmap.set("IID_コラボの食べ物５", "Chicken Link");
+jpmap.set("IID_コラボの食べ物６", "Pure Honey");
+
+
+
 
 
 

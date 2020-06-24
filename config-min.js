@@ -429,7 +429,25 @@ function chooseclass(level, yesamiibo, yesenemy, yesbroken, yesalm, yestier1, ye
 	var isOne = yestier1;
   var isUgly = yesugly;
   var base = yesBase;
+	var amiibo = ["Lord (Marth)",  "Lord (M. Corrin)", "Lord (F. Corrin)", "Lord (Roy)", "Lord (Lucina)", "Hero (Ike)", "Tactitian (Robin)"];
+	var oneandtwo = ["Mage (Male)", "Pegasus Knight", "Cleric", "Mage (Female)"];
+	var almcelica1 = ["Fighter", "Priestess (Celica)"]
+	var almcelica2 = ["Hero (Alm)", "Princess"]
+	var almcelica3 = ["Conqueror", "Rigain"]
+	var levelone = ["Villager", "Archer", "Cavalier", "Soldier", "Mercenary", "Boy", "Girl"];
+	var leveltwo = ["Myrmidon", "Sniper", "Paladin", "Knight", ];
+	var levelthree = ["Dread Fighter", "Baron", "Bow Knight", "Gold Knight"];
+	var onetwothree = ["Falcon Knight", "Saint", "Sage", "Priestess"];
+	var enemyone = ["Mogall", "Brigand"];
+	var enemytwo = ["Mogall", "Brigand"];
+	var enemyflex = [ "Arcanist", "Cantor", "Witch"];
+	var enemythree = ["Dagon", "Fire Dragon", "Fiend", "Guardian", "Balor"];
+	var overclass = ["Harrier", "Skogul", "Yasha", "Exemplar", "Guru", "Enchantress", "Oliphantier", "Spartan"];
+	var brokenuni = ["Fell Dragon", "God"];
 
+	var uglyone = ["Gargoyle", "Entombed (Normal)", "Revenant (Normal)", "Bonewalker"];
+	var uglythree = ["Deathgoyle", "Lich", "Garuda", "Deimos", "Vestal", "Mila Apostole", "White Dragon", "Duma Apostole"];
+	var uglytwo = ["Entombed (Numbing)", "Entombed (Venin)", "Revenant (Numbing)",  "Revenant (Numbing)", "Titan", "Lich", "Necodragon", "Fafnir", "Bonewalker"];
 
 	var classledger = [];
 
@@ -557,6 +575,67 @@ function Route(option) {
    return;
   }
 
+	//Item array entry ifs
+
+	var extractedmap = [];
+
+	if(document.getElementById("item").checked){
+		var checkedtruths = [true, true, true, true, true, true];
+		var univtruth = true;
+
+			if(document.getElementById("provisions").checked == true){
+				arraypush(provisions, extractedmap);
+				checkedtruths[0] = false;
+			}
+
+			if(document.getElementById("quest").checked == true){
+				arraypush(questitems, extractedmap);
+				checkedtruths[1] = false;
+			}
+			if(document.getElementById("statboosters").checked == true){
+				arraypush(statboosters, extractedmap);
+				checkedtruths[2] = false;
+			}
+
+			if(document.getElementById("weapons").checked == true){
+				arraypush(weapons, extractedmap);
+				checkedtruths[3] = false;
+			}
+
+			if(document.getElementById("rusted").checked == true){
+				arraypush(rusted, extractedmap);
+				checkedtruths[4] = false;
+			}
+			if(document.getElementById("dlc").checked == true){
+				arraypush(rusted, extractedmap);
+				checkedtruths[5] = false;
+			}
+			if(document.getElementById("enitem").checked == true){
+				arraypush(amiiboenemy, extractedmap);
+				checkedtruths[6] = false;
+			}
+			console.log(checkedtruths);
+
+
+
+			var anyfalse = false;
+			for(var u=0;u<checkedtruths.length;u++){
+				if(checkedtruths[u] == false){
+					anyfalse = true;
+				}
+			}
+			if(!anyfalse){
+				alert("error: please select at least one item type to include in the item randomization pool, or uncheck 'Randomize Starting Items'");
+				return;
+			}
+
+
+
+
+
+
+}
+
 	switch(option){
 
 	case "Alm": {
@@ -609,18 +688,43 @@ function Route(option) {
 
 						//console.log(stringfix(myclass, almchars[i - 2].gender));
 
-
+						/*
 						if(data[0].Modules.Characters[almchars[i-2].id]["Equipped Item"] != null){
 							//console.log(almchars[i-2].name + " has an item!");
 							//console.log(data[0].Modules.Characters[almchars[i-2].id]["Equipped Item"])
 							//console.log("New Item: ");
 							if(document.getElementById("item").checked){
-							data[0].Modules.Characters[almchars[i-2].id]["Equipped Item"] = 	itemmap[randint(itemmap.length)];
+							data[0].Modules.Characters[almchars[i-2].id]["Equipped Item"] = 	extractedmap[randint(extractedmap.length)];
 							//console.log(data[0].Modules.Characters[almchars[i-2].id]["Equipped Item"]);
 
 							}
 						}
+						*/
 
+						//console.log(myclass);
+						//console.log(stringfix(myclass, almchars[i - 2].gender));
+						if(document.getElementById("item").checked){
+							//console.log(data[0].Modules.Characters[celicachars[i-2].id]["Equipped Item"] );
+							if(data[0].Modules.Characters[almchars[i-2].id]["Equipped Item"] != null){
+								var myitem = extractedmap[randint(extractedmap.length)];
+						data[0].Modules.Characters[almchars[i-2].id]["Equipped Item"] = 	myitem;
+						//console.log(data[0].Modules.Characters[almchars[i-2].id]["Equipped Item"]);
+						var itemico = document.createElement("img");
+						console.log(lowunderscore(jpmap.get(myitem)));
+						itemico.src = "img/Echoes_" + lowunderscore(jpmap.get(myitem)) + "_icon.png";
+						console.log("img/Echoes_" + lowunderscore(jpmap.get(myitem)) + "_icon.png");
+						st = document.createElement("p");
+						var excstr = "exc" + i-2
+						st.id = excstr;
+						st.innerHTML = "Starting Item: " + jpmap.get(myitem);
+						console.log();
+						document.getElementById("div2").appendChild(st);
+						st.appendChild(itemico);
+					}
+					}
+
+
+						//Other>
 
 						var playerjid = classmap.get(stringfix(myclass, almchars[i - 2].gender));
 						data[0].Modules.Characters[almchars[i-2].id].JID = playerjid;
@@ -673,10 +777,14 @@ function Route(option) {
 			celicachars.splice(12, 0, Deen);
 			celicachars.splice(12, 0, Sonya);
 		}
+
+
+
+
 		for (var i = 2; i < celicachars.length + 2; i++) {
 			var firsttime = true;
 			var csvclass = [celicachars[i - 2].name];
-			console.log(csvclass);
+			//console.log(csvclass);
 			csstring = celicachars[i - 2].name;
 			var id = document.createTextNode(csstring + ": ");
 			var tablehead = document.createElement("table");
@@ -697,21 +805,34 @@ function Route(option) {
 				//celicabutton.style.display = 'none';
 
 				if(firsttime){
+
+
+
+
 						//console.log(myclass);
 						//console.log(stringfix(myclass, almchars[i - 2].gender));
 						if(document.getElementById("item").checked){
-							console.log(data[0].Modules.Characters[celicachars[i-2].id]["Equipped Item"] );
+							//console.log(data[0].Modules.Characters[celicachars[i-2].id]["Equipped Item"] );
 							if(data[0].Modules.Characters[celicachars[i-2].id]["Equipped Item"] != null){
-						data[0].Modules.Characters[celicachars[i-2].id]["Equipped Item"] = 	itemmap[randint(itemmap.length)];
+								var myitem = extractedmap[randint(extractedmap.length)];
+						data[0].Modules.Characters[celicachars[i-2].id]["Equipped Item"] = 	myitem;
 						//console.log(data[0].Modules.Characters[almchars[i-2].id]["Equipped Item"]);
 						var itemico = document.createElement("img");
-						itemico.src = "img/boy.gif";
+						console.log(lowunderscore(jpmap.get(myitem)));
+						itemico.src = "img/Echoes_" + lowunderscore(jpmap.get(myitem)) + "_icon.png";
+						console.log("img/Echoes_" + lowunderscore(jpmap.get(myitem)) + "_icon.png");
 						st = document.createElement("p");
 						var excstr = "exc" + i-2
 						st.id = excstr;
-						st.innerHTML = "Starting Item: ";
+						st.innerHTML = "Starting Item: " + jpmap.get(myitem);
+						console.log();
 						document.getElementById("div2").appendChild(st);
 						st.appendChild(itemico);
+
+						//begin test block
+
+
+
 						}
 						}
 
@@ -725,9 +846,9 @@ function Route(option) {
 			}
 			tableCreate(arr, yesOverclass(), celicachars[i - 2].name);
 			document.getElementById("div2").appendChild(document.createElement("br"));
-			console.log(csvclass);
+			//console.log(csvclass);
 			rows[rows.length] = csvclass;
-			console.log(rows);
+			//console.log(rows);
 		}
 		var ex = document.getElementById("export");
 		ex.hidden = false;
@@ -763,6 +884,17 @@ function Route(option) {
 		}
 	}
 }
+}
+
+function lowunderscore(itemtype){
+		try{
+		var output = itemtype.toLowerCase().replace(/ /g,"_");
+		console.log(output);
+		return output;
+	}
+	catch(err){
+			console.log("invalid string: " + itemtype);
+	}
 }
 
 function tableCreate(array, overlevel, name) {
