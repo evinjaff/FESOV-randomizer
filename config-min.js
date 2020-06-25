@@ -607,7 +607,7 @@ function Route(option) {
 				checkedtruths[4] = false;
 			}
 			if(document.getElementById("dlc").checked == true){
-				arraypush(rusted, extractedmap);
+				arraypush(dlc, extractedmap);
 				checkedtruths[5] = false;
 			}
 			if(document.getElementById("enitem").checked == true){
