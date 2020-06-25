@@ -74,6 +74,8 @@ classmap.set("Lord (M. Corrin)" , "JID_幻影カムイ男");
 classmap.set("Lord (F. Corrin)" , "JID_幻影カムイ女");
 
 
+
+
 var weapons = [
 
 "IID_鉄の剣" ,
@@ -116,15 +118,6 @@ var weapons = [
 "IID_長弓" ,
 "IID_キラーボウ" ,
 "IID_シャイニングボウ" ,
-
-
-
-"IID_錆びた剣" ,
-"IID_錆びた槍" ,
-"IID_錆びた弓" ,
-"IID_錆びた盾" ,
-"IID_錆びた斧" ,
-"IID_錆びた指輪" ,
 "IID_毒の剣" ,
 "IID_毒の槍" ,
 "IID_毒の弓" ,
@@ -225,12 +218,27 @@ var statboosters = [
 
 //Rusted Weapons
 var rusted = [
-"IID_錆びた剣_鋼" ,
-"IID_錆びた槍_鋼" ,
-"IID_錆びた弓_鋼" ,
-"IID_錆びた盾_鉄" ,
-"IID_錆びた盾_鋼" ,
-"IID_錆びた斧_悪魔" ]
+  "IID_錆びた剣_鉄",
+  "IID_錆びた剣_鋼",
+  "IID_錆びた剣_暗黒",
+  "IID_錆びた剣_勇者",
+  "IID_錆びた剣_流星",
+  "IID_錆びた剣_毒",
+  "IID_錆びた槍_鉄",
+  "IID_錆びた槍_鋼",
+  "IID_錆びた槍_太陽",
+  "IID_錆びた槍_毒",
+  "IID_錆びた弓_鉄",
+  "IID_錆びた弓_鋼",
+  "IID_錆びた弓_月光",
+  "IID_錆びた弓_毒",
+  "IID_錆びた盾_鉄",
+  "IID_錆びた盾_鋼",
+  "IID_錆びた盾_竜",
+  "IID_錆びた斧_悪魔",
+  "IID_錆びた指輪_天使",
+  "IID_錆びた指輪_悪魔",
+  "IID_錆びた指輪_魔道",]
 
 var dlc = [
 "IID_ブーツ" ,
@@ -280,6 +288,30 @@ jpmap.set("IID_サウニオン", "Saunion");
 //jpmap.set("IID_おの", "Axe");
 jpmap.set("IID_薪割り斧", "Splitting Axe");
 jpmap.set("IID_デビルアクス", "Devil Axe");
+
+jpmap.set("Rusted Sword", "IID_錆びた剣_鉄");
+jpmap.set("Rusted Sword", "IID_錆びた剣_鋼");
+jpmap.set("Rusted Sword", "IID_錆びた剣_暗黒");
+jpmap.set("Rusted Sword", "IID_錆びた剣_勇者");
+jpmap.set("Rusted Sword", "IID_錆びた剣_流星");
+jpmap.set("Rusted Sword", "IID_錆びた剣_毒");
+jpmap.set("Rusted Lance", "IID_錆びた槍_鉄");
+jpmap.set("Rusted Lance", "IID_錆びた槍_鋼");
+jpmap.set("Rusted Lance", "IID_錆びた槍_太陽");
+jpmap.set("Rusted Lance", "IID_錆びた槍_毒");
+jpmap.set("Rusted Bow", "IID_錆びた弓_鉄");
+jpmap.set("Rusted Bow", "IID_錆びた弓_鋼");
+jpmap.set("Rusted Bow", "IID_錆びた弓_月光");
+jpmap.set("Rusted Bow", "IID_錆びた弓_毒");
+jpmap.set("Rusted Shield", "IID_錆びた盾_鉄");
+jpmap.set("Rusted Shield", "IID_錆びた盾_鋼");
+jpmap.set("Rusted Shield", "IID_錆びた盾_竜");
+jpmap.set("Rusted Axe", "IID_錆びた斧_悪魔");
+jpmap.set("Rusted Ring", "IID_錆びた指輪_天使");
+jpmap.set("Rusted Ring", "IID_錆びた指輪_悪魔");
+jpmap.set("Rusted Ring", "IID_錆びた指輪_魔道");
+jpmap.set("Rusted Lance", "IID_錆びた槍_毒");
+
 //jpmap.set("IID_ゆみ", "Bow
 jpmap.set("IID_鉄の弓", "Iron Bow");
 jpmap.set("IID_鋼の弓", "Steel Bow");
@@ -296,7 +328,10 @@ jpmap.set("IID_裏剣ファルシオン", "Parallel Falchion");
 jpmap.set("IID_ラグネル", "Ragnell");
 jpmap.set("IID_封印の剣", "Binding Blade");
 jpmap.set("IID_夜刀神", "Yato");
+
 jpmap.set("IID_錆びた剣", "Rusted Sword");
+jpmap.set("IID_錆びた槍_毒", "Rusted Lance");
+
 jpmap.set("IID_錆びた槍", "Rusted Lance");
 jpmap.set("IID_錆びた弓", "Rusted Bow");
 jpmap.set("IID_錆びた盾", "Rusted Shield");

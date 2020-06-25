@@ -706,7 +706,11 @@ function Route(option) {
 						if(document.getElementById("item").checked){
 							//console.log(data[0].Modules.Characters[celicachars[i-2].id]["Equipped Item"] );
 							if(data[0].Modules.Characters[almchars[i-2].id]["Equipped Item"] != null){
-								var myitem = extractedmap[randint(extractedmap.length)];
+								console.log("Rand Number: ")
+								var rng = randint(extractedmap.length-1);
+
+
+								var myitem = extractedmap[rng];
 						data[0].Modules.Characters[almchars[i-2].id]["Equipped Item"] = 	myitem;
 						//console.log(data[0].Modules.Characters[almchars[i-2].id]["Equipped Item"]);
 						var itemico = document.createElement("img");
