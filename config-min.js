@@ -718,8 +718,11 @@ function Route(option) {
 						st.id = excstr;
 						st.innerHTML = "Starting Item: " + jpmap.get(myitem);
 						console.log();
-						document.getElementById("div2").appendChild(st);
-						st.appendChild(itemico);
+						  st.appendChild(itemico);
+							document.getElementById("div2");
+							document.getElementById("div2").appendChild(st);
+
+
 					}
 					}
 
@@ -826,8 +829,9 @@ function Route(option) {
 						st.id = excstr;
 						st.innerHTML = "Starting Item: " + jpmap.get(myitem);
 						console.log();
-						document.getElementById("div2").appendChild(st);
 						st.appendChild(itemico);
+						document.getElementById("div2");
+						document.getElementById("div2").appendChild(st);
 
 						//begin test block
 
