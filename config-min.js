@@ -684,10 +684,14 @@ function Route(option) {
 				if(firsttime){
 						//console.log(myclass);
 
-
-
+						/* Test loop to test for null results
+						for(var o=1;o<extractedmap.length;o++){
+							console.log("o = " + o);
+							console.log(extractedmap[o]);
+							console.log(jpmap.get(extractedmap[o]));
+						}
 						//console.log(stringfix(myclass, almchars[i - 2].gender));
-
+						*/
 						/*
 						if(data[0].Modules.Characters[almchars[i-2].id]["Equipped Item"] != null){
 							//console.log(almchars[i-2].name + " has an item!");
