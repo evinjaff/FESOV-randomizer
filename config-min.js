@@ -6,7 +6,7 @@ document.getElementsByTagName('head')[0].appendChild(script);
 
 
 
-
+var spells = [];
 
 var script = document.createElement('script');
 script.src = 'https://code.jquery.com/jquery-3.4.1.min.js';
@@ -552,6 +552,7 @@ function getSpritePath(pclass) {
 }
 
 function Route(option) {
+
 	var celicabutton = document.getElementById("CelicaButton");
 	var almbutton = document.getElementById("AlmButton");
 	var bothbutton = document.getElementById("Both");
@@ -578,6 +579,11 @@ function Route(option) {
 	//Item array entry ifs
 
 	var extractedmap = [];
+
+	var dospells = false;
+	if(document.getElementById("spells").checked == true){
+		dospells = true;
+	}
 
 	if(document.getElementById("item").checked){
 		var checkedtruths = [true, true, true, true, true, true];
@@ -615,6 +621,8 @@ function Route(option) {
 				checkedtruths[6] = false;
 			}
 			console.log(checkedtruths);
+
+
 
 
 
@@ -682,6 +690,14 @@ function Route(option) {
 				//console.log("First Time:");
 				//console.log(firsttime);
 				if(firsttime){
+
+
+					if(dospells){
+						//spells[i-2] = data[0].Modules.Characters[celicachars[i-2].id]["Learned White Magic"] //= almwhite[randint(almwhite.length)];
+						//spells[i-2] = data[0].Modules.Characters[celicachars[i-2].id]["Learned Black Magic"] //= almblack[randint(almwhite.length)];
+
+
+					}
 						//console.log(myclass);
 
 						/* Test loop to test for null results
@@ -710,7 +726,7 @@ function Route(option) {
 						if(document.getElementById("item").checked){
 							//console.log(data[0].Modules.Characters[celicachars[i-2].id]["Equipped Item"] );
 							if(data[0].Modules.Characters[almchars[i-2].id]["Equipped Item"] != null){
-								console.log("Rand Number: ")
+								//console.log("Rand Number: ")
 								var rng = randint(extractedmap.length-1);
 
 
@@ -718,9 +734,9 @@ function Route(option) {
 						data[0].Modules.Characters[almchars[i-2].id]["Equipped Item"] = 	myitem;
 						//console.log(data[0].Modules.Characters[almchars[i-2].id]["Equipped Item"]);
 						var itemico = document.createElement("img");
-						console.log(lowunderscore(jpmap.get(myitem)));
+						//console.log(lowunderscore(jpmap.get(myitem)));
 						itemico.src = "img/Echoes_" + lowunderscore(jpmap.get(myitem)) + "_icon.png";
-						console.log("img/Echoes_" + lowunderscore(jpmap.get(myitem)) + "_icon.png");
+						//console.log("img/Echoes_" + lowunderscore(jpmap.get(myitem)) + "_icon.png");
 						st = document.createElement("p");
 						var excstr = "exc" + i-2
 						st.id = excstr;
@@ -728,12 +744,12 @@ function Route(option) {
 
 						var pu = document.createElement("p");
 						pu.innerHTML = jpmap.get(myitem);
-						console.log(pu);
+						//console.log(pu);
 
 						st.appendChild(document.createElement("br"));
 						st.appendChild(itemico);
 						st.appendChild(pu);
-						console.log(itemico);
+						//console.log(itemico);
 
 							document.getElementById("div2").appendChild(st);
 
@@ -826,7 +842,13 @@ function Route(option) {
 
 
 
+					if(dospells){
 
+							spells[i-2] = data[0].Modules.Characters[celicachars[i-2].id]["Learned Black Magic"]; //= almwhite[randint(almwhite.length)];
+							//spells[i-2] = data[0].Modules.Characters[almchars[i-2].id]["Learned Black Magic"] = almblack[randint(almwhite.length)];
+
+
+					}
 						//console.log(myclass);
 						//console.log(stringfix(myclass, almchars[i - 2].gender));
 						if(document.getElementById("item").checked){
