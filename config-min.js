@@ -724,10 +724,17 @@ function Route(option) {
 						st = document.createElement("p");
 						var excstr = "exc" + i-2
 						st.id = excstr;
-						st.innerHTML = "Starting Item: " + jpmap.get(myitem);
-						console.log();
-						  st.appendChild(itemico);
-							document.getElementById("div2");
+						st.innerHTML = "Starting Item: ";
+
+						var pu = document.createElement("p");
+						pu.innerHTML = jpmap.get(myitem);
+						console.log(pu);
+
+						st.appendChild(document.createElement("br"));
+						st.appendChild(itemico);
+						st.appendChild(pu);
+						console.log(itemico);
+
 							document.getElementById("div2").appendChild(st);
 
 
@@ -835,11 +842,25 @@ function Route(option) {
 						st = document.createElement("p");
 						var excstr = "exc" + i-2
 						st.id = excstr;
-						st.innerHTML = "Starting Item: " + jpmap.get(myitem);
-						console.log();
+						st.innerHTML = "Starting Item: ";
+
+						var pu = document.createElement("p");
+						pu.innerHTML = jpmap.get(myitem);
+						console.log(pu);
+
+						st.appendChild(document.createElement("br"));
 						st.appendChild(itemico);
-						document.getElementById("div2");
+						st.appendChild(pu);
+
+
+
+						console.log(st);
+
+
 						document.getElementById("div2").appendChild(st);
+						//document.getElementById("div2").appendChild(pu);
+
+						//begin test block
 
 						//begin test block
 
