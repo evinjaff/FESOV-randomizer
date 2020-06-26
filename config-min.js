@@ -877,6 +877,24 @@ var thracia = false;
 				if(firsttime){
 
 
+					if(randgrowths == true){
+						//console.log(data[0].Modules.Characters[almchars[i-2].id]["Growths"]);
+
+						for(var k=0; k<data[0].Modules.Characters[almchars[i-2].id]["Growths"].length-1;k++){
+								data[0].Modules.Characters[celicachars[i-2].id]["Growths"][k] = parseInt(min) + randint(parseInt(max)-parseInt(min));
+
+						}
+						if(thracia){
+								console.log("THRACIA TIME!")
+								data[0].Modules.Characters[celicachars[i-2].id]["Growths"][7] = parseInt(min) + randint(parseInt(max)-parseInt(min));
+						}
+
+						console.log(data[0].Modules.Characters[celicachars[i-2].id]["Growths"]);
+
+
+					}
+
+
 
 					if(dospells){
 
@@ -894,9 +912,9 @@ var thracia = false;
 						data[0].Modules.Characters[celicachars[i-2].id]["Equipped Item"] = 	myitem;
 						//console.log(data[0].Modules.Characters[almchars[i-2].id]["Equipped Item"]);
 						var itemico = document.createElement("img");
-						console.log(lowunderscore(jpmap.get(myitem)));
+						//console.log(lowunderscore(jpmap.get(myitem)));
 						itemico.src = "img/Echoes_" + lowunderscore(jpmap.get(myitem)) + "_icon.png";
-						console.log("img/Echoes_" + lowunderscore(jpmap.get(myitem)) + "_icon.png");
+						//console.log("img/Echoes_" + lowunderscore(jpmap.get(myitem)) + "_icon.png");
 						st = document.createElement("p");
 						var excstr = "exc" + i-2
 						st.id = excstr;
@@ -904,7 +922,7 @@ var thracia = false;
 
 						var pu = document.createElement("p");
 						pu.innerHTML = jpmap.get(myitem);
-						console.log(pu);
+						//console.log(pu);
 
 						st.appendChild(document.createElement("br"));
 						st.appendChild(itemico);
@@ -912,7 +930,7 @@ var thracia = false;
 
 
 
-						console.log(st);
+						//console.log(st);
 
 
 						document.getElementById("div2").appendChild(st);
