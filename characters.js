@@ -447,11 +447,9 @@ jpmap.set("IID_コラボの食べ物５", "Chicken Link");
 jpmap.set("IID_コラボの食べ物６", "Pure Honey");
 
 
-var almwhite = ["MSID_汎用魔法", "MSID_グレイ", "MSID_ロビン", "MSID_クリフ", "MSID_エフィ神聖", "MSID_シルク", "MSID_汎用神聖", "MSID_リュート", "MSID_汎用神聖", "MSID_デューテ神聖", "MSID_ティータ"];
-var almblack = ["MSID_汎用魔法", "MSID_グレイ", "MSID_ロビン", "MSID_クリフ", "MSID_エフィ魔法", "MSID_リュート", "MSID_デューテ"];
+var white = ["MSID_汎用魔法", "MSID_グレイ", "MSID_ロビン", "MSID_クリフ", "MSID_エフィ神聖", "MSID_シルク", "MSID_汎用神聖", "MSID_リュート", "MSID_汎用神聖", "MSID_デューテ神聖", "MSID_ティータ", /* Celica:*/"MSID_汎用魔法","MSID_セリカ", "MSID_メイ神聖", "MSID_ボーイ", "MSID_ジェニー", "MSID_セーバー", "MSID_カムイ", "MSID_汎用魔法", "MSID_汎用神聖", "MSID_汎用神聖", "MSID_アトラス", "MSID_ジェシー", "MSID_ソニア神聖", "MSID_汎用神聖", "MSID_ノーマ", "MSID_ノーマ"];
+var black = ["MSID_汎用魔法", "MSID_グレイ", "MSID_ロビン", "MSID_クリフ", "MSID_エフィ魔法", "MSID_リュート", "MSID_デューテ" /*Celica:*/,"MSID_汎用魔法","MSID_セリカ", "MSID_メイ", "MSID_ボーイ", "MSID_セーバー", "MSID_カムイ", "MSID_アトラス", "MSID_ジェシー", "MSID_ソニア", "MSID_ノーマ", "MSID_ノーマ"];
 
-var celicablack = ["MSID_汎用魔法","MSID_セリカ", "MSID_メイ", "MSID_ボーイ", "MSID_セーバー", "MSID_カムイ", "MSID_アトラス", "MSID_ジェシー", "MSID_ソニア", "MSID_ノーマ", "MSID_ノーマ"]
-var celicawhite = ["MSID_汎用魔法","MSID_セリカ", "MSID_メイ神聖", "MSID_ボーイ", "MSID_ジェニー", "MSID_セーバー", "MSID_カムイ", "MSID_汎用魔法", "MSID_汎用神聖", "MSID_汎用神聖", "MSID_アトラス", "MSID_ジェシー", "MSID_ソニア神聖", "MSID_汎用神聖", "MSID_ノーマ", "MSID_ノーマ"]
 
 var data = [{
     "Modules": {

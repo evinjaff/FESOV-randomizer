@@ -635,10 +635,53 @@ var thracia = false;
 			var min = document.getElementById("ming").value;
 			var max = document.getElementById("maxg").value;
 
-			if(parseInt(min) > parseInt(max)){
+			var mint = document.getElementById("mingt").value;
+			var maxt = document.getElementById("maxgt").value;
+
+			if(parseInt(min) > parseInt(max) || parseInt(mint) > parseInt(maxt)){
 				alert("Min growth rate is higher than max growth rate");
 				return;
 			}
+
+
+
+
+			switch (document.getElementById("growths").checked) {
+				case true:
+
+				if(parseInt(min) > 100 || parseInt(max) > 100 ){
+					alert("Growth Rates cannot be greater than 100");
+					return;
+				}
+				if(min == "" || max == ""){
+					alert("Growth Rates cannot be empty!");
+					return;
+				}
+
+					break;
+				default:
+
+			}
+
+			switch (document.getElementById("move").checked) {
+				case true:
+
+				if(parseInt(mint) > 100 || parseInt(maxt) > 100){
+					alert("Move Growth Rates cannot be greater than 100");
+					return;
+				}
+
+				if(mint == "" || maxt == ""){
+					alert("Move growth Rates cannot be empty!");
+					return;
+				}
+
+					break;
+				default:
+
+			}
+
+
 
 
 			var anyfalse = false;
@@ -708,10 +751,8 @@ var thracia = false;
 
 
 					if(dospells){
-						//spells[i-2] = data[0].Modules.Characters[celicachars[i-2].id]["Learned White Magic"] //= almwhite[randint(almwhite.length)];
-						//spells[i-2] = data[0].Modules.Characters[celicachars[i-2].id]["Learned Black Magic"] //= almblack[randint(almwhite.length)];
-
-
+						data[0].Modules.Characters[almchars[i-2].id]["Learned Black Magic"] = black[randint(black.length)];
+						data[0].Modules.Characters[almchars[i-2].id]["Learned White Magic"] = white[randint(white.length)];
 					}
 
 					//Growth Characters
@@ -725,11 +766,16 @@ var thracia = false;
 						}
 						if(thracia){
 								console.log("THRACIA TIME!")
-								data[0].Modules.Characters[almchars[i-2].id]["Growths"][7] = parseInt(min) + randint(parseInt(max)-parseInt(min));
+								data[0].Modules.Characters[almchars[i-2].id]["Growths"][7] = parseInt(mint) + randint(parseInt(maxt)-parseInt(mint));
 						}
 
 						console.log(data[0].Modules.Characters[almchars[i-2].id]["Growths"]);
 
+
+					}
+					if(document.getElementById("log").checked == true){
+						data[0].Modules.Characters[almchars[i-2].id]["Description"]["value"] += "\\n" + data[0].Modules.Characters[almchars[i-2].id]["Growths"].slice(0,8).toString();
+						console.log(data[0].Modules.Characters[almchars[i-2].id]["Description"]["value"]);
 
 					}
 						//console.log(myclass);
@@ -877,16 +923,32 @@ var thracia = false;
 				if(firsttime){
 
 
+					if(document.getElementById("shufgrowths").checked){
+
+						if(document.getElementById("res").checked){var resnum = 7;}else{var resnum = 6;}
+						var sliced = shuffle(data[0].Modules.Characters[celicachars[i-2].id]["Growths"].slice(0,resnum));
+
+
+						//console.log(sliced);
+						//console.log(data[0].Modules.Characters[celicachars[i-2].id]["Growths"]);
+
+						for(var q = 0; q<sliced.length;q++){
+							data[0].Modules.Characters[celicachars[i-2].id]["Growths"][q] = sliced[q];
+						}
+						//console.log(data[0].Modules.Characters[celicachars[i-2].id]["Growths"]);
+							}
+
+
 					if(randgrowths == true){
 						//console.log(data[0].Modules.Characters[almchars[i-2].id]["Growths"]);
 
-						for(var k=0; k<data[0].Modules.Characters[almchars[i-2].id]["Growths"].length-1;k++){
+						for(var k=0; k<data[0].Modules.Characters[celicachars[i-2].id]["Growths"].length-1;k++){
 								data[0].Modules.Characters[celicachars[i-2].id]["Growths"][k] = parseInt(min) + randint(parseInt(max)-parseInt(min));
 
 						}
 						if(thracia){
 								console.log("THRACIA TIME!")
-								data[0].Modules.Characters[celicachars[i-2].id]["Growths"][7] = parseInt(min) + randint(parseInt(max)-parseInt(min));
+								data[0].Modules.Characters[celicachars[i-2].id]["Growths"][7] = parseInt(mint) + randint(parseInt(maxt)-parseInt(mint));
 						}
 
 						console.log(data[0].Modules.Characters[celicachars[i-2].id]["Growths"]);
@@ -894,13 +956,17 @@ var thracia = false;
 
 					}
 
+					if(document.getElementById("log").checked == true){
+						data[0].Modules.Characters[celicachars[i-2].id]["Description"]["value"] += "\\n" + data[0].Modules.Characters[celicachars[i-2].id]["Growths"].slice(0,8).toString();
+					}
+					//console.log(data[0].Modules.Characters[celicachars[i-2].id]["Description"]["value"]);
 
 
 					if(dospells){
 
-							spells[i-2] = data[0].Modules.Characters[celicachars[i-2].id]["Learned Black Magic"]; //= almwhite[randint(almwhite.length)];
-							//spells[i-2] = data[0].Modules.Characters[almchars[i-2].id]["Learned Black Magic"] = almblack[randint(almwhite.length)];
-
+							data[0].Modules.Characters[celicachars[i-2].id]["Learned Black Magic"] = black[randint(black.length)];
+							data[0].Modules.Characters[celicachars[i-2].id]["Learned White Magic"] = white[randint(white.length)];
+							//console.log(data[0].Modules.Characters[celicachars[i-2].id]);
 
 					}
 						//console.log(myclass);
@@ -993,6 +1059,17 @@ var thracia = false;
 		}
 	}
 }
+}
+
+function shuffle(a) {
+    var j, x, i;
+    for (i = a.length - 1; i > 0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        x = a[i];
+        a[i] = a[j];
+        a[j] = x;
+    }
+    return a;
 }
 
 function lowunderscore(itemtype){

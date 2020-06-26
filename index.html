@@ -234,18 +234,68 @@ function openCity(evt, cityName) {
   </div> </input>
   <br>
   <br>
-  <h3>Randomize Player Growths</h3>
-  <input id="growths" onclick="document.getElementById('Thracia').hidden = false;" type="checkbox" name="onetwo"><div class="tooltip">Randomize Growths?<span class="tooltiptext">Randomizes player's growths, </span>
+  <h3>Randomize Player Growths (Need to patch code.bin to work)</h3>
+  <input id="growths" onclick="document.getElementById('Thracia').hidden = false;document.getElementById('adjust').hidden = false;" type="radio" name="grow"><div class="tooltip">Randomize Growths?<span class="tooltiptext">Generates random growth rates for characters</span>
   </div>
   <br></input>
-  <div id="Thracia" hidden="true">
-  <input id="move" type="checkbox" name="onetwo"><div class="tooltip">Randomize Movement Growth?<span class="tooltiptext">THRACIA TIME!</span>
-  </div>
-  <br></input>
+
+  <script language="JavaScript">
+
+    // this prevents from typing non-number text, including "e".
+    function isNumber(evt) {
+      evt = (evt) ? evt : window.event;
+      let charCode = (evt.which) ? evt.which : evt.keyCode;
+      if ((charCode > 31 && (charCode < 48 || charCode > 57)) && charCode !== 46) {
+        evt.preventDefault();
+      } else {
+        return true;
+      }
+    }
+  </script>
+
+  <div id="adjust" hidden>
+    <br>
+      <p>Set minimum growth rate</p>
+  <input id="ming" type="number" min="0" max="100" value="0"  oninput="validity.valid||(value='');" onpress="isNumber(event); ">
+  <p>Set maximum growth rate</p>
+  <input id="maxg" type="number" min="0" max="100" value="100" oninput="validity.valid||(value='');" onpress="isNumber(event); ">
+  <br><br>
 </div>
 
 
 
+  <div id="Thracia" hidden="true">
+  <input id="move" type="checkbox" name="onetwo" onclick="document.getElementById('ThraciaSlider').hidden = false;"><div class="tooltip">Randomize Movement Growth?<span class="tooltiptext">THRACIA TIME!</span>
+
+  </div></input>
+
+  <div id="ThraciaSlider" hidden>
+    <br>
+      <p>Set minimum movement growth rate</p>
+  <input id="mingt" type="number" min="0" max="100" value="0" oninput="validity.valid||(value='');" onpress="isNumber(event); ">
+  <p>Set maximum movement growth rate</p>
+  <input id="maxgt" type="number" min="0" max="100" value="100" oninput="validity.valid||(value='');" onpress="isNumber(event); ">
+  <br><br>
+</div>
+
+  <br><br>
+
+</div>
+
+<input id="shufgrowths" onclick="document.getElementById('growthoptions').hidden = false;" type="radio" name="grow"><div class="tooltip">Shuffle Growths?<span class="tooltiptext">Shuffles around player growths instead of generating random values</span>
+
+
+</div>
+
+<div id="growthoptions" hidden>
+
+  <input id="res" type="checkbox">Include resistance growth?</input>
+  <br>
+</div>
+
+<br>
+
+<input id="log" type="checkbox">Log growths in description?</input>
 
 <br>
 
@@ -263,10 +313,7 @@ function openCity(evt, cityName) {
   <p>Value: <span id="maxg"></span></p>
 </div>
 -->
-<p>Set minimum growth rate</p>
-<input id="ming" type="number" min="0" max="100" value="0">
-<p>Set maximum growth rate</p>
-<input id="maxg" type="number" min="0" max="100" value="100">
+
 
 <!--
 <script>
