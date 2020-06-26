@@ -774,7 +774,7 @@ var thracia = false;
 
 					}
 					if(document.getElementById("log").checked == true){
-						data[0].Modules.Characters[almchars[i-2].id]["Description"]["value"] += "\\n" + data[0].Modules.Characters[almchars[i-2].id]["Growths"].slice(0,8).toString();
+						data[0].Modules.Characters[almchars[i-2].id]["Description"]["value"] += "\\n Growths: " + data[0].Modules.Characters[almchars[i-2].id]["Growths"].slice(0,8).toString();
 						console.log(data[0].Modules.Characters[almchars[i-2].id]["Description"]["value"]);
 
 					}
@@ -957,7 +957,7 @@ var thracia = false;
 					}
 
 					if(document.getElementById("log").checked == true){
-						data[0].Modules.Characters[celicachars[i-2].id]["Description"]["value"] += "\\n" + data[0].Modules.Characters[celicachars[i-2].id]["Growths"].slice(0,8).toString();
+						data[0].Modules.Characters[celicachars[i-2].id]["Description"]["value"] += "\\n Growths: " + data[0].Modules.Characters[celicachars[i-2].id]["Growths"].slice(0,8).toString();
 					}
 					//console.log(data[0].Modules.Characters[celicachars[i-2].id]["Description"]["value"]);
 
