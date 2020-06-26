@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<body>
+<body onload="openCity(event, 'General');">
 
   <!-- Bootstrap Code-->
 
@@ -30,11 +30,12 @@
   <a id="link "target="_blank" href="README/BLOG.html">Blog documenting my randomized adventures</a>
 </div>
   <br>
-  <h2 id="warning">⚠️WARNING: Be EXTREMELY careful about reclassing Alm, as you can potentially softlock the game inside dungeons since he will not be able to break boxes when he's reclassed into something other than Fighter, Hero, or Conqueror. Through testing, Celica seems to still be able to break boxes for every class, even ones like Grima that are at risk of crashing the game.</h2>
-<h2>Randomize a Character:</h2>
+  <h3 id="warning">⚠️WARNING: Be careful about reclassing Alm, as you can potentially softlock the game inside dungeons since he will not be able to break boxes when he's reclassed into something other than Fighter, Hero, or Conqueror. Celica seems to still be able to break boxes for most classes.</h3>
+<!--
+<h1>Randomize a Character:</h1>
 <!--
 <link rel="stylesheet" href="print.css" type="text/css" media="print">
--->
+
 
 
 
@@ -92,7 +93,7 @@
 
 <br>
 <br>
-<h3>Class Options (Pick at least one)</h3>
+<h3>Randomize Classes</h3>
 <input type="checkbox" checked="checked" id="base"> <div class="tooltip">Standard Classes?<span class="tooltiptext">Includes standard classes such as Archer, Cavalier, Baron</span>
 </div> </input>
 <br>
@@ -112,20 +113,7 @@
 </div> </input>
 <br>
 <br>
-<div class="tooltip">2 Level Class Organization:
-  <span class="tooltiptext">Determines how to randomize classes that only promote once like Mages and Pegasus Knights</span>
-</div>
 
-
-<br>
-
-<input type="radio" id="onetwo" name="onetwo3" checked="checked"><div class="tooltip">Base is 1 and 2<span class="tooltiptext">Mage: Tier 1 and 2 Sage: Tier 3</span>
-</div>
-<br></input>
-<input type="radio" id="one" name="onetwo3"><div class="tooltip">Base is 1<span class="tooltiptext">Mage: Tier 1 Sage: Tier 2 and 3</span>
-</div>
-<br></input>
-<br>
 
 
 <button type="button" onclick="randomize()">Randomize Individual Character</button>
@@ -141,93 +129,203 @@
 
 <h2>Randomize a Party:</h2>
 
-<h3>Sonya or Deen? (If Celica's Party or Full Route)</h3>
-<div style="text-align: center">
-<input type="radio" id="sonya" name="sord" checked="checked">Sonya</input>
-<input type="radio" id="deen" name="sord">Deen</input>
-<input type="radio" id="both" name="sord">Both</input>
-
-</div>
+-->
 <br>
 <div style="text-align: center">
-<h3>Class Options (Pick at least one)</h3>
+
+
+
 </div>
-<div style="text-align: center">
-  <input type="checkbox" checked="checked" id="base1"> <div class="tooltip">Standard Classes?<span class="tooltiptext">Includes standard classes such as Archer, Cavalier, Baron</span>
+
+<script>
+function openCity(evt, cityName) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
+
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+
+
+<!-- Tab links -->
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'General')">General</button>
+  <button class="tablinks" onclick="openCity(event, 'Paris')">Classes</button>
+  <button class="tablinks" onclick="openCity(event, 'Tokyo')">Player Info</button>
+  <button class="tablinks" onclick="openCity(event, 'Items')">Items</button>
+</div>
+
+<!-- Tab content -->
+<div id="General" class="tabcontent">
+  <h3>Sonya or Deen? (If Celica's Party or Full Route)</h3>
+  <div style="text-align: center">
+  <input type="radio" id="sonya" name="sord" checked="checked">Sonya</input>
+  <input type="radio" id="deen" name="sord">Deen</input>
+  <input type="radio" id="both" name="sord">Both</input>
+
+  </div>
+</div>
+
+<div id="Paris" class="tabcontent">
+  <h3>Class Options (Pick at least one)</h3>
+
+  <div style="text-align: center">
+    <input type="checkbox" checked="checked" id="base1"> <div class="tooltip">Standard Classes?<span class="tooltiptext">Includes standard classes such as Archer, Cavalier, Baron</span>
+    </div> </input>
+    <br>
+  <input type="checkbox" id="amiibo1"> <div class="tooltip">Amiibo Classes?<span class="tooltiptext">Includes Amiibo classes such as Lords, Robin, Ike</span>
   </div> </input>
   <br>
-<input type="checkbox" id="amiibo1"> <div class="tooltip">Amiibo Classes?<span class="tooltiptext">Includes Amiibo classes such as Lords, Robin, Ike</span>
-</div> </input>
-<br>
-<input type="checkbox" id="enemy1"> <div class="tooltip">Enemy Classes?<span class="tooltiptext">Includes enemy classes such as Brigands, Cantors, Witches</span>
-</div></input>
-<br>
+  <input type="checkbox" id="enemy1"> <div class="tooltip">Enemy Classes?<span class="tooltiptext">Includes enemy classes such as Brigands, Cantors, Witches</span>
+  </div></input>
+  <br>
 
 
 
-<input type="checkbox" id="busted1"> <div class="tooltip">Broken Classes?<span class="tooltiptext">Includes broken classes that have crazy stats or partially don't work</span>
-</div> </input>
-<br>
-<input type="checkbox" id="ugly1"> <div class="tooltip">Ugly Classes?<span class="tooltiptext">Includes classes that human's weren't designed to class into and don't look good.</span>
-</div> </input>
-<br>
-<input type="checkbox" id="alm1"><div class="tooltip">Alm and Celica Classes?<span class="tooltiptext">Includes Alm and Celica classes (Fighter, Princess, etc.)</span>
-</div> </input>
-<br>
-<input type="checkbox" id="overclass1"> <div class="tooltip">Generate Overclasses?<span class="tooltiptext">Includes DLC Overclasses</span>
-</div> </input>
-<br>
-<br>
+  <input type="checkbox" id="busted1"> <div class="tooltip">Broken Classes?<span class="tooltiptext">Includes broken classes that have crazy stats or partially don't work</span>
+  </div> </input>
+  <br>
+  <input type="checkbox" id="ugly1"> <div class="tooltip">Ugly Classes?<span class="tooltiptext">Includes classes that human's weren't designed to class into and don't look good.</span>
+  </div> </input>
+  <br>
+  <input type="checkbox" id="alm1"><div class="tooltip">Alm and Celica Classes?<span class="tooltiptext">Includes Alm and Celica classes (Fighter, Princess, etc.)</span>
+  </div> </input>
+  <br>
+  <input type="checkbox" id="overclass1"> <div class="tooltip">Generate Overclasses?<span class="tooltiptext">Includes DLC Overclasses</span>
+  </div> </input>
+  <br>
+  <br>
 
-<input type="checkbox" id="item" checked="checked"> <div class="tooltip">Randomize Starting Items?<span class="tooltiptext">Randomizes starting items</span>
-</div> </input>
-
-<br>
-<br>
-<input type="checkbox" id="weapons" checked="checked"> <div class="tooltip">Include normal weapons/shields/rings?<span class="tooltiptext">Inclues all standard weapons, rings, and shields</span>
-</div> </input>
-<br>
-<input type="checkbox" id="provisions"> <div class="tooltip">Include provisions?<span class="tooltiptext">Includes provivions when choosing items</span>
-</div> </input>
-<br>
-<input type="checkbox" id="quest"> <div class="tooltip">Include quest items and hats?<span class="tooltiptext">Includes quest items when choosing items</span>
-</div> </input>
-<br>
-<input type="checkbox" id="statboosters"> <div class="tooltip">Include statboosters?<span class="tooltiptext">Inclues all statboosters, except for tailisman</span>
-</div> </input>
-<br>
-<input type="checkbox" id="rusted"> <div class="tooltip">Include rusted weapons?<span class="tooltiptext">Inclues all weapons</span>
-</div> </input>
-<br>
-<input type="checkbox" id="dlc"> <div class="tooltip">Include DLC & 7/11 items?<span class="tooltiptext">Inclues all DLC items from Mila's bounty</span>
-</div> </input>
-<br>
-<input type="checkbox" id="enitem"> <div class="tooltip">Include Amiibo and Enemy-exclusive items?<span class="tooltiptext">Inclues all items exclusive to Amiibo and Enemies</span>
-</div> </input>
-<br>
-<br>
-<input type="checkbox" id="spells"> <div class="tooltip">Randomize Spell Lists? (Beta)<span class="tooltiptext">Randomizes player spell lists</span>
-</div> </input>
+  <div class="tooltip">2 Level Class Organization:
+    <span class="tooltiptext">Determines how to randomize classes that only promote once like Mages and Pegasus Knights</span>
+  </div>
 
 
-<br>
-<br>
-<div class="tooltip">2 Level Class Organization:
-  <span class="tooltiptext">Determines how to randomize classes that only promote once like Mages and Pegasus Knights</span>
+  <br>
+
+  <input type="radio" id="onetwo1" name="onetwo3" checked="checked"><div class="tooltip">Base is 1 and 2<span class="tooltiptext">Mage: Tier 1 and 2 Sage: Tier 3</span>
+  </div>
+  <br></input>
+  <input type="radio" id="one1" name="onetwo3"><div class="tooltip">Base is 1<span class="tooltiptext">Mage: Tier 1 Sage: Tier 2 and 3</span>
+  </div>
+  <br></input>
+  <br>
+
+</div>
+</div>
+
+<div id="Tokyo" class="tabcontent"  style="text-align: center">
+
+  <p>Randomize Player Growths</p>
+  <input id="growths" onclick="document.getElementById('Thracia').hidden = false;" type="checkbox" name="onetwo"><div class="tooltip">Randomize Growths?<span class="tooltiptext">Randomizes player's growths, </span>
+  </div>
+  <br></input>
+  <div id="Thracia" hidden="true">
+  <input id="move" type="checkbox" name="onetwo"><div class="tooltip">Randomize Movement Growth?<span class="tooltiptext">THRACIA TIME!</span>
+  </div>
+  <br></input>
 </div>
 
 
+
+
 <br>
 
-<input type="radio" id="onetwo1" name="onetwo" checked="checked"><div class="tooltip">Base is 1 and 2<span class="tooltiptext">Mage: Tier 1 and 2 Sage: Tier 3</span>
+<!--
+<div class="slidecontainer">
+  <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+  <p>Value: <span id="demo"></span></p>
 </div>
-<br></input>
-<input type="radio" id="one1" name="onetwo"><div class="tooltip">Base is 1<span class="tooltiptext">Mage: Tier 1 Sage: Tier 2 and 3</span>
-</div>
-<br></input>
+
 <br>
 
 
+<div class="slidecontainer">
+  <input type="range" min="1" max="100" value="50" class="slider" id="maxRange">
+  <p>Value: <span id="maxg"></span></p>
+</div>
+-->
+<p>Set minimum growth rate</p>
+<input id="ming" type="number" min="0" max="100" value="0">
+<p>Set maximum growth rate</p>
+<input id="maxg" type="number" min="0" max="100" value="100">
+
+<!--
+<script>
+var mslider = document.getElementById("maxRange");
+console.log(mslider.value);
+var moutput = document.getElementById("maxg");
+console.log(moutput);
+moutput.innerHTML = mslider.value;
+
+mslider.oninput = function() {
+  moutput.innerHTML = this.value;
+}
+</script>
+
+<script>
+var slider = document.getElementById("myRange");
+var output = document.getElementById("demo");
+output.innerHTML = slider.value;
+
+slider.oninput = function() {
+  output.innerHTML = this.value;
+}
+</script>
+-->
+
+
+</div>
+
+<div id="Items" class="tabcontent" style="text-align: center">
+
+  <input type="checkbox" id="item" checked="checked"> <div class="tooltip">Randomize Starting Items?<span class="tooltiptext">Randomizes starting items</span>
+  </div> </input>
+
+  <br>
+  <br>
+  <input type="checkbox" id="weapons" checked="checked"> <div class="tooltip">Include normal weapons/shields/rings?<span class="tooltiptext">Inclues all standard weapons, rings, and shields</span>
+  </div> </input>
+  <br>
+  <input type="checkbox" id="provisions"> <div class="tooltip">Include provisions?<span class="tooltiptext">Includes provivions when choosing items</span>
+  </div> </input>
+  <br>
+  <input type="checkbox" id="quest"> <div class="tooltip">Include quest items and hats?<span class="tooltiptext">Includes quest items when choosing items</span>
+  </div> </input>
+  <br>
+  <input type="checkbox" id="statboosters"> <div class="tooltip">Include statboosters?<span class="tooltiptext">Inclues all statboosters, except for tailisman</span>
+  </div> </input>
+  <br>
+  <input type="checkbox" id="rusted"> <div class="tooltip">Include rusted weapons?<span class="tooltiptext">Inclues all weapons</span>
+  </div> </input>
+  <br>
+  <input type="checkbox" id="dlc"> <div class="tooltip">Include DLC & 7/11 items?<span class="tooltiptext">Inclues all DLC items from Mila's bounty</span>
+  </div> </input>
+  <br>
+  <input type="checkbox" id="enitem"> <div class="tooltip">Include Amiibo and Enemy-exclusive items?<span class="tooltiptext">Inclues all items exclusive to Amiibo and Enemies</span>
+  </div> </input>
+  <br>
+  <br>
+  <input type="checkbox" id="spells"> <div class="tooltip">Randomize Spell Lists? (Beta)<span class="tooltiptext">Randomizes player spell lists</span>
+  </div> </input>
+
+</div>
+
+<div  style="text-align: center">
 
 <br>
 <button type="button" id="AlmButton" onclick="Route('Alm')">Randomize Alm's Route</button>
@@ -240,6 +338,8 @@
 <button id="print-button" onclick="printPage()" style="hidden text-align: center">Export Class List (via CSV)</a>
 
 <button id="print-button" onclick="JSONgenerate()" style="text-align: center">Export Class List (via JSON for Paragon)</a>
+</div>
+</div>
 </div>
 
 <!-- style="hidden" -->

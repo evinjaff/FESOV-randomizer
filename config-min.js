@@ -584,6 +584,15 @@ function Route(option) {
 	if(document.getElementById("spells").checked == true){
 		dospells = true;
 	}
+var randgrowths = false;
+var thracia = false;
+	if(document.getElementById("growths").checked){
+		randgrowths = true;
+		if(document.getElementById("move").checked){
+			thracia = true;
+		}
+	}
+
 
 	if(document.getElementById("item").checked){
 		var checkedtruths = [true, true, true, true, true, true];
@@ -620,10 +629,16 @@ function Route(option) {
 				arraypush(amiiboenemy, extractedmap);
 				checkedtruths[6] = false;
 			}
-			console.log(checkedtruths);
+			//console.log(checkedtruths);
 
 
+			var min = document.getElementById("ming").value;
+			var max = document.getElementById("maxg").value;
 
+			if(parseInt(min) > parseInt(max)){
+				alert("Min growth rate is higher than max growth rate");
+				return;
+			}
 
 
 			var anyfalse = false;
@@ -698,6 +713,25 @@ function Route(option) {
 
 
 					}
+
+					//Growth Characters
+
+					if(randgrowths == true){
+						//console.log(data[0].Modules.Characters[almchars[i-2].id]["Growths"]);
+
+						for(var k=0; k<data[0].Modules.Characters[almchars[i-2].id]["Growths"].length-1;k++){
+								data[0].Modules.Characters[almchars[i-2].id]["Growths"][k] = parseInt(min) + randint(parseInt(max)-parseInt(min));
+
+						}
+						if(thracia){
+								console.log("THRACIA TIME!")
+								data[0].Modules.Characters[almchars[i-2].id]["Growths"][7] = parseInt(min) + randint(parseInt(max)-parseInt(min));
+						}
+
+						console.log(data[0].Modules.Characters[almchars[i-2].id]["Growths"]);
+
+
+					}
 						//console.log(myclass);
 
 						/* Test loop to test for null results
@@ -720,6 +754,8 @@ function Route(option) {
 							}
 						}
 						*/
+
+
 
 						//console.log(myclass);
 						//console.log(stringfix(myclass, almchars[i - 2].gender));
@@ -774,7 +810,7 @@ function Route(option) {
 			tableCreate(arr, yesOverclass(), almchars[i - 2].name);
 			document.getElementById("div2").appendChild(document.createElement("br"));
 			rows[rows.length] = csvclass;
-			//console.log(rows);
+
 
 		}
 
@@ -944,7 +980,7 @@ function Route(option) {
 function lowunderscore(itemtype){
 		try{
 		var output = itemtype.toLowerCase().replace(/ /g,"_");
-		console.log(output);
+
 		return output;
 	}
 	catch(err){
