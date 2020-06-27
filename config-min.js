@@ -926,10 +926,12 @@ var thracia = false;
 
 						//console.log(evolutionids);
 					if(document.getElementById("evo").checked){
+						if(data[0].Modules.Items[prop]["EID"] != null){
 					for(var prop in data[0].Modules.Items){
 
 							data[0].Modules.Items[prop]["EID"] = evolutionids[randint(evolutionids.length)];
 						}
+					}
 					}
 
 
