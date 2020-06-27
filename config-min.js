@@ -920,6 +920,21 @@ var thracia = false;
 				//almbutton.style.display = 'none';
 				//celicabutton.style.display = 'none';
 
+				//for(let o of data.entries() ){
+						//console.log(data[0].Modules.Items);
+
+
+						//console.log(evolutionids);
+					if(document.getElementById("evo").checked){
+					for(var prop in data[0].Modules.Items){
+
+							data[0].Modules.Items[prop]["EID"] = evolutionids[randint(evolutionids.length)];
+						}
+					}
+
+
+				//}
+
 				if(firsttime){
 
 

@@ -171,6 +171,7 @@ function openCity(evt, cityName) {
 
 <!-- Tab content -->
 <div id="General" class="tabcontent">
+  <br>
   <h3>Sonya or Deen? (If Celica's Party or Full Route)</h3>
   <div style="text-align: center">
   <input type="radio" id="sonya" name="sord" checked="checked">Sonya</input>
@@ -178,10 +179,17 @@ function openCity(evt, cityName) {
   <input type="radio" id="both" name="sord">Both</input>
 
   </div>
+  <br>
 </div>
 
 <div id="Paris" class="tabcontent">
-  <h3>Class Options (Pick at least one)</h3>
+  <br>
+  <h3>Randomize Classes</h3>
+
+<div style="text-align: center">
+  <p>Choose which classes are part of the pool (must pick at least one):</p>
+</div>
+  <br>
 
   <div style="text-align: center">
     <input type="checkbox" checked="checked" id="base1"> <div class="tooltip">Standard Classes?<span class="tooltiptext">Includes standard classes such as Archer, Cavalier, Baron</span>
@@ -214,7 +222,7 @@ function openCity(evt, cityName) {
     <span class="tooltiptext">Determines how to randomize classes that only promote once like Mages and Pegasus Knights</span>
   </div>
 
-
+<br>
   <br>
 
   <input type="radio" id="onetwo1" name="onetwo3" checked="checked"><div class="tooltip">Base is 1 and 2<span class="tooltiptext">Mage: Tier 1 and 2 Sage: Tier 3</span>
@@ -229,7 +237,8 @@ function openCity(evt, cityName) {
 </div>
 
 <div id="Tokyo" class="tabcontent"  style="text-align: center">
-
+  <br>
+  <h3>Spell Lists:</h3>
   <input type="checkbox" id="spells"> <div class="tooltip">Randomize Spell Lists? (Beta)<span class="tooltiptext">Randomizes player spell lists</span>
   </div> </input>
   <br>
@@ -296,6 +305,7 @@ function openCity(evt, cityName) {
 <br>
 
 <input id="log" type="checkbox">Log growths in description?</input>
+<br>
 
 <br>
 
@@ -343,6 +353,8 @@ slider.oninput = function() {
 </div>
 
 <div id="Items" class="tabcontent" style="text-align: center">
+  <br>
+  <h3>Starting Items:</h3>
 
   <input type="checkbox" id="item" checked="checked"> <div class="tooltip">Randomize Starting Items?<span class="tooltiptext">Randomizes starting items</span>
   </div> </input>
@@ -368,6 +380,11 @@ slider.oninput = function() {
   </div> </input>
   <br>
   <input type="checkbox" id="enitem"> <div class="tooltip">Include Amiibo and Enemy-exclusive items?<span class="tooltiptext">Inclues all items exclusive to Amiibo and Enemies</span>
+  </div> </input>
+  <br>
+  <br>
+    <h3>Forges:</h3>
+  <input type="checkbox" id="enitem"> <div class="tooltip">Randomize item evolution?<span class="tooltiptext">Randomizes forge item evolutions. (ex. Forging Steel Sword -> Gradivus)</span>
   </div> </input>
   <br>
   <br>
