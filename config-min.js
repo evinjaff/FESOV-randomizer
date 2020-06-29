@@ -4,7 +4,58 @@ script.src = 'https://code.jquery.com/jquery-3.5.1.min.js';
 document.getElementsByTagName('head')[0].appendChild(script);
 */
 
+function stringfix(string, gender){
 
+
+	switch(string) {
+  case "Cavalier":
+	case "Villager":
+	case "Paladin":
+	case "Mage":
+	case "Gold Knight":
+	{
+    if(gender == "Male"){
+			var output = string + " (M)";
+		}
+		if(gender == "Female"){
+			var output = string + " (M)";
+		}
+		return output;
+	}
+
+	case "Lord (Corrin)":
+	{
+		if(gender == "Male"){
+			var output = "Lord (M. Corrin)"
+		}
+		if(gender == "Female"){
+			var output = "Lord (F. Corrin)"
+		}
+		return output;
+	}
+
+	case "Mage (Male)": {
+			return "Mage (M)";
+	}
+	case "Mage (Female)":{
+			return "Mage (F)";
+	}
+	case "Mila Apostole":{
+		return "Mila's Servant";
+	}
+	case "Duma Apostole":{
+		return "Duma's Apostole";
+	}
+
+  default:
+	{
+    // code block
+		return string;
+	}
+
+	}
+
+}
 
 var spells = [];
 
@@ -429,27 +480,9 @@ function chooseclass(level, yesamiibo, yesenemy, yesbroken, yesalm, yestier1, ye
 	var isOne = yestier1;
   var isUgly = yesugly;
   var base = yesBase;
-	var amiibo = ["Lord (Marth)",  "Lord (M. Corrin)", "Lord (F. Corrin)", "Lord (Roy)", "Lord (Lucina)", "Hero (Ike)", "Tactitian (Robin)"];
-	var oneandtwo = ["Mage (Male)", "Pegasus Knight", "Cleric", "Mage (Female)"];
-	var almcelica1 = ["Fighter", "Priestess (Celica)"]
-	var almcelica2 = ["Hero (Alm)", "Princess"]
-	var almcelica3 = ["Conqueror", "Rigain"]
-	var levelone = ["Villager", "Archer", "Cavalier", "Soldier", "Mercenary", "Boy", "Girl"];
-	var leveltwo = ["Myrmidon", "Sniper", "Paladin", "Knight", ];
-	var levelthree = ["Dread Fighter", "Baron", "Bow Knight", "Gold Knight"];
-	var onetwothree = ["Falcon Knight", "Saint", "Sage", "Priestess"];
-	var enemyone = ["Mogall", "Brigand"];
-	var enemytwo = ["Mogall", "Brigand"];
-	var enemyflex = [ "Arcanist", "Cantor", "Witch"];
-	var enemythree = ["Dagon", "Fire Dragon", "Fiend", "Guardian", "Balor"];
-	var overclass = ["Harrier", "Skogul", "Yasha", "Exemplar", "Guru", "Enchantress", "Oliphantier", "Spartan"];
-	var brokenuni = ["Fell Dragon", "God"];
-
-	var uglyone = ["Gargoyle", "Entombed (Normal)", "Revenant (Normal)", "Bonewalker"];
-	var uglythree = ["Deathgoyle", "Lich", "Garuda", "Deimos", "Vestal", "Mila Apostole", "White Dragon", "Duma Apostole"];
-	var uglytwo = ["Entombed (Numbing)", "Entombed (Venin)", "Revenant (Numbing)",  "Revenant (Numbing)", "Titan", "Lich", "Necodragon", "Fafnir", "Bonewalker"];
 
 	var classledger = [];
+
 
 
 
@@ -528,13 +561,161 @@ function chooseclass(level, yesamiibo, yesenemy, yesbroken, yesalm, yestier1, ye
 		}
 
 		return classledger[randint(classledger.length)];
-	return classledger[randint(classledger.length)];
+	//return classledger[randint(classledger.length)];
 }
 
 function arraypush(array, other) {
 	for (i = 0; i < array.length; i++) {
 		other.push(array[i]);
 	}
+}
+function getRandomValue(collection) {
+    let keys = Array.from(collection.keys());
+	  var output = collection.get(keys[Math.floor(Math.random() * keys.length)]);
+    return output;
+}
+
+function getRandomKey(collection) {
+    let keys = Array.from(collection.keys());
+    return keys[Math.floor(Math.random() * keys.length)];
+}
+
+function contains(a, obj) {
+    for (var i = 0; i < a.length; i++) {
+        if (a[i] === obj) {
+            return true;
+        }
+    }
+    return false;
+}
+
+function getTier(string){
+		//Tier 1
+		if(contains(oneandtwo, string) || contains(almcelica1, string) || contains(levelone, string) || contains(enemyone, string) || contains(enemyflex, string) || contains(uglyone, string) || contains(amiibo, string)){
+			return 1;
+		}
+		//Tier 2
+		if(contains(uglytwo, string) || contains(leveltwo, string) || contains(almcelica2, string) || contains(enemytwo, string)){
+			return 2;
+		}
+		if(contains(uglythree, string) || contains(enemythree, string) || contains(levelthree, string) || contains(onetwothree, string) || contains(enemyflex, string)){
+			return 3;
+		}
+		//Tier 3
+		//if(){}
+		//Untiered Grey Area
+		//if(){}
+		//Edge Case switch statement
+		switch (string) {
+			case "Cavalier (M)":
+				return 1;
+			case "Cavalier (F)":
+				return 1;
+			case "Paladin (M)":
+				return 2;
+			case "Paladin (F)":
+				return 2;
+			case "Gold Knight (M)":
+				return 3;
+			case "Gold Knight (F)":
+				return 3;
+			case "Mage (M)":
+				return 1;
+			case "Mage (F)":
+				return 1;
+			case "Villager (M)":
+				return 1;
+			case "Villager (F)":
+				return 1;
+			case "Hero":
+				return 1;
+			case "Tactician (Robin)":
+				return 1;
+			case "Revenant (Venin)":
+				return 2;
+			case "Entombed(Numbing)":
+				return 2;
+			case "Entombed(Venin)":
+				return 2;
+			case "Mila's Servant":
+				return 3;
+			case "Duma's Apostole":
+				return 3;
+			case "Fell Dragon":
+				return 0;
+			case "God":
+				return 0;
+			case undefined:
+				return 0;
+			case null:
+				return 0;
+			default:
+				return 0;
+		}
+
+}
+
+function npcify(){
+	if(document.getElementById("NPC").checked == true){
+
+
+		var enarr = [];
+		var trueEvin = false;
+		for(var mypid of npcarr){
+
+			//console.log(mypid);
+
+			var charclass = getRandomValue(classmap);
+			//console.log(charclass);
+
+			var origJID = data[0].Modules["Characters"][mypid]["JID"];  //= charclass;
+
+			//classmap.(origJID);
+
+			//console.log("Old Class: " + getByValue(classmap, origJID));
+
+			if(getTier(getByValue(classmap, origJID)) == 0){
+					return;
+			}
+
+			//Assingment:
+			// data[0].Modules["Characters"][mypid]["JID"] = ;
+
+			//TODO: Add Spell lists for magic initiates
+
+			var gender = "";
+			if(Math.random() > 0.5){
+				gender = "Male";
+			}
+			else{
+				gender = "Female";
+			}
+
+			var chosenclass = chooseclass(getTier(getByValue(classmap, origJID)), true, true, false, true, true, true, true);
+
+			var fixedstring = classmap.get(stringfix(chosenclass, "Male"));
+
+			//console.log( "Level: " + getTier(getByValue(classmap, origJID)) + "\n" + "Class: " + chosenclass + " Final JID: " + fixedstring);
+
+
+
+
+
+			var droppeditem = getRandomKey(jpmap);
+
+
+			data[0].Modules["Characters"][mypid]["JID"] = fixedstring;
+			data[0].Modules["Characters"][mypid]["Equipped Item"] = droppeditem;
+
+
+
+	}
+
+}
+else{
+	return;
+}
+
 }
 
 function randint(max) {
@@ -549,6 +730,13 @@ function getSpritePath(pclass) {
 	var path = "img/";
 	var name = pclass;
 	return path + name;
+}
+
+function getByValue(map, searchValue) {
+  for (let [key, value] of map.entries()) {
+    if (value === searchValue)
+      return key;
+  }
 }
 
 function Route(option) {
@@ -730,6 +918,8 @@ var thracia = false;
 
 			var firsttime = true;
 
+			npcify();
+
 
 			for (var j = almchars[i - 2].tier; j < final; j++) {
 				var item = document.createElement("td");
@@ -765,17 +955,17 @@ var thracia = false;
 
 						}
 						if(thracia){
-								console.log("THRACIA TIME!")
+								//console.log("THRACIA TIME!")
 								data[0].Modules.Characters[almchars[i-2].id]["Growths"][7] = parseInt(mint) + randint(parseInt(maxt)-parseInt(mint));
 						}
 
-						console.log(data[0].Modules.Characters[almchars[i-2].id]["Growths"]);
+						//console.log(data[0].Modules.Characters[almchars[i-2].id]["Growths"]);
 
 
 					}
 					if(document.getElementById("log").checked == true){
 						data[0].Modules.Characters[almchars[i-2].id]["Description"]["value"] += "\\n Growths: " + data[0].Modules.Characters[almchars[i-2].id]["Growths"].slice(0,8).toString();
-						console.log(data[0].Modules.Characters[almchars[i-2].id]["Description"]["value"]);
+						//console.log(data[0].Modules.Characters[almchars[i-2].id]["Description"]["value"]);
 
 					}
 						//console.log(myclass);
@@ -926,7 +1116,7 @@ var thracia = false;
 
 						//console.log(evolutionids);
 					if(document.getElementById("evo").checked){
-						console.log("evo!");
+						//console.log("evo!");
 
 							for(var prop in data[0].Modules.Items){
 
@@ -965,11 +1155,11 @@ var thracia = false;
 
 						}
 						if(thracia){
-								console.log("THRACIA TIME!")
+								//console.log("THRACIA TIME!")
 								data[0].Modules.Characters[celicachars[i-2].id]["Growths"][7] = parseInt(mint) + randint(parseInt(maxt)-parseInt(mint));
 						}
 
-						console.log(data[0].Modules.Characters[celicachars[i-2].id]["Growths"]);
+						//console.log(data[0].Modules.Characters[celicachars[i-2].id]["Growths"]);
 
 
 					}
@@ -1097,7 +1287,7 @@ function lowunderscore(itemtype){
 		return output;
 	}
 	catch(err){
-			console.log("invalid string: " + itemtype);
+			//console.log("invalid string: " + itemtype);
 	}
 }
 
@@ -1254,58 +1444,7 @@ function printPage() {
 	return false;
 }
 
-function stringfix(string, gender){
 
-
-	switch(string) {
-  case "Cavalier":
-	case "Villager":
-	case "Paladin":
-	case "Mage":
-	case "Gold Knight":
-	{
-    if(gender == "Male"){
-			var output = string + " (M)";
-		}
-		if(gender == "Female"){
-			var output = string + " (M)";
-		}
-		return output;
-	}
-
-	case "Lord (Corrin)":
-	{
-		if(gender == "Male"){
-			var output = "Lord (M. Corrin)"
-		}
-		if(gender == "Female"){
-			var output = "Lord (F. Corrin)"
-		}
-		return output;
-	}
-
-	case "Mage (Male)": {
-			return "Mage (M)";
-	}
-	case "Mage (Female)":{
-			return "Mage (F)";
-	}
-	case "Mila Apostole":{
-		return "Mila's Servant";
-	}
-	case "Duma Apostole":{
-		return "Duma's Apostole";
-	}
-
-  default:
-	{
-    // code block
-		return string;
-	}
-
-	}
-
-}
 
 function removeAll() {
 	document.getElementById("clutter");
