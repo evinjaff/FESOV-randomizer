@@ -590,6 +590,12 @@ function contains(a, obj) {
 }
 
 function getTier(string){
+
+		//Balance tweaking for early-game Brigands
+		//console.log("String: " + string)
+		if(string == "Brigand"){
+			return 1;
+		}
 		//Tier 1
 		if(contains(oneandtwo, string) || contains(almcelica1, string) || contains(levelone, string) || contains(enemyone, string) || contains(enemyflex, string) || contains(uglyone, string) || contains(amiibo, string)){
 			return 1;
@@ -673,27 +679,40 @@ function npcify(){
 			//classmap.(origJID);
 
 			//console.log("Old Class: " + getByValue(classmap, origJID));
-
+			console.log(getByValue(classmap, origJID) + " tier is " + getTier(getByValue(classmap, origJID)));
 			if(getTier(getByValue(classmap, origJID)) == 0){
-					return;
+					//Do Nothing - Don't fuck up the JSON
 			}
+			else{
+
+
+
+									data[0].Modules["Characters"][mypid]["Learned Black Magic"] = black[randint(black.length)];
+									data[0].Modules["Characters"][mypid]["Learned White Magic"] = white[randint(white.length)];
 
 			//Assingment:
 			// data[0].Modules["Characters"][mypid]["JID"] = ;
 
 			//TODO: Add Spell lists for magic initiates
+			//TODO: Change Names to match classes
 
-			var gender = "";
+			var mygender = "";
 			if(Math.random() > 0.5){
-				gender = "Male";
+				mygender = "Male";
 			}
 			else{
-				gender = "Female";
+				mygender = "Female";
 			}
 
 			var chosenclass = chooseclass(getTier(getByValue(classmap, origJID)), true, true, false, true, true, true, true);
+			//console.log("chosenclass: " + chosenclass);
 
-			var fixedstring = classmap.get(stringfix(chosenclass, "Male"));
+
+
+			var fixedstring = classmap.get(stringfix(chosenclass, mygender));
+
+			//Early Game tweak so levels aren't impossible
+
 
 			//console.log( "Level: " + getTier(getByValue(classmap, origJID)) + "\n" + "Class: " + chosenclass + " Final JID: " + fixedstring);
 
@@ -706,17 +725,22 @@ function npcify(){
 
 			data[0].Modules["Characters"][mypid]["JID"] = fixedstring;
 			data[0].Modules["Characters"][mypid]["Equipped Item"] = droppeditem;
-
+		}
 
 
 	}
-
+	//Force Lock Early brigands to non-caster low-cap Classes
+	var lowcapmartial = ["JID_村人男", "JID_村人女", "JID_盗賊男", "JID_子供男", "JID_子供女"]
+	data[0].Modules["Characters"]["PID_盗賊"]["JID"] = lowcapmartial[randint(lowcapmartial.length)];
+	//console.log(data[0].Modules["Characters"]["PID_盗賊"]);
 }
 else{
+		//Not checked
 	return;
 }
 
-}
+} //End of function
+
 
 function randint(max) {
 
@@ -919,6 +943,7 @@ var thracia = false;
 			var firsttime = true;
 
 			npcify();
+
 
 
 			for (var j = almchars[i - 2].tier; j < final; j++) {

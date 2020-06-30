@@ -479,11 +479,14 @@ jpmap.set("IID_コラボの食べ物５", "Chicken Link");
 jpmap.set("IID_コラボの食べ物６", "Pure Honey");
 
 
-var white = ["MSID_汎用魔法", "MSID_グレイ", "MSID_ロビン", "MSID_クリフ", "MSID_エフィ神聖", "MSID_シルク", "MSID_汎用神聖", "MSID_リュート", "MSID_汎用神聖", "MSID_デューテ神聖", "MSID_ティータ", /* Celica:*/"MSID_汎用魔法","MSID_セリカ", "MSID_メイ神聖", "MSID_ボーイ", "MSID_ジェニー", "MSID_セーバー", "MSID_カムイ", "MSID_汎用魔法", "MSID_汎用神聖", "MSID_汎用神聖", "MSID_アトラス", "MSID_ジェシー", "MSID_ソニア神聖", "MSID_汎用神聖", "MSID_ノーマ", "MSID_ノーマ"];
-var black = ["MSID_汎用魔法", "MSID_グレイ", "MSID_ロビン", "MSID_クリフ", "MSID_エフィ魔法", "MSID_リュート", "MSID_デューテ" /*Celica:*/,"MSID_汎用魔法","MSID_セリカ", "MSID_メイ", "MSID_ボーイ", "MSID_セーバー", "MSID_カムイ", "MSID_アトラス", "MSID_ジェシー", "MSID_ソニア", "MSID_ノーマ", "MSID_ノーマ"];
+var white = ["MSID_ジャミル","MSID_ドーマ","MSID_ガネフ","MSID_妖術師５",
+"MSID_祈祷師４", "MSID_祈祷師" ,"MSID_祈祷師２","MSID_祈祷師３","MSID_祈祷師２強","MSID_祈祷師１強","MSID_妖術師１", "MSID_汎用魔法", "MSID_グレイ", "MSID_ロビン", "MSID_クリフ", "MSID_エフィ神聖", "MSID_シルク", "MSID_汎用神聖", "MSID_リュート", "MSID_汎用神聖", "MSID_デューテ神聖", "MSID_ティータ", /* Celica:*/"MSID_汎用魔法","MSID_セリカ", "MSID_メイ神聖", "MSID_ボーイ", "MSID_ジェニー", "MSID_セーバー", "MSID_カムイ", "MSID_汎用魔法", "MSID_ウェスタ","MSID_汎用神聖", "MSID_汎用神聖", "MSID_祈祷師屍兵", "MSID_妖術師６","MSID_妖術師４",
+"MSID_アトラス", "MSID_ジェシー", "MSID_ソニア神聖", "MSID_汎用神聖", "MSID_ノーマ", "MSID_ノーマ"];
+
+var black = ["MSID_ミカエラ","MSID_ジャミル","MSID_ジュダ","MSID_ドーマ","MSID_ガネフ","MSID_リネア","MSID_祈祷師４","MSID_祈祷師３","MSID_祈祷師２強","MSID_祈祷師１強","MSID_妖術師１","MSID_汎用魔法", "MSID_グレイ", "MSID_ロビン", "MSID_クリフ", "MSID_エフィ魔法", "MSID_リュート", "MSID_デューテ" /*Celica:*/,"MSID_汎用魔法","MSID_セリカ", "MSID_メイ", "MSID_ボーイ", "MSID_セーバー", "MSID_カムイ", "MSID_アトラス", "MSID_ジェシー", "MSID_ソニア", "MSID_ノーマ", "MSID_ノーマ", "MSID_魔女１", "MSID_魔女２", "MSID_ウェスタ", "MSID_ジュダ", "MSID_妖術師２",  "MSID_祈祷師屍兵", "MSID_妖術師６", "MSID_妖術師４"];
 
 
-var evolutionids =  ["EID_鉄の剣", "EID_鋼の剣", "EID_銀の剣", "EID_勇者の剣", "EID_暗黒の剣", "EID_聖なる剣", "EID_黄金の短剣", "EID_鉄の槍", "EID_鋼の槍", "EID_手やり", "EID_ナイトキラー", "EID_聖なる槍", "EID_鉄の弓", "EID_鋼の弓", "EID_銀の弓", "EID_聖なる弓", "EID_錆びた剣_鉄", "EID_錆びた剣_鋼", "EID_錆びた剣_暗黒", "EID_錆びた剣_勇者", "EID_錆びた剣_流星", "EID_錆びた剣_毒", "EID_錆びた槍_鉄", "EID_錆びた槍_鋼", "EID_錆びた槍_太陽", "EID_錆びた槍_毒", "EID_錆びた弓_鉄", "EID_錆びた弓_鋼", "EID_錆びた弓_月光", "EID_錆びた弓_毒", "EID_錆びた盾_鉄", "EID_錆びた盾_鋼", "EID_錆びた盾_竜", "EID_錆びた斧_悪魔", "EID_錆びた指輪_天使", "EID_錆びた指輪_悪魔"];
+var evolutionids =  ["MSID_妖術師５","EID_鉄の剣", "EID_鋼の剣", "EID_銀の剣", "EID_勇者の剣", "EID_暗黒の剣", "EID_聖なる剣", "EID_黄金の短剣", "EID_鉄の槍", "EID_鋼の槍", "EID_手やり", "EID_ナイトキラー", "EID_聖なる槍", "EID_鉄の弓", "EID_鋼の弓", "EID_銀の弓", "EID_聖なる弓", "EID_錆びた剣_鉄", "EID_錆びた剣_鋼", "EID_錆びた剣_暗黒", "EID_錆びた剣_勇者", "EID_錆びた剣_流星", "EID_錆びた剣_毒", "EID_錆びた槍_鉄", "EID_錆びた槍_鋼", "EID_錆びた槍_太陽", "EID_錆びた槍_毒", "EID_錆びた弓_鉄", "EID_錆びた弓_鋼", "EID_錆びた弓_月光", "EID_錆びた弓_毒", "EID_錆びた盾_鉄", "EID_錆びた盾_鋼", "EID_錆びた盾_竜", "EID_錆びた斧_悪魔", "EID_錆びた指輪_天使", "EID_錆びた指輪_悪魔"];
 
 
 var data = [{
