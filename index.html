@@ -30,7 +30,7 @@
   <a id="link "target="_blank" href="README/BLOG.html">Blog documenting my randomized adventures</a>
 </div>
   <br>
-  <h3 id="warning">⚠️This has been tested to work on North American systems and North American digital and physical game cartridges. This has not been tested on other systems, but theoretically they should work. By using this tool, even on the intended hardware, you assume any and all liability associated with using this software as well as the liability associated with patching a Nintendo game.</h3>
+  <h3 id="warning">⚠️This has been tested to work on North American systems and North American digital and physical game cartridges. This has not been tested on other systems, but theoretically they should work. By using this tool, even on the intended hardware, you assume any and all liability associated with using this software as well as the liability associated with patching a Nintendo game. (This is just for legal reasons there is minimal risk)</h3>
 <!--
 <h1>Randomize a Character:</h1>
 <!--
@@ -396,9 +396,11 @@ slider.oninput = function() {
 <div id="theEnemy" class="tabcontent">
 <h3>Full Enemy Randomization Coming Soon!<h3>
 
-  <input type="checkbox" id="NPC"> <div class="tooltip">Randomize NPCs/Major Enemies? (Beta)<span class="tooltiptext">Randomizes NPCs and major Enemies</span>
+  <input type="radio" name="npc" id="NPC"> <div class="tooltip">Randomize NPCs/Major Enemies? (Balanced)<span class="tooltiptext">Classes are randomized by same class strength. Click on <a href="https://fireemblemwiki.org/wiki/Class_strength">this link</a> for more info.</span>
   </div> </input>
-
+  <br>
+  <input type="radio" name="npc" id="chaos"> <div class="tooltip">Randomize NPCs/Major Enemies? (Unbalanced)<span class="tooltiptext">Classes are completely randomized. WARNING: May make game EXTREMELY difficult</span>
+  </div> </input>
 
 </div>
 

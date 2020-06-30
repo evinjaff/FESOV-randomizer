@@ -699,6 +699,24 @@ function strchoose(int){
 }
 
 function npcify(){
+	var kidsPID = ["PID_幼少アルム", "PID_幼少セリカ", "PID_幼少グレイ", "PID_幼少ロビン", "PID_幼少クリフ", "PID_幼少エフィ", "PID_若マイセン"];
+	if(document.getElementById("chaos").checked == true){
+		for(var mypid of npcarr){
+
+				var randoJID = classmap.get(getRandomKey(classmap));
+				data[0].Modules["Characters"][mypid]["JID"] = randoJID;
+
+				if(data[0].Modules["Characters"][mypid]["Dropped Item"] != null){
+					console.log("not null item! " + data[0].Modules["Characters"][mypid]["Dropped Item"]);
+					data[0].Modules["Characters"][mypid]["Dropped Item"] = getRandomKey(jpmap);
+			}
+			else{
+				console.log("null")
+			}
+		}
+
+	}
+
 	if(document.getElementById("NPC").checked == true){
 
 
@@ -745,7 +763,7 @@ function npcify(){
 
 				//Mycen Fun
 
-				var kidsPID = ["PID_幼少アルム", "PID_幼少セリカ", "PID_幼少グレイ", "PID_幼少ロビン", "PID_幼少クリフ", "PID_幼少エフィ", "PID_若マイセン"];
+
 
 				if(contains(kidsPID, mypid)){
 					properJID = classmap.get(getRandomKey(classmap));
@@ -809,6 +827,8 @@ function getByValue(map, searchValue) {
 }
 
 function Route(option) {
+
+	npcify();
 
 	var celicabutton = document.getElementById("CelicaButton");
 	var almbutton = document.getElementById("AlmButton");
@@ -987,7 +1007,7 @@ var thracia = false;
 
 			var firsttime = true;
 
-			npcify();
+
 
 
 
@@ -1251,7 +1271,7 @@ var thracia = false;
 						//console.log(stringfix(myclass, almchars[i - 2].gender));
 						if(document.getElementById("item").checked){
 							//console.log(data[0].Modules.Characters[celicachars[i-2].id]["Equipped Item"] );
-							if(data[0].Modules.Characters[celicachars[i-2].id]["Equipped Item"] != null){
+							//if(data[0].Modules.Characters[celicachars[i-2].id]["Equipped Item"] != null){
 								var myitem = extractedmap[randint(extractedmap.length)];
 						data[0].Modules.Characters[celicachars[i-2].id]["Equipped Item"] = 	myitem;
 						//console.log(data[0].Modules.Characters[almchars[i-2].id]["Equipped Item"]);
@@ -1286,7 +1306,7 @@ var thracia = false;
 
 
 
-						}
+						//}
 						}
 
 						var playerjid = classmap.get(stringfix(myclass, celicachars[i - 2].gender));
@@ -1305,7 +1325,7 @@ var thracia = false;
 		}
 		var ex = document.getElementById("export");
 		ex.hidden = false;
-		console.log(almbutton);
+		//console.log(almbutton);
 		if(almbutton.style.display == 'none'){
 			celicabutton.style.display = 'none';
 			bothbutton.style.display = 'none';
