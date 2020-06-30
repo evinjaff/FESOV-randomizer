@@ -593,50 +593,66 @@ function getTier(string){
 
 		//Balance tweaking for early-game Brigands
 		//console.log("String: " + string)
-		if(string == "Brigand"){
+
+
+
+
+		if(contains(one, string)){
 			return 1;
 		}
-		//Tier 1
-		if(contains(oneandtwo, string) || contains(almcelica1, string) || contains(levelone, string) || contains(enemyone, string) || contains(enemyflex, string) || contains(uglyone, string) || contains(amiibo, string)){
-			return 1;
-		}
-		//Tier 2
-		if(contains(uglytwo, string) || contains(leveltwo, string) || contains(almcelica2, string) || contains(enemytwo, string)){
+
+		if(contains(two, string)){
 			return 2;
 		}
-		if(contains(uglythree, string) || contains(enemythree, string) || contains(levelthree, string) || contains(onetwothree, string) || contains(enemyflex, string)){
+		if(contains(three, string)){
 			return 3;
 		}
-		//Tier 3
-		//if(){}
-		//Untiered Grey Area
-		//if(){}
-		//Edge Case switch statement
+		if(contains(four, string)){
+			return 4;
+		}
+		if(contains(five, string)){
+			return 5;
+		}
+		if(contains(six, string)){
+			return 6;
+		}
+		if(contains(seven, string)){
+			return 7;
+		}
+		if(contains(eight, string)){
+			return 8;
+		}
+		if(contains(ten, string)){
+			return 10;
+		}
+
+
+
 		switch (string) {
 			case "Cavalier (M)":
-				return 1;
+				return 6;
 			case "Cavalier (F)":
-				return 1;
+				return 6;
 			case "Paladin (M)":
-				return 2;
+				return 3;
 			case "Paladin (F)":
-				return 2;
+				return 3;
 			case "Gold Knight (M)":
-				return 3;
+				return 1;
 			case "Gold Knight (F)":
-				return 3;
+				return 1;
 			case "Mage (M)":
-				return 1;
+				return 5;
 			case "Mage (F)":
-				return 1;
+				return 6;
 			case "Villager (M)":
-				return 1;
+				return 10;
 			case "Villager (F)":
-				return 1;
+				return 10;
 			case "Hero":
-				return 1;
+				return 2;
 			case "Tactician (Robin)":
-				return 1;
+				return 2;
 			case "Revenant (Venin)":
 				return 2;
 			case "Entombed(Numbing)":
@@ -644,13 +660,9 @@ function getTier(string){
 			case "Entombed(Venin)":
 				return 2;
 			case "Mila's Servant":
-				return 3;
+				return 1;
 			case "Duma's Apostole":
-				return 3;
-			case "Fell Dragon":
-				return 0;
-			case "God":
-				return 0;
+				return 1;
 			case undefined:
 				return 0;
 			case null:
@@ -659,6 +671,31 @@ function getTier(string){
 				return 0;
 		}
 
+}
+
+function strchoose(int){
+	switch (int) {
+		case 1:
+			return one[randint(one.length)];
+		case 2:
+			return two[randint(two.length)];
+		case 3:
+				return three[randint(three.length)];
+		case 4:
+				return four[randint(four.length)];
+		case 5:
+				return five[randint(five.length)];
+		case 6:
+				return six[randint(six.length)];
+		case 7:
+				return seven[randint(seven.length)];
+		case 8:
+				return eight[randint(eight.length)];
+		case 10:
+				return ten[randint(ten.length)];
+		default:
+				return;
+	}
 }
 
 function npcify(){
@@ -670,67 +707,75 @@ function npcify(){
 		for(var mypid of npcarr){
 
 			//console.log(mypid);
+			//NPC randomization based on class strength table
+			/** https://fireemblemwiki.org/wiki/Class_strength **/
 
-			var charclass = getRandomValue(classmap);
 			//console.log(charclass);
 
 			var origJID = data[0].Modules["Characters"][mypid]["JID"];  //= charclass;
 
-			//classmap.(origJID);
+			var origclass = getByValue(classmap, origJID);
 
-			//console.log("Old Class: " + getByValue(classmap, origJID));
-			console.log(getByValue(classmap, origJID) + " tier is " + getTier(getByValue(classmap, origJID)));
+			var str = getTier(origclass);
+
+			//console.log("Class Value:" + getByValue(classmap, origJID) + "\n Class Tier: " + str);
+
+			var randclass = strchoose(str);
+			//console.log(randclass);
+
 			if(getTier(getByValue(classmap, origJID)) == 0){
 					//Do Nothing - Don't fuck up the JSON
 			}
 			else{
 
+				//console.log(origclass + " New Class is: "+ randclass + " JID is: " + classmap.get(stringfix(randclass)));
+
+				var randgender = "Male";
+
+				if(Math.random() > 0.5){
+					randgender = "Male";
+				}else{
+					randgender = "Female";
+				}
 
 
-									data[0].Modules["Characters"][mypid]["Learned Black Magic"] = black[randint(black.length)];
-									data[0].Modules["Characters"][mypid]["Learned White Magic"] = white[randint(white.length)];
+				var properJID = classmap.get(stringfix(randclass, randgender));
 
-			//Assingment:
-			// data[0].Modules["Characters"][mypid]["JID"] = ;
+				var droppeditem = getRandomKey(jpmap);
 
-			//TODO: Add Spell lists for magic initiates
-			//TODO: Change Names to match classes
+				//Mycen Fun
 
-			var mygender = "";
-			if(Math.random() > 0.5){
-				mygender = "Male";
+				var kidsPID = ["PID_幼少アルム", "PID_幼少セリカ", "PID_幼少グレイ", "PID_幼少ロビン", "PID_幼少クリフ", "PID_幼少エフィ", "PID_若マイセン"];
+
+				if(contains(kidsPID, mypid)){
+					properJID = classmap.get(getRandomKey(classmap));
+					//console.log(properJID);
+				}
+
+				data[0].Modules["Characters"][mypid]["JID"] = properJID;
+				data[0].Modules["Characters"][mypid]["Equipped Item"] = droppeditem;
+
 			}
-			else{
-				mygender = "Female";
-			}
-
-			var chosenclass = chooseclass(getTier(getByValue(classmap, origJID)), true, true, false, true, true, true, true);
-			//console.log("chosenclass: " + chosenclass);
 
 
-
-			var fixedstring = classmap.get(stringfix(chosenclass, mygender));
-
-			//Early Game tweak so levels aren't impossible
+			//console.log("Old Class: " + getByValue(classmap, origJID));
+			//console.log(getByValue(classmap, origJID) + " tier is " + getTier(getByValue(classmap, origJID)));
 
 
-			//console.log( "Level: " + getTier(getByValue(classmap, origJID)) + "\n" + "Class: " + chosenclass + " Final JID: " + fixedstring);
+			/*
 
 
-
-
-
-			var droppeditem = getRandomKey(jpmap);
 
 
 			data[0].Modules["Characters"][mypid]["JID"] = fixedstring;
 			data[0].Modules["Characters"][mypid]["Equipped Item"] = droppeditem;
-		}
+		} */
 
 
 	}
 	//Force Lock Early brigands to non-caster low-cap Classes
 	var lowcapmartial = ["JID_村人男", "JID_村人女", "JID_盗賊男", "JID_子供男", "JID_子供女"]
+
 	data[0].Modules["Characters"]["PID_盗賊"]["JID"] = lowcapmartial[randint(lowcapmartial.length)];
 	//console.log(data[0].Modules["Characters"]["PID_盗賊"]);
 }
@@ -806,7 +851,7 @@ var thracia = false;
 	}
 
 
-	if(document.getElementById("item").checked){
+	//if(document.getElementById("item").checked){
 		var checkedtruths = [true, true, true, true, true, true];
 		var univtruth = true;
 
@@ -853,7 +898,7 @@ var thracia = false;
 			if(parseInt(min) > parseInt(max) || parseInt(mint) > parseInt(maxt)){
 				alert("Min growth rate is higher than max growth rate");
 				return;
-			}
+			//}
 
 
 
@@ -1022,7 +1067,7 @@ var thracia = false;
 						//console.log(stringfix(myclass, almchars[i - 2].gender));
 						if(document.getElementById("item").checked){
 							//console.log(data[0].Modules.Characters[celicachars[i-2].id]["Equipped Item"] );
-							if(data[0].Modules.Characters[almchars[i-2].id]["Equipped Item"] != null){
+							//if(data[0].Modules.Characters[almchars[i-2].id]["Equipped Item"] != null){
 								//console.log("Rand Number: ")
 								var rng = randint(extractedmap.length-1);
 
@@ -1051,7 +1096,7 @@ var thracia = false;
 							document.getElementById("div2").appendChild(st);
 
 
-					}
+					//}
 					}
 
 
