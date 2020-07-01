@@ -782,6 +782,10 @@ function npcify(){
 				data[0].Modules["Characters"][mypid]["JID"] = properJID;
 				data[0].Modules["Characters"][mypid]["Equipped Item"] = droppeditem;
 
+				if(data[0].Modules["Characters"][mypid]["Dropped Item"] != null){
+					data[0].Modules["Characters"][mypid]["Dropped Item"] = droppeditem;
+				}
+
 			}
 
 
@@ -800,10 +804,11 @@ function npcify(){
 
 
 	}
-	//Force Lock Early brigands to non-caster low-cap Classes
+	/*Lock Early brigands to non-caster low-cap Classes
 	var lowcapmartial = ["JID_村人男", "JID_村人女", "JID_盗賊男", "JID_子供男", "JID_子供女"]
 
 	data[0].Modules["Characters"]["PID_盗賊"]["JID"] = lowcapmartial[randint(lowcapmartial.length)];
+	*/
 	//console.log(data[0].Modules["Characters"]["PID_盗賊"]);
 }
 else{
@@ -812,6 +817,10 @@ else{
 }
 
 } //End of function
+
+function fixweapons(){
+	
+}
 
 
 function randint(max) {
