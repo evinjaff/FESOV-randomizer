@@ -674,23 +674,32 @@ function getTier(string){
 }
 
 function strchoose(int){
+	//Fixed so that you can also have a class 2 levels lower for diversity. Avoids issues with Paladins and other classes that have small class strengths not being diverse.
 	switch (int) {
 		case 1:
-			return one[randint(one.length)];
+			var onerange = one.concat(two, three);
+			return onerange[randint(onerange.length)];
 		case 2:
-			return two[randint(two.length)];
+			var tworange = two.concat(three, four);
+			return tworange[randint(tworange.length)];
 		case 3:
-				return three[randint(three.length)];
+			var threerange = three.concat(five, four);
+			return threerange[randint(threerange.length)];
 		case 4:
-				return four[randint(four.length)];
+			var fourrange = four.concat(five, six);
+			return fourrange[randint(fourrange.length)];
 		case 5:
-				return five[randint(five.length)];
+			var fiverange = five.concat(seven, six);
+			return fiverange[randint(fiverange.length)];
 		case 6:
-				return six[randint(six.length)];
+			var sixrange = six.concat(seven, eight);
+			return sixrange[randint(sixrange.length)];
 		case 7:
-				return seven[randint(seven.length)];
+			var sevenrange = seven.concat(ten, eight);
+			return sevenrange[randint(sevenrange.length)];
 		case 8:
-				return eight[randint(eight.length)];
+			var eightrange = seven.concat(ten);
+			return eightrange[randint(eightrange.length)];
 		case 10:
 				return ten[randint(ten.length)];
 		default:
