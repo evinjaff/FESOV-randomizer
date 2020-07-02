@@ -23,6 +23,7 @@ function stringfix(string, gender){
 		return output;
 	}
 
+
 	case "Lord (Corrin)":
 	{
 		if(gender == "Male"){
@@ -819,7 +820,62 @@ else{
 } //End of function
 
 function fixweapons(){
-	
+
+	if(document.getElementById("amiiboweaponbuff").checked == true){
+			//Kanji Item IDs
+
+			//Exalted Falchion -> "IID_神剣ファルシオン"
+			// Original Mt > 10
+			// Original Weight > 3
+			// Range tweaked to 2
+
+			//Ragnell -> "IID_ラグネル"
+			// Original Mt > 18
+			// Original Weight > 15
+			// Range tweaked to 2
+
+			//Paralell Falchion -> "IID_裏剣ファルシオン"
+			// Original Mt > 12
+			// Original Weight > 3
+			// Range tweaked to 2
+
+
+			//Binding Blade -> "IID_封印の剣"
+			// Original Mt > 18
+			// Original Weight > 8
+			// Iron sword mt in this game 5
+
+			//Yato -> "IID_夜刀神"
+			// Original Mt > 8
+			// Original Weight > 1
+			// Reasonable high-end weapon. No need to scale
+
+			var legendaryswords = ["IID_神剣ファルシオン", "IID_ラグネル", "IID_裏剣ファルシオン", "IID_封印の剣", "IID_夜刀神"];
+			var mights = [10, 18, 12, 18, 8];
+			var weights = [3, 15, 3, 8, 1];
+			var descriptions = ["The Hero-King's sword carved \\nfrom Naga's Fang", "A legendary sword bessed by \\nthe godess Ashera", "A legendary sword carved from Naga's Fang\\n", "A powerful weapon capable of sealing Idunn", "A legendary Katana capable of slaying\\n the first dragons."];
+
+			//Buff Ragnell range
+			data[0].Modules["Items"]["IID_ラグネル"]["Max Range"] = 2;
+
+			for(var i=0;i<legendaryswords.length;i++){
+
+
+				data[0].Modules["Items"][legendaryswords[i]]["Might"] = mights[i];
+				data[0].Modules["Items"][legendaryswords[i]]["Weight"] = weights[i];
+				data[0].Modules["Items"][legendaryswords[i]]["Description"]["value"] = descriptions[i];
+				/*
+				console.log("New Weapon: " + data[0].Modules["Items"][legendaryswords[i]]["Name"]["value"]);
+				console.log(data[0].Modules["Items"][legendaryswords[i]]["Might"]);
+				console.log(data[0].Modules["Items"][legendaryswords[i]]["Weight"]);
+				console.log(data[0].Modules["Items"][legendaryswords[i]]["Description"]["value"]);
+				*/
+			}
+
+
+
+	}
+
 }
 
 
@@ -847,6 +903,7 @@ function getByValue(map, searchValue) {
 function Route(option) {
 
 	npcify();
+	fixweapons();
 
 	var celicabutton = document.getElementById("CelicaButton");
 	var almbutton = document.getElementById("AlmButton");
