@@ -719,7 +719,7 @@ function npcify(){
 				if(data[0].Modules["Characters"][mypid]["Dropped Item"] != null){
 					console.log("not null item! " + data[0].Modules["Characters"][mypid]["Dropped Item"]);
 					data[0].Modules["Characters"][mypid]["Dropped Item"] = getRandomKey(jpmap);
-			}
+				}
 			else{
 				console.log("null")
 			}
@@ -784,7 +784,10 @@ function npcify(){
 				data[0].Modules["Characters"][mypid]["Equipped Item"] = droppeditem;
 
 				if(data[0].Modules["Characters"][mypid]["Dropped Item"] != null){
-					data[0].Modules["Characters"][mypid]["Dropped Item"] = droppeditem;
+
+					data[0].Modules["Characters"][mypid]["Drop Rate %"] = 99.9;
+					data[0].Modules["Characters"][mypid]["Dropped Item"] = getRandomKey(jpmap);
+					console.log(data[0].Modules["Characters"][mypid]);
 				}
 
 			}

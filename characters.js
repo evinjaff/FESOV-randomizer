@@ -4,9 +4,9 @@ var one = [ "Baron", "Bow Knight", "Gold Knight (M)", "Gold Knight (F)", "Falcon
 var two = ["Dread Fighter", "Sage", "Saint", "Princess", "Hero", "Cantor", "Lich", "Deathgoyle", "Titan", "Garuda", "Lord (Marth)",  "Lord (M. Corrin)", "Lord (F. Corrin)", "Lord (Roy)", "Lord (Lucina)", "Hero (Ike)", "Tactitian (Robin)", "Revenant (Numbing)",  "Revenant (Venin)"];
 var three = ["Paladin (M)", "Paladin (F)", "Mogall"];
 var four = ["Myrmidon", "Sniper", "Dracul", "Entombed (Numbing)", "Entombed (Venin)"];
-var five = ["Knight", "Mage (Male)", "Priestess (Celica)", "Fighter", "Arcanist", "Revenant (Normal)", "Entombed (Normal)"];
+var five = ["Knight", "Mage (Male)", "Priestess (Celica)", "Fighter", "Arcanist", "Entombed (Normal)"];
 var six = ["Cavalier (M)", "Cavalier (F)", "Pegasus Knight", "Mage (Female)", "Witch", "Gargoyle", "Arcanist"];
-var seven = ["Mercenary", "Archer", "Bonewalker"];
+var seven = ["Mercenary", "Archer", "Bonewalker", "Revenant (Normal)"];
 var eight = ["Soldier", "Cleric"];
 
 var ten = ["Villager (M)", "Villager (F)", "Boy", "Girl", "Brigand"];
@@ -51063,6 +51063,7 @@ var data = [{
                   "Skill 6": null,
                   "Skill 7": null,
                   "Skill 8": null,
+                  "Learned White Magic": "MSID_神官１",
                   "End Section": [
                       0,
                       0,
