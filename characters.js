@@ -51063,7 +51063,7 @@ var data = [{
                   "Skill 6": null,
                   "Skill 7": null,
                   "Skill 8": null,
-                  "Learned White Magic": "MSID_神官１",
+                  //"Learned White Magic": "MSID_神官１",
                   "End Section": [
                       0,
                       0,
