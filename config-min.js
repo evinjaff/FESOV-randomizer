@@ -708,6 +708,10 @@ function strchoose(int){
 	}
 }
 
+function randclasspromotion(){
+
+}
+
 function npcify(){
 	var kidsPID = ["PID_幼少アルム", "PID_幼少セリカ", "PID_幼少グレイ", "PID_幼少ロビン", "PID_幼少クリフ", "PID_幼少エフィ", "PID_若マイセン"];
 	if(document.getElementById("chaos").checked == true){
