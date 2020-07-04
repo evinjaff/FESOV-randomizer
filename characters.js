@@ -490,6 +490,8 @@ jpmap.set("IID_コラボの食べ物４", "Mille Crepe");
 jpmap.set("IID_コラボの食べ物５", "Chicken Link");
 jpmap.set("IID_コラボの食べ物６", "Pure Honey");
 
+var jidlist = ["JID_不明", "JID_村人男", "JID_村人女", "JID_ナイト男", "JID_ナイト女", "JID_パラディン男", "JID_パラディン女", "JID_ゴールドナイト男", "JID_ゴールドナイト女", "JID_ソルジャー男", "JID_アーマー男", "JID_バロン男", "JID_魔人", "JID_盗賊男", "JID_傭兵男", "JID_剣士男", "JID_魔戦士男", "JID_アーチャー男", "JID_スナイパー男", "JID_ボウナイト男", "JID_戦士男", "JID_勇者男", "JID_魔道士男", "JID_賢者男", "JID_ペガサスナイト女", "JID_ファルコンナイト女", "JID_シスター女", "JID_聖女", "JID_魔道士女", "JID_神官女", "JID_神官セ", "JID_プリンセス女", "JID_妖術師男", "JID_祈祷師男", "JID_魔女", "JID_ゾンビ", "JID_マミー", "JID_スケルトン", "JID_リッチー", "JID_ガーゴイル", "JID_バルログ", "JID_ドラゴンゾンビ", "JID_白竜", "JID_ビグル", "JID_邪神", "JID_子供男", "JID_子供女", "JID_ミラのしもべ", "JID_ドーマの使徒", "JID_ドラクル", "JID_タイタン", "JID_ガルーダ", "JID_守護者", "JID_ウェスタ", "JID_ファフナー", "JID_ダゴン", "JID_バロール", "JID_デイモス", "JID_火竜", "JID_邪竜", "JID_ゾンビ毒", "JID_ゾンビ麻痺", "JID_マミー毒", "JID_マミー麻痺", "JID_幻影マルス", "JID_幻影アイク", "JID_幻影ルキナ", "JID_幻影ルフレ", "JID_幻影ロイ", "JID_幻影カムイ男", "JID_幻影カムイ女"];
+
 
 var white = ["MSID_ジャミル","MSID_ドーマ","MSID_ガネフ","MSID_妖術師５",
 "MSID_祈祷師４", "MSID_祈祷師" ,"MSID_祈祷師２","MSID_祈祷師３","MSID_祈祷師２強","MSID_祈祷師１強","MSID_妖術師１", "MSID_汎用魔法", "MSID_グレイ", "MSID_ロビン", "MSID_クリフ", "MSID_エフィ神聖", "MSID_シルク", "MSID_汎用神聖", "MSID_リュート", "MSID_汎用神聖", "MSID_デューテ神聖", "MSID_ティータ", /* Celica:*/"MSID_汎用魔法","MSID_セリカ", "MSID_メイ神聖", "MSID_ボーイ", "MSID_ジェニー", "MSID_セーバー", "MSID_カムイ", "MSID_汎用魔法", "MSID_ウェスタ","MSID_汎用神聖", "MSID_汎用神聖", "MSID_祈祷師屍兵", "MSID_妖術師６","MSID_妖術師４",

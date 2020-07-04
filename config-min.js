@@ -710,9 +710,15 @@ function strchoose(int){
 
 function randclasspromotion(){
 		if(document.getElementById("evolutionbeta").checked == true){
+
 			for(var jids in data[0].Modules["Classes"]){
-				console.log(jids);
+				//console.log(data[0].Modules["Classes"][jids]["Promotes From"])
+
+				data[0].Modules["Classes"][jids]["Promotes From"] = jidlist[randint(jidlist.length)];
+				console.log(getByValue(classmap , data[0].Modules["Classes"][jids]["Promotes From"]));
+				//console.log(data[0].Modules["Classes"][jids]["Promotes From"]);
 			}
+
 		}
 }
 
