@@ -709,7 +709,11 @@ function strchoose(int){
 }
 
 function randclasspromotion(){
-
+		if(document.getElementById("evolutionbeta").checked == true){
+			for(var jids in data[0].Modules["Classes"]){
+				console.log(jids);
+			}
+		}
 }
 
 function npcify(){
@@ -860,7 +864,7 @@ function fixweapons(){
 			var legendaryswords = ["IID_神剣ファルシオン", "IID_ラグネル", "IID_裏剣ファルシオン", "IID_封印の剣", "IID_夜刀神"];
 			var mights = [10, 18, 12, 18, 8];
 			var weights = [3, 15, 3, 8, 1];
-			var descriptions = ["The Hero-King's sword carved \\nfrom Naga's Fang", "A legendary sword bessed by \\nthe godess Ashera", "A legendary sword carved from Naga's Fang\\n", "A powerful weapon capable of sealing Idunn", "A legendary Katana capable of slaying\\n the first dragons."];
+			var descriptions = ["The Hero-King's sword carved \\nfrom Naga's Fang", "A legendary sword bessed by \\nthe godess Ashera", "A legendary sword carved from Naga's Fang\\n", "A powerful weapon \\ncapable of sealing Idunn", "A legendary Katana capable of slaying\\n the first dragons."];
 
 			//Buff Ragnell range
 			data[0].Modules["Items"]["IID_ラグネル"]["Max Range"] = 2;
@@ -911,6 +915,7 @@ function Route(option) {
 
 	npcify();
 	fixweapons();
+	randclasspromotion();
 
 	var celicabutton = document.getElementById("CelicaButton");
 	var almbutton = document.getElementById("AlmButton");
