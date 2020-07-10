@@ -3,7 +3,7 @@ var script = document.createElement('script');
 script.src = 'https://code.jquery.com/jquery-3.5.1.min.js';
 document.getElementsByTagName('head')[0].appendChild(script);
 */
-
+var worldtrue = true;
 function stringfix(string, gender){
 
 
@@ -479,11 +479,7 @@ function moreweapons() {
 	 if(!document.getElementById("moreweapons").checked){
 		 //Slow non-hard coded solution
 		 //Opted to make this O(n^2) over O(1) so it's dynamic.
-		//var []
-		console.log("Old:");
-		console.log(data);
-		console.log("Reference:");
-		console.log(oldflags);
+
 
 		 for(var jids in data[0].Modules["Classes"]){
 
@@ -503,17 +499,95 @@ function moreweapons() {
 				 }
 			 }
 		 }
-		 console.log("New:");
-		 console.log(data);
 
 	 }
 
-		 //for(var jids in data[0].Modules["Classes"]){
-			 //console.log(getByValue(classmap , data[0].Modules["Classes"][jids]["Promotes From"]));
-			// data[0].Modules["Classes"][jids]["Promotes From"]
-		 //}
-
 }
+
+function randomchars() {
+		if(document.getElementById("routechars").checked){
+			var arr = [];
+			//Generates internal Array
+			for(var pids in data[0].Modules["Characters"]){
+					//console.log(data[0].Modules["Characters"][pids]["Name"]["value"]);
+
+					//for(var i in data[0].Modules["Characters"][pids]){
+				if(data[0].Modules["Characters"][pids]["Name"]["value"] != ""){
+
+
+					var newins = [data[0].Modules["Characters"][pids]];
+					arr[arr.length] = newins;
+				}
+
+					//console.log(data[0].Modules["Characters"][pids]["Name"]["value"]);
+
+					if(data[0].Modules["Characters"][pids]["Name"]["value"] == "Conrad"){
+							console.log("Break at Conrad");
+							break;
+					}
+						//break;
+					//}
+
+				}
+				console.log(arr);
+
+
+
+				for(var pids in data[0].Modules["Characters"]){
+
+						//data[0].Modules["Characters"][pids] = arr[randint(arr.length)][0];
+						if(data[0].Modules["Characters"][pids]["Name"]["value"] != ""){
+
+							var index = Math.floor(Math.random()*arr.length);
+
+						var poppedname = arr.splice(index, 1)[0];
+
+						//console.log(poppedname);
+
+						console.log(data[0].Modules["Characters"][pids]["Name"]["value"] + " is now " + poppedname[0]["Name"]["value"]);
+
+						console.log("array contents");
+
+						/*
+						for(var k in arr){
+							console.log(arr[k][0]["Name"]["value"]);
+						}
+						*/
+
+
+						console.log(pids);
+
+						//console.log(data[0].Modules["Characters"][pids]["Name"]["value"]);
+
+
+						data[0].Modules["Characters"][pids] = poppedname;
+						//console.log(arr[randint(arr.length)][0]);
+						//arr[arr.length] = newins;
+
+
+
+						console.log(poppedname);
+
+						//console.log(data[0].Modules["Characters"][poppedname[0]["PID"]]);
+
+						data[0].Modules["Characters"][pids] = poppedname[0];
+						console.log(arr);
+						if(arr.length == 0){
+								console.log("Break for zero length");
+								//break;
+								return;
+						}
+					}
+
+
+
+					}
+					console.log(data);
+
+
+			}
+}
+
 
 
 function chooseclass(level, yesamiibo, yesenemy, yesbroken, yesalm, yestier1, yesugly, yesBase) {
@@ -850,7 +924,7 @@ function npcify(){
 
 					data[0].Modules["Characters"][mypid]["Drop Rate %"] = 99.9;
 					data[0].Modules["Characters"][mypid]["Dropped Item"] = getRandomKey(jpmap);
-					console.log(data[0].Modules["Characters"][mypid]);
+					//console.log(data[0].Modules["Characters"][mypid]);
 				}
 
 			}
@@ -972,7 +1046,12 @@ function Route(option) {
 	moreweapons();
 	npcify();
 	fixweapons();
-	randclasspromotion();
+	//randclasspromotion();
+	if(worldtrue){
+		randomchars();
+		worldtrue = false;
+	}
+
 
 	var celicabutton = document.getElementById("CelicaButton");
 	var almbutton = document.getElementById("AlmButton");
@@ -1299,7 +1378,7 @@ var thracia = false;
 
 
 
-
+		//randomchars();
 		break;
 
 	return;
@@ -1482,6 +1561,7 @@ var thracia = false;
 		}
 
 		celicadone = true;
+		//randomchars();
 		break;
 	}
 
