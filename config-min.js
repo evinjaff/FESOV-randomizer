@@ -472,6 +472,49 @@ function Ugly() {
 	return document.getElementById("ugly").checked;
 }
 
+function moreweapons() {
+		//Hard Code weapon flags for some JIDS
+		//This will revert the weapon flags and secondary weapons back to normal, since it will be easier
+
+	 if(!document.getElementById("moreweapons").checked){
+		 //Slow non-hard coded solution
+		 //Opted to make this O(n^2) over O(1) so it's dynamic.
+		//var []
+		console.log("Old:");
+		console.log(data);
+		console.log("Reference:");
+		console.log(oldflags);
+
+		 for(var jids in data[0].Modules["Classes"]){
+
+			 //console.log(jids);
+
+			 for(var oldjids in oldflags[0].Modules["Classes"]){
+				 //console.log(oldjids["Name"]["value"])
+				 //console.log(jids["Name"]["value"])
+				 if(oldjids == jids){
+					 //console.log("Match!");
+					 //console.log(oldjids);
+
+					 data[0].Modules["Classes"][jids] = oldflags[0].Modules["Classes"][oldjids];
+
+
+
+				 }
+			 }
+		 }
+		 console.log("New:");
+		 console.log(data);
+
+	 }
+
+		 //for(var jids in data[0].Modules["Classes"]){
+			 //console.log(getByValue(classmap , data[0].Modules["Classes"][jids]["Promotes From"]));
+			// data[0].Modules["Classes"][jids]["Promotes From"]
+		 //}
+
+}
+
 
 function chooseclass(level, yesamiibo, yesenemy, yesbroken, yesalm, yestier1, yesugly, yesBase) {
 	var isBroken = yesbroken;
@@ -925,6 +968,8 @@ function getByValue(map, searchValue) {
 
 function Route(option) {
 
+
+	moreweapons();
 	npcify();
 	fixweapons();
 	randclasspromotion();
