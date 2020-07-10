@@ -714,7 +714,7 @@ function randclasspromotion(){
 			for(var jids in data[0].Modules["Classes"]){
 				//console.log(data[0].Modules["Classes"][jids]["Promotes From"])
 
-				data[0].Modules["Classes"][jids]["Promotes From"] = jidlist[randint(jidlist.length)];
+				//data[0].Modules["Classes"][jids]["Promotes From"] = jidlist[randint(jidlist.length)];
 				console.log(getByValue(classmap , data[0].Modules["Classes"][jids]["Promotes From"]));
 				//console.log(data[0].Modules["Classes"][jids]["Promotes From"]);
 			}
@@ -732,7 +732,13 @@ function npcify(){
 
 				if(data[0].Modules["Characters"][mypid]["Dropped Item"] != null){
 					console.log("not null item! " + data[0].Modules["Characters"][mypid]["Dropped Item"]);
-					data[0].Modules["Characters"][mypid]["Dropped Item"] = getRandomKey(jpmap);
+					if(Math.random() > 0.5){
+						data[0].Modules["Characters"][mypid]["Dropped Item"] = getRandomKey(jpmap);
+						console.log("Yes trigger!");
+					}
+					else{
+						console.log("No trigger!");
+					}
 				}
 			else{
 				console.log("null")
