@@ -513,20 +513,20 @@ function randomchars() {
 
 			var arr = [];
 			//Generates internal Array
-			for(var pids in data[0].Modules["Characters"]){
-					//console.log(data[0].Modules["Characters"][pids]["Name"]["value"]);
+			for(var pids in legacy[0].Modules["Characters"]){
+					//console.log(legacy[0].Modules["Characters"][pids]["Name"]["value"]);
 
-					//for(var i in data[0].Modules["Characters"][pids]){
-				if(data[0].Modules["Characters"][pids]["Name"]["value"] != ""){
+					//for(var i in legacy[0].Modules["Characters"][pids]){
+				if(legacy[0].Modules["Characters"][pids]["Name"]["value"] != ""){
 
 
-					var newins = [data[0].Modules["Characters"][pids]];
+					var newins = [legacy[0].Modules["Characters"][pids]];
 					arr[arr.length] = newins;
 				}
 
-					console.log(data[0].Modules["Characters"][pids]["Name"]["value"]);
+					//console.log(arr["Name"]["value"]);
 
-					if(data[0].Modules["Characters"][pids]["Name"]["value"] == "Conrad"){
+					if(legacy[0].Modules["Characters"][pids]["Name"]["value"] == "Conrad"){
 							console.log("Break at Conrad");
 							break;
 					}
@@ -535,25 +535,53 @@ function randomchars() {
 
 				}
 
-			for(var pids in data[0].Modules["Characters"]) {
+
+
+				console.log("This should run ONCE!");
+			for(var pids in legacy[0].Modules["Characters"]) {
+
 
 
 						if(data[0].Modules["Characters"][pids]["Name"]["value"] != ""){
 
 							var index = Math.floor(Math.random()*arr.length);
 
-							var poppedname = arr.splice(index, 1)[0];
+							//var poppedname = arr.splice(index, 1);
 
-						}
+							for(var x in arr){
+									console.log(arr[x][0]["Name"]["value"]);
+							}
+
+							var randomIndex = Math.floor(Math.random() * arr.length);
+							var poppedname = arr.splice(randomIndex, 1);
+
+							poppedname = poppedname[0];
+
+							console.log(arr);
+
+
+
+							console.log("Popped! " + poppedname[0]["Name"]["value"]);
+							console.log(poppedname);
+
+
+
+
 
 						//Change name value.. Just a test for pointer problems
-
+						console.log(data[0].Modules["Characters"][pids]["Name"]["value"] + " is " + poppedname[0]["Name"]["value"]);
 						data[0].Modules["Characters"][pids]["Name"]["value"] = poppedname[0]["Name"]["value"];
 						data[0].Modules["Characters"][pids]["Voice"] = poppedname[0]["Voice"];
 						data[0].Modules["Characters"][pids]["Description"]["value"] = poppedname[0]["Description"]["value"];
 
 
 						console.log(data[0].Modules);
+
+						if(arr.length == 0){
+							break;
+						}
+
+					}
 
 
 
@@ -562,6 +590,7 @@ function randomchars() {
 
 
 			}
+
 		}
 	}
 
@@ -1020,7 +1049,8 @@ function Route(option) {
 
 
 	moreweapons();
-	npcify();
+	//Uncomment later
+	//npcify();
 	fixweapons();
 	//randclasspromotion();
 	if(worldtrue){
