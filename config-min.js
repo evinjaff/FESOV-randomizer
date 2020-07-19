@@ -506,6 +506,11 @@ function moreweapons() {
 
 function randomchars() {
 		if(document.getElementById("routechars").checked){
+
+			console.log(data);
+
+
+
 			var arr = [];
 			//Generates internal Array
 			for(var pids in data[0].Modules["Characters"]){
@@ -519,7 +524,7 @@ function randomchars() {
 					arr[arr.length] = newins;
 				}
 
-					//console.log(data[0].Modules["Characters"][pids]["Name"]["value"]);
+					console.log(data[0].Modules["Characters"][pids]["Name"]["value"]);
 
 					if(data[0].Modules["Characters"][pids]["Name"]["value"] == "Conrad"){
 							console.log("Break at Conrad");
@@ -529,65 +534,36 @@ function randomchars() {
 					//}
 
 				}
-				console.log(arr);
+
+			for(var pids in data[0].Modules["Characters"]) {
 
 
-
-				for(var pids in data[0].Modules["Characters"]){
-
-						//data[0].Modules["Characters"][pids] = arr[randint(arr.length)][0];
 						if(data[0].Modules["Characters"][pids]["Name"]["value"] != ""){
 
 							var index = Math.floor(Math.random()*arr.length);
 
-						var poppedname = arr.splice(index, 1)[0];
+							var poppedname = arr.splice(index, 1)[0];
 
-						//console.log(poppedname);
-
-						console.log(data[0].Modules["Characters"][pids]["Name"]["value"] + " is now " + poppedname[0]["Name"]["value"]);
-
-						console.log("array contents");
-
-						/*
-						for(var k in arr){
-							console.log(arr[k][0]["Name"]["value"]);
 						}
-						*/
+
+						//Change name value.. Just a test for pointer problems
+
+						data[0].Modules["Characters"][pids]["Name"]["value"] = poppedname[0]["Name"]["value"];
+						data[0].Modules["Characters"][pids]["Voice"] = poppedname[0]["Voice"];
+						data[0].Modules["Characters"][pids]["Description"]["value"] = poppedname[0]["Description"]["value"];
 
 
-						console.log(pids);
-
-						//console.log(data[0].Modules["Characters"][pids]["Name"]["value"]);
-
-
-						data[0].Modules["Characters"][pids] = poppedname;
-						//console.log(arr[randint(arr.length)][0]);
-						//arr[arr.length] = newins;
-
-
-
-						console.log(poppedname);
-
-						//console.log(data[0].Modules["Characters"][poppedname[0]["PID"]]);
-
-						data[0].Modules["Characters"][pids] = poppedname[0];
-						console.log(arr);
-						if(arr.length == 0){
-								console.log("Break for zero length");
-								//break;
-								return;
-						}
-					}
+						console.log(data[0].Modules);
 
 
 
-					}
-					console.log(data);
+
+
 
 
 			}
-}
-
+		}
+	}
 
 
 function chooseclass(level, yesamiibo, yesenemy, yesbroken, yesalm, yestier1, yesugly, yesBase) {
@@ -991,7 +967,7 @@ function fixweapons(){
 			// Reasonable high-end weapon. No need to scale
 
 			var legendaryswords = ["IID_神剣ファルシオン", "IID_ラグネル", "IID_裏剣ファルシオン", "IID_封印の剣", "IID_夜刀神"];
-			var mights = [10, 18, 12, 18, 8];
+			var mights = [10, 18, 12, 18, 6];
 			var weights = [3, 15, 3, 8, 1];
 			var descriptions = ["The Hero-King's sword carved \\nfrom Naga's Fang", "A legendary sword bessed by \\nthe godess Ashera", "A legendary sword carved from Naga's Fang\\n", "A powerful weapon \\ncapable of sealing Idunn", "A legendary Katana capable of slaying\\n the first dragons."];
 
