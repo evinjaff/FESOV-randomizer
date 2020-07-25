@@ -518,11 +518,17 @@ function randomchars() {
 
 					//for(var i in legacy[0].Modules["Characters"][pids]){
 				if(legacy[0].Modules["Characters"][pids]["Name"]["value"] != ""){
-
-
+					var norun = false;
+					if(legacy[0].Modules["Characters"][pids]["Name"]["value"] == "Alm"){
+						norun = true;
+					}
+					if(norun == true){
 					var newins = [legacy[0].Modules["Characters"][pids]];
 					arr[arr.length] = newins;
+					}
 				}
+
+				  "PID_アルム"
 
 					//console.log(arr["Name"]["value"]);
 
@@ -573,6 +579,8 @@ function randomchars() {
 						data[0].Modules["Characters"][pids]["Name"]["value"] = poppedname[0]["Name"]["value"];
 						data[0].Modules["Characters"][pids]["Voice"] = poppedname[0]["Voice"];
 						data[0].Modules["Characters"][pids]["Description"]["value"] = poppedname[0]["Description"]["value"];
+						//data[0].Modules["Characters"][pids]["Base Stats"] = poppedname[0]["Base Stats"];
+						data[0].Modules["Characters"][pids]["JID"] = poppedname[0]["JID"];
 
 
 						console.log(data[0].Modules);
