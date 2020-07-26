@@ -522,13 +522,13 @@ function randomchars() {
 					if(legacy[0].Modules["Characters"][pids]["Name"]["value"] == "Alm"){
 						norun = true;
 					}
-					if(norun == true){
+					if(norun == false){
 					var newins = [legacy[0].Modules["Characters"][pids]];
 					arr[arr.length] = newins;
 					}
 				}
 
-				  "PID_アルム"
+				  //"PID_アルム"
 
 					//console.log(arr["Name"]["value"]);
 
