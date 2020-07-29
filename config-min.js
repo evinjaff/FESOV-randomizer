@@ -513,94 +513,78 @@ function randomchars() {
 
 			var arr = [];
 			//Generates internal Array
+			/*
 			for(var pids in legacy[0].Modules["Characters"]){
 					//console.log(legacy[0].Modules["Characters"][pids]["Name"]["value"]);
 
 					//for(var i in legacy[0].Modules["Characters"][pids]){
-				if(legacy[0].Modules["Characters"][pids]["Name"]["value"] != ""){
-					var norun = false;
-					if(legacy[0].Modules["Characters"][pids]["Name"]["value"] == "Alm"){
-						norun = true;
-					}
-					if(norun == false){
-					var newins = [legacy[0].Modules["Characters"][pids]];
-					arr[arr.length] = newins;
-					}
-				}
+					console.log(legacy[0].Modules["Characters"][pids]["Name"]["value"]);
+					arr[arr.length] = pids;
 
-				  //"PID_アルム"
-
-					//console.log(arr["Name"]["value"]);
-
-					if(legacy[0].Modules["Characters"][pids]["Name"]["value"] == "Conrad"){
-							console.log("Break at Conrad");
-							break;
-					}
-						//break;
-					//}
+					console.log(arr);
 
 				}
-
+`			*/
 
 
 				console.log("This should run ONCE!");
-			for(var pids in legacy[0].Modules["Characters"]) {
+var randobank = ["PID_ルカ", "PID_グレイ", "PID_ロビン", "PID_クリフ", "PID_シルク", "PID_クレア", "PID_クレーベ", "PID_フォルス", "PID_パイソン", "PID_リュート", "PID_マチルダ", "PID_デューテ", "PID_ティータ", "PID_ジーク", "PID_マイセン", "PID_エフィ", "PID_セリカ", "PID_メイ", "PID_ボーイ", "PID_ジェニー", "PID_セーバー", "PID_バルボ", "PID_カムイ", "PID_レオ", "PID_パオラ", "PID_カチュア", "PID_アトラス", "PID_ジェシー", "PID_ソニア", "PID_ディーン", "PID_エスト", "PID_ノーマ", "PID_コンラート"];
+
+	/* Exlcude Alm "PID_アルム",*/
+			for(var k in charpids) {
+
+							var inx = randint(randobank.length);
+
+							//console.log(randobank);
+
+							//Pops element and removes an item
+
+							var pop = legacy[0].Modules["Characters"][randobank[inx]];
+							randobank.splice(inx, 1);
 
 
 
-						if(data[0].Modules["Characters"][pids]["Name"]["value"] != ""){
-
-							var index = Math.floor(Math.random()*arr.length);
-
-							//var poppedname = arr.splice(index, 1);
-
-							for(var x in arr){
-									console.log(arr[x][0]["Name"]["value"]);
-							}
-
-							var randomIndex = Math.floor(Math.random() * arr.length);
-							var poppedname = arr.splice(randomIndex, 1);
-
-							poppedname = poppedname[0];
-
-							console.log(arr);
+							console.log(legacy[0].Modules["Characters"][charpids[k]]["Name"]["value"]);
+							console.log("↑ New Name is now ↓");
+							console.log(pop["Name"]["value"]);
 
 
 
-							console.log("Popped! " + poppedname[0]["Name"]["value"]);
-							console.log(poppedname);
+							data[0].Modules["Characters"][charpids[k]]["Name"]["value"] = pop["Name"]["value"];
+							data[0].Modules["Characters"][charpids[k]]["Name"]["key"] = pop["Name"]["key"];
+							data[0].Modules["Characters"][charpids[k]]["Voice"] = pop["Voice"];
+							data[0].Modules["Characters"][charpids[k]]["Description"]["value"] = pop["Description"]["value"];
+							data[0].Modules["Characters"][charpids[k]]["JID"] = pop["JID"];
+							data[0].Modules["Characters"][charpids[k]]["Max Stats"] = pop["Max Stats"];
+							data[0].Modules["Characters"][charpids[k]]["Growths"] = pop["Growths"];
+							data[0].Modules["Characters"][charpids[k]]["Fatigue Tolerance"] = pop["Fatigue Tolerance"];
+							data[0].Modules["Characters"][charpids[k]]["BID"] = pop["BID"];
+							data[0].Modules["Characters"][charpids[k]]["Gender"] = pop["Gender"];
+							data[0].Modules["Characters"][charpids[k]]["AID"] = pop["AID"];
+
+							data[0].Modules["Characters"][charpids[k]]["Description"]["value"] = pop["Description"]["value"];
+							data[0].Modules["Characters"][charpids[k]]["Description"]["key"] = pop["Description"]["key"];
+
+							data[0].Modules["Characters"][charpids[k]]["PID"] = pop["PID"];
 
 
 
 
+							//Skill import
+							data[0].Modules["Characters"][charpids[k]]["Skill 1"] = pop["Skill 1"];
+							data[0].Modules["Characters"][charpids[k]]["Skill 2"] = pop["Skill 2"];
+							data[0].Modules["Characters"][charpids[k]]["Skill 3"] = pop["Skill 3"];
 
-						//Change name value.. Just a test for pointer problems
-						console.log(data[0].Modules["Characters"][pids]["Name"]["value"] + " is " + poppedname[0]["Name"]["value"]);
-						data[0].Modules["Characters"][pids]["Name"]["value"] = poppedname[0]["Name"]["value"];
-						data[0].Modules["Characters"][pids]["Voice"] = poppedname[0]["Voice"];
-						data[0].Modules["Characters"][pids]["Description"]["value"] = poppedname[0]["Description"]["value"];
-						//data[0].Modules["Characters"][pids]["Base Stats"] = poppedname[0]["Base Stats"];
-						data[0].Modules["Characters"][pids]["JID"] = poppedname[0]["JID"];
+							data[0].Modules["Characters"][charpids[k]]["Learned Black Magic"] = pop["Learned Black Magic"];
+							data[0].Modules["Characters"][charpids[k]]["Learned White Magic"] = pop["Learned White Magic"];
 
 
-						console.log(data[0].Modules);
 
-						if(arr.length == 0){
-							break;
-						}
 
 					}
-
-
-
-
-
-
-
 			}
 
 		}
-	}
 
 
 function chooseclass(level, yesamiibo, yesenemy, yesbroken, yesalm, yestier1, yesugly, yesBase) {
