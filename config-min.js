@@ -6,7 +6,6 @@ document.getElementsByTagName('head')[0].appendChild(script);
 var worldtrue = true;
 function stringfix(string, gender){
 
-
 	switch(string) {
   case "Cavalier":
 	case "Villager":
@@ -78,7 +77,10 @@ var request = new XMLHttpRequest();
 
 var almdone = false;
 var celicadone = false;
-var almchars = [Alm, Lukas, Gray, Tobin, Kliff, Faye, Silque, Clair, Clive, Forsyth, Python, Luthier, Mathilda, Delthea, Tatiana, Zeke, Mycen];
+var almchars = [Lukas, Gray, Tobin, Kliff, Faye, Silque, Clair, Clive, Forsyth, Python, Luthier, Mathilda, Delthea, Tatiana, Zeke, Mycen];
+
+//Alm is out of the array
+
 
 var Alm = {
 	name: "Alm",
@@ -565,7 +567,7 @@ var randobank = ["PID_ルカ", "PID_グレイ", "PID_ロビン", "PID_クリフ"
 							data[0].Modules["Characters"][charpids[k]]["Description"]["value"] = pop["Description"]["value"];
 							data[0].Modules["Characters"][charpids[k]]["Description"]["key"] = pop["Description"]["key"];
 
-							data[0].Modules["Characters"][charpids[k]]["PID"] = pop["PID"];
+							//data[0].Modules["Characters"][charpids[k]]["PID"] = pop["PID"];
 
 
 
@@ -868,7 +870,9 @@ function npcify(){
 		var trueEvin = false;
 		for(var mypid of npcarr){
 
-			//console.log(mypid);
+
+
+			data[0].Modules["Characters"][mypid]["Boss BGM"] = bgm[randint(bgm.length)];
 			//NPC randomization based on class strength table
 			/** https://fireemblemwiki.org/wiki/Class_strength **/
 
@@ -919,7 +923,7 @@ function npcify(){
 
 				if(data[0].Modules["Characters"][mypid]["Dropped Item"] != null){
 
-					data[0].Modules["Characters"][mypid]["Drop Rate %"] = 99.9;
+					data[0].Modules["Characters"][mypid]["Drop Rate %"] = 10;
 					data[0].Modules["Characters"][mypid]["Dropped Item"] = getRandomKey(jpmap);
 					//console.log(data[0].Modules["Characters"][mypid]);
 				}
@@ -1042,7 +1046,7 @@ function Route(option) {
 
 	moreweapons();
 	//Uncomment later
-	//npcify();
+	npcify();
 	fixweapons();
 	//randclasspromotion();
 	if(worldtrue){
