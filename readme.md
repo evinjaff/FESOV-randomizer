@@ -1,6 +1,8 @@
 # Fire Emblem Echoes: Shadows of Valentia Randomizer
 Current Version: 1.3 (Shut up Tobin Edition)
 
+# I am not maintaining this project anymore, but I may come back to this later. I've really gotten into Wii Homebrew recently and have been focused on playing around with that.
+
 ## 1.3 Updates:
 
 - Crushed some more bugs and made some efficiency fixes!
@@ -250,8 +252,4 @@ Yes! Thank you for asking. Below are some rulesets I typed up that you might enj
 <a href = "https://evinjaff.github.io/FESOV-randomizer/rules/SmashEmblem.pdf" target="_blank">Smash Emblem</a>
 
 <a href = "https://evinjaff.github.io/FESOV-randomizer/rules/NoPromote.pdf" target="_blank">Base Class Run</a>
-
-# I like this but I think you should do/change xyz..
-
-Thanks for your suggestion! If you think there's something I should change, feel free to submit an issuel, or heck why not fork this repository and send me a pull request! I know that there's a lot of stuff that I haven't done efficiently since most of my programing experience is with Java, C, and MATLAB and I kind of just stumbled my way through JS. As a result of my limited knowledge, I made my life a lot harder by writing this in almost pure JavaScript with the exception of finally slapping on jQuery at the end for image loading and JSON exporting. Also, some of my code verges on spaghetti code, and at some point, I'm going to try and make optimization weaks (I've already started by adding in some switch statemetns when possible), as well as just cleaning up the code so that people can collaborate, and hack on extra features if they so want. This code is 100% open-source, so do with it as you'd like, just please credit me if you use this tool for a Youtube/Twitch Let's Play, a spin-off/clone of this site, etc. Also, if anyone happens to have any additional animated GIF map sprites I missed, please add them in via Pull Request inside the img folder using the FE15_ClassName_(Character).gif naming convention. I think I got a lot of them, but there's still a lot I'm missing.
 
